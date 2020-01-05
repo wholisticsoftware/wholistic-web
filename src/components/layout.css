@@ -8,24 +8,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-menu,
-nav,
-section,
-summary {
+article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary {
   display: block;
 }
-audio,
-canvas,
-progress,
-video {
+audio,canvas,progress,video {
   display: inline-block;
 }
 audio:not([controls]) {
@@ -35,8 +21,7 @@ audio:not([controls]) {
 progress {
   vertical-align: baseline;
 }
-[hidden],
-template {
+[hidden],template {
   display: none;
 }
 a {
@@ -90,10 +75,7 @@ img {
 svg:not(:root) {
   overflow: hidden;
 }
-code,
-kbd,
-pre,
-samp {
+code,kbd,pre,samp {
   font-family: monospace, monospace;
   font-size: 1em;
 }
@@ -105,11 +87,7 @@ hr {
   height: 0;
   overflow: visible;
 }
-button,
-input,
-optgroup,
-select,
-textarea {
+button,input,optgroup,select,textarea {
   font: inherit;
   margin: 0;
 }
