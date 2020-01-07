@@ -10,19 +10,7 @@ import Slider from "react-slick";
 import "./layout.css"
 
 // <div style={{ backgroundImage: `url(./images/willow-creek.jpg)` }}>foobar baz</div>
-/*
- * <Slider {...settings}>
-				  <div>
-					<h1>FooBar</h1>
-				  </div>
-				  <div>
-					<h1>FooBar2</h1>
-				  </div>
-				  <div>
-					<h1>FooBar3</h1>
-				  </div>
-              </Slider>
-              * */
+              
 const Welcome = ({ className }) => (
   <StaticQuery
     query={graphql`
@@ -52,7 +40,17 @@ const Welcome = ({ className }) => (
           style={{ width: `100%`, height: `100%`, display: `flex`, justifyContent: `center`, backgroundSize: `contain`, backgroundPosition: `bottom`, }}>
           <div style={{ width: `100%`, height: `100%`, display: `flex`, justifyContent: `center`, alignItems: `center` }}>
             <div class="text-slider-container">
-              
+              <Slider {...settings}>
+				  <div>
+					<h1>FooBar</h1>
+				  </div>
+				  <div>
+					<h1>FooBar2</h1>
+				  </div>
+				  <div>
+					<h1>FooBar3</h1>
+				  </div>
+              </Slider>
             </div>
           </div>
         </BackgroundImage>

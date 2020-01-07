@@ -6,8 +6,11 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "../../node_modules/slick-carousel/slick/slick.css";
+import "../../node_modules/slick-carousel/slick/slick-theme.css";
 
 import Welcome from "../components/welcome"
+
 //
 /*
  *     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
