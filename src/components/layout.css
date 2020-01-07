@@ -1,3 +1,6 @@
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -607,4 +610,7 @@ border-bottom: 1px solid var(--theme-ui-colors-ui-border,
     margin-bottom: 1.5rem;*/
     position: relative;
     background-color: white;
+    max-height: 150px;
+    max-width: 300px;
 }
+

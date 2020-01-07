@@ -5,34 +5,29 @@ import styled from 'styled-components'
 
 import BackgroundImage from 'gatsby-background-image'
 
-import ReactTextRotator from 'react-text-rotator';
+import Slider from "react-slick";
 
 import "./layout.css"
 
 // <div style={{ backgroundImage: `url(./images/willow-creek.jpg)` }}>foobar baz</div>
-
-const content = [
-  {
-    text: 'Software built with the whole picture in mind.', className: 'classA', animation: 'fade',
-  },
-  {
-    text: 'Make tech serve you. Not the other way around.', className: 'classB', animation: 'fade',
-  },
-  {
-    text: 'A team that scales to what YOU need.', className: 'classC', animation: 'fade',
-  },
-  {
-    text: 'The experience and drive to build the best.', className: 'classD', animation: 'fade',
-  },
-  {
-    text: 'Clients and projects, big and small.', className: 'classE', animation: 'fade',
-  },
-];
+/*
+ * <Slider {...settings}>
+				  <div>
+					<h1>FooBar</h1>
+				  </div>
+				  <div>
+					<h1>FooBar2</h1>
+				  </div>
+				  <div>
+					<h1>FooBar3</h1>
+				  </div>
+              </Slider>
+              * */
 const Welcome = ({ className }) => (
   <StaticQuery
     query={graphql`
       query {
-        desktop: file(relativePath: { eq: "triangle1.jpg" }) {
+        desktop: file(relativePath: { eq: "triangle2.jpg" }) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 1920) {
               ...GatsbyImageSharpFluid_withWebp
@@ -49,12 +44,15 @@ const Welcome = ({ className }) => (
       </div> )
       */
       const imageData = data.desktop.childImageSharp.fluid
+      var settings = {
+        dots: false
+      };
       return (
         <BackgroundImage Tag="section" className={className} fluid={imageData} backgroundColor={`transparent`} 
-          style={{ width: `100%`, height: `100%`, display: `flex`, justifyContent: `center`, backgroundSize: `contain` }}>
+          style={{ width: `100%`, height: `100%`, display: `flex`, justifyContent: `center`, backgroundSize: `contain`, backgroundPosition: `bottom`, }}>
           <div style={{ width: `100%`, height: `100%`, display: `flex`, justifyContent: `center`, alignItems: `center` }}>
             <div class="text-slider-container">
-              <ReactTextRotator content={content} time={5000} startDelay={2000} />
+              
             </div>
           </div>
         </BackgroundImage>
