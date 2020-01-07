@@ -32,17 +32,24 @@ const Welcome = ({ className }) => (
       </div> )
       */
       const imageData = data.desktop.childImageSharp.fluid
-      var settings = {
-        dots: false
-      };
+      const settings = {
+      dots: true,
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      speed: 2000,
+      cssEase: "linear"
+    };
       return (
         <BackgroundImage Tag="section" className={className} fluid={imageData} backgroundColor={`transparent`} 
           style={{ width: `100%`, height: `100%`, display: `flex`, justifyContent: `center`, backgroundSize: `contain`, backgroundPosition: `bottom`, }}>
           <div style={{ width: `100%`, height: `100%`, display: `flex`, justifyContent: `center`, alignItems: `center` }}>
-            <div class="text-slider-container">
+            <div className="text-slider-container">
               <Slider {...settings}>
 				  <div>
-					<h1>FooBar</h1>
+				    <p>Business and Technology</p>
+					<h1>Aligned</h1>
 				  </div>
 				  <div>
 					<h1>FooBar2</h1>
