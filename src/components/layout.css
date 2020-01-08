@@ -613,11 +613,16 @@ div nav.navbar {
     margin-bottom: 1.5rem;*/
     position: relative;
     background-color: white;
-    max-height: 150px;
-    max-width: 33%;
     text-align: center;
     /*background-image: linear-gradient(to right, rgba(255/*255,255,0), rgba(255,255,255,1));*/
     opacity: 90%;
+    max-height: 20%;
+    max-width: 45%;
+}
+@media only screen and (max-width: 600px) {
+  .text-slider-container {
+     max-width: 100%;
+  }
 }
 .text-slider-container .wholistic {
   font-family: 'Eagle Lake', cursive;
