@@ -624,6 +624,9 @@ div nav.navbar {
      max-width: 100%;
   }
 }
+.text-slider-container p {
+  margin-bottom: -.20em;
+}
 .text-slider-container .wholistic {
   font-family: 'Eagle Lake', cursive;
 }

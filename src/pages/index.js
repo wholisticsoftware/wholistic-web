@@ -10,6 +10,7 @@ import "../../node_modules/slick-carousel/slick/slick.css";
 import "../../node_modules/slick-carousel/slick/slick-theme.css";
 
 import Welcome from "../components/welcome"
+import BizTech from "../components/business-tech"
 
 //
 /*
@@ -22,6 +23,7 @@ const IndexPage = () => (
   <Layout style={{ height: `100%`}}>
     <SEO title="Wholistic Software" />
     <Welcome></Welcome>
+    <BizTech></BizTech>
   </Layout>
 )
 
