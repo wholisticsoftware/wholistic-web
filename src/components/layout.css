@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Eagle+Lake&display=swap');
+/*@import url('../fonts/dejavu-sans-fontfacekit/web-fonts/dejavusans_extralight_macroman/stylesheet.css');*/
+
+@font-face {
+  font-family: myFirstFont;
+  src: url(../fonts/dejavu-sans-fontfacekit/web-fonts/dejavusans_extralight_macroman/DejaVuSans-ExtraLight-webfont.woff);
+}
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -599,16 +606,22 @@ div nav.navbar {
 }*/
 
 .text-slider-container {
-    border-top: 1px solid var(--theme-ui-colors-ui-border,
-#f0f0f2);
-border-bottom: 1px solid var(--theme-ui-colors-ui-border,
-    #f0f0f2);
+    border-top: 1px solid var(--theme-ui-colors-ui-border, #f0f0f2);
+    border-bottom: 1px solid var(--theme-ui-colors-ui-border, #f0f0f2);
     padding: 1rem 3rem;
     /*margin-top: 1.5rem;
     margin-bottom: 1.5rem;*/
     position: relative;
     background-color: white;
     max-height: 150px;
-    max-width: 300px;
+    max-width: 33%;
+    text-align: center;
+    /*background-image: linear-gradient(to right, rgba(255/*255,255,0), rgba(255,255,255,1));*/
+    opacity: 90%;
 }
-
+.text-slider-container .wholistic {
+  font-family: 'Eagle Lake', cursive;
+}
+.text-slider-container p {
+  font-family: 'dejavu_sansextralight';
+}

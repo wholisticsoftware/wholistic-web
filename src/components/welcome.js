@@ -15,7 +15,7 @@ const Welcome = ({ className }) => (
   <StaticQuery
     query={graphql`
       query {
-        desktop: file(relativePath: { eq: "triangle2.jpg" }) {
+        desktop: file(relativePath: { eq: "trangle-padded3.jpg" }) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 1920) {
               ...GatsbyImageSharpFluid_withWebp
@@ -31,14 +31,16 @@ const Welcome = ({ className }) => (
         <ReactTextRotator content={content} time={5000} startDelay={2000} />
       </div> )
       */
+      
       const imageData = data.desktop.childImageSharp.fluid
+      
       const settings = {
       dots: true,
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
-      speed: 2000,
+      speed: 500,
       cssEase: "linear"
     };
       return (
@@ -49,13 +51,15 @@ const Welcome = ({ className }) => (
               <Slider {...settings}>
 				  <div>
 				    <p>Business and Technology</p>
-					<h1>Aligned</h1>
+					<h1 class="wholistic" style={{ wordWrap: `no-wrap`}}>Aligned</h1>
 				  </div>
 				  <div>
-					<h1>FooBar2</h1>
+					<p>Let's</p>
+					<h1 class="wholistic" style={{ wordWrap: `no-wrap`}}>FOOBAR</h1>
 				  </div>
 				  <div>
-					<h1>FooBar3</h1>
+					<p>World-Class</p>
+					<h1 class="wholistic" style={{ wordWrap: `no-wrap`}}>GO</h1>
 				  </div>
               </Slider>
             </div>
