@@ -2,8 +2,12 @@
 /*@import url('../fonts/dejavu-sans-fontfacekit/web-fonts/dejavusans_extralight_macroman/stylesheet.css');*/
 
 @font-face {
-  font-family: myFirstFont;
+  font-family: dejavu_sansextralight;
   src: url(../fonts/dejavu-sans-fontfacekit/web-fonts/dejavusans_extralight_macroman/DejaVuSans-ExtraLight-webfont.woff);
+}
+@font-face {
+  font-family: deutsch;
+  src: url(../fonts/deutsch_gothic/Deutsch.ttf);
 }
 
 html {
@@ -632,4 +636,17 @@ div nav.navbar {
 }
 .text-slider-container p {
   font-family: 'dejavu_sansextralight';
+}
+.msg-container {
+  
+}
+.actualize {
+  font-family: 'deutsch';
+  font-size: 10em;
+}
+@media only screen and (max-width: 600px) {
+  .actualize {
+    font-family: 'deutsch';
+    font-size: 3em;
+  }
 }

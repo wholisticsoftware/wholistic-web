@@ -11,6 +11,7 @@ import "../../node_modules/slick-carousel/slick/slick-theme.css";
 
 import Welcome from "../components/welcome"
 import BizTech from "../components/business-tech"
+import Philosophy from "../components/philosophy"
 
 //
 /*
@@ -24,6 +25,7 @@ const IndexPage = () => (
     <SEO title="Wholistic Software" />
     <Welcome></Welcome>
     <BizTech></BizTech>
+    <Philosophy></Philosophy>
   </Layout>
 )
 
