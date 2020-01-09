@@ -10,9 +10,11 @@ import "../../node_modules/slick-carousel/slick/slick.css";
 import "../../node_modules/slick-carousel/slick/slick-theme.css";
 
 import Welcome from "../components/welcome"
-import BizTech from "../components/business-tech"
+import Wholistic from "../components/wholistic"
+//import BizTech from "../components/business-tech"
 import Philosophy from "../components/philosophy"
 
+//     <BizTech></BizTech>
 //
 /*
  *     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
@@ -22,9 +24,9 @@ import Philosophy from "../components/philosophy"
     * */
 const IndexPage = () => (
   <Layout style={{ height: `100%`}}>
-    <SEO title="Wholistic Software" />
-    <Welcome></Welcome>
-    <BizTech></BizTech>
+    <SEO title="Wholistic Software, LLC" />
+    <Wholistic></Wholistic>
+    <Welcome style={{ scrollSnapType: `y mandatory` }}></Welcome>
     <Philosophy></Philosophy>
   </Layout>
 )

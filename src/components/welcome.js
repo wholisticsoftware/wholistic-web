@@ -45,7 +45,7 @@ const Welcome = ({ className }) => (
     };
       return (
         <BackgroundImage Tag="section" className={className} fluid={imageData} backgroundColor={`transparent`} 
-          style={{ width: `100%`, height: `100%`, display: `flex`, justifyContent: `center`, backgroundRepeat: `no-repeat`, backgroundSize: `contain`, backgroundPosition: `bottom`, }}>
+          style={{ width: `100%`, height: `100%`, display: `flex`, justifyContent: `center`, alignItems: `center`, backgroundRepeat: `no-repeat`, backgroundSize: `contain`, backgroundPosition: `bottom`, }}>
           <div style={{ width: `100%`, height: `100%`, display: `flex`, justifyContent: `center`, alignItems: `center` }}>
             <div className="text-slider-container">
               <Slider {...settings}>
