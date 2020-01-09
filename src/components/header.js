@@ -5,9 +5,10 @@ import React from "react"
 import Icon from "../svg/wholistic-logo-tight.svg";
 //{siteTitle}
 //<Link to="/page-2/">intro</Link>
+//style={{ backgroundColor: `transparent!important`}}
 const Header = ({ siteTitle }) => (
   <header>
-	<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light" fixed="top" style={{ backgroundColor: `transparent!important`}} >
+	<nav class="navbar navbar-expand-lg fixed-top navbar-light" fixed="top" >
       <a className="navbar-brand" href="#"><Link to="/"><Icon /></Link></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
