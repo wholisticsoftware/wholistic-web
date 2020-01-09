@@ -52,14 +52,22 @@ const Welcome = ({ className }) => (
 				  <div>
 				    <p>Business and Technology</p>
 					<h1 class="wholistic" style={{ wordWrap: `no-wrap`}}>Aligned</h1>
+					<button className="go" style={{ marginTop: `-1em` }}>See How</button>
 				  </div>
 				  <div>
-					<p>Let's</p>
-					<h1 class="wholistic" style={{ wordWrap: `no-wrap`}}>FOOBAR</h1>
+				    <p>Full-Service Software</p>
+					<h1 class="wholistic" style={{ wordWrap: `no-wrap` }}>Solutions</h1>
+					<button className="go" style={{ marginTop: `-1em` }}>Learn More</button>
 				  </div>
 				  <div>
-					<p>World-Class</p>
-					<h1 class="wholistic" style={{ wordWrap: `no-wrap`}}>GO</h1>
+				    <p>Complexity</p>
+					<h1 class="wholistic" style={{ wordWrap: `no-wrap`}}>Simplified</h1>
+					<button className="go" style={{ marginTop: `-1em` }}>See How</button>
+				  </div>
+				  <div>
+					<p>What You Need</p>
+					<h1 class="wholistic" style={{ wordWrap: `no-wrap`}}>Delivered</h1>
+					<button className="go">GO</button>
 				  </div>
               </Slider>
             </div>
@@ -69,11 +77,30 @@ const Welcome = ({ className }) => (
     }}
   />
 )
-
+/*
+<div>
+				    <p>Business and Technology</p>
+					<h1 class="wholistic" style={{ wordWrap: `no-wrap`}}>Aligned</h1>
+				  </div>
+				  <div>
+				    <p>Full-Service Software</p>
+					<h1 class="wholistic" style={{ wordWrap: `no-wrap` }}>Solutions</h1>
+					<button className="go" style={{ marginTop: `-1em` }}>Learn More</button>
+				  </div>
+				  <div>
+				    <p>Complexity</p>
+					<h1 class="wholistic" style={{ wordWrap: `no-wrap`}}>Simplified</h1>
+				  </div>
+				  <div>
+					<p>What You Need</p>
+					<h1 class="wholistic" style={{ wordWrap: `no-wrap`}}>Delivered</h1>
+					<button className="go">GO</button>
+				  </div>
+				  */
 const StyledWelcome = styled(Welcome)`
   width: 100%;
   background-position: bottom center;
-  background-repeat: repeat-y;
+  background-repeat: no-repeat;
   background-size: cover;
 `
 export default StyledWelcome

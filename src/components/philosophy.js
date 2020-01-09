@@ -44,7 +44,7 @@ const BizTech = ({ className }) => (
       return (
         <BackgroundImage Tag="section" className={className} fluid={imageData} backgroundColor={`transparent`} 
           style={{ width: `100%`, height: `100%`, display: `flex`, justifyContent: `center`, backgroundRepeat: `no-repeat`, 
-			  backgroundSize: `cover`, backgroundPosition: `left`}}>
+			  backgroundSize: `cover`, backgroundPosition: `top`}}>
           <div style={{ width: `100%`, height: `100%`, display: `flex`, justifyContent: `center`, alignItems: `center` }}>
             <div className="msg-container">
               <div className="actualize"><p>Actualize</p></div>
@@ -58,7 +58,7 @@ const BizTech = ({ className }) => (
 
 const StyledWelcome = styled(BizTech)`
   width: 100%;
-  background-position: bottom center;
+  background-position: left;
   background-repeat: repeat-y;
   background-size: cover;
 `

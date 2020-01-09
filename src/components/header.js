@@ -8,7 +8,7 @@ import Icon from "../svg/wholistic-logo-tight.svg";
 const Header = ({ siteTitle }) => (
 <header>
   <nav className="navbar navbar-expand-lg fixed-top" fixed="top">
-    <a className="navbar-brand" href="#"><Icon /></a>
+    <a className="navbar-brand" href="#"><Link to="/"><Icon /></Link></a>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
@@ -19,7 +19,7 @@ const Header = ({ siteTitle }) => (
             </li>
             <li><a className="nav-link">{` `}</a></li>
             <li className="nav-item">
-                <a className="nav-link" href="//codeply.com">services</a>
+                <Link className="nav-link" to="/page-2/">services</Link>
             </li>
             <li><a className="nav-link">{` `}</a></li>
             <li className="nav-item">

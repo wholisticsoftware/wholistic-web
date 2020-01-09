@@ -15,7 +15,7 @@ const BizTech = ({ className }) => (
   <StaticQuery
     query={graphql`
       query {
-        desktop: file(relativePath: { eq: "trangle-padded3.jpg" }) {
+        desktop: file(relativePath: { eq: "trangle-padded-sharp.jpg" }) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 1920) {
               ...GatsbyImageSharpFluid_withWebp
