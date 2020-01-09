@@ -686,8 +686,8 @@ div nav.navbar {
   font-size: 10em;
   color: #212529;
   -webkit-text-fill-color: #212529;
-  -webkit-text-stroke-width: .25px;
-  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: #444444;
 }
 @media only screen and (max-width: 600px) {
   .actualize {
