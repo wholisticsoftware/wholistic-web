@@ -16,7 +16,7 @@ function Wholistic(props) {
         <LeftBrace />
           <span className='wholistic-inner' style={{}}>
             <div className='wholisticfont'  style={{}}>Wholistic</div>
-            <div className='softwarefont' style={{}}>Software</div>
+            <div className='softwarefont' style={{}}>Systems</div>
           </span>
         <RightBrace />
     </div>

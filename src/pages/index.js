@@ -9,6 +9,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "../../node_modules/slick-carousel/slick/slick.css";
 import "../../node_modules/slick-carousel/slick/slick-theme.css";
 
+//import Scrollable from "../components/scrollable/scrollable";
+
 import Welcome from "../components/welcome"
 import Wholistic from "../components/wholistic"
 //import BizTech from "../components/business-tech"

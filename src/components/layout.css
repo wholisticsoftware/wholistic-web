@@ -708,7 +708,7 @@ div nav.navbar {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-width: 340px;
+  min-width: 500px;
 }
 .wholistic-outer svg {
   max-height: 425px;

@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <div style={{ margin: `0 auto`, height: `100%`, padding: `0px`, paddingTop: 0, }} >
         <main>{children}</main>
-        <footer style={{ }}>
+        <footer className="fixed-bottom" style={{ left: `auto`, right: `0px`}}>
           © {new Date().getFullYear()}, wholistic software, llc.
         </footer>
       </div>
