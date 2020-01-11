@@ -6,17 +6,21 @@ import Icon from "../svg/wholistic-logo-tight.svg";
 //{siteTitle}
 //<Link to="/page-2/">intro</Link>
 //style={{ backgroundColor: `transparent!important`}}
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, showBrand }) => 
+
+{
+	console.log("showBrand: " + showBrand);
+	return (
   <header>
-	<nav class="navbar navbar-expand-lg fixed-top navbar-light" fixed="top" >
-      <a className="navbar-brand" href="#"><Link to="/"><Icon /></Link></a>
+	<nav class="navbar navbar-expand-lg fixed-top navbar-light" fixed="top" style={{ alignItems: `start` }} >
+      <a className="navbar-brand" href="#"><Link to="/" style={{visibility: showBrand ? '' : 'hidden'}}><Icon /></Link></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 	  <div class="collapse navbar-collapse justify-content-stretch" id="navbarSupportedContent">
-		<ul class="navbar-nav ml-auto">
+		<ul class="navbar-nav ml-auto" style={{ backgroundColor: `rgba(255,255,255,.98)` }}>
 		  <li className="nav-item">
-			<a className="nav-link" href="#">welcome</a>
+			<a className="nav-link active-item" href="#">welcome</a>
 			</li>
 			<li><a className="nav-link">{` `}</a></li>
 			<li className="nav-item">
@@ -34,7 +38,7 @@ const Header = ({ siteTitle }) => (
 	  </div>
 	</nav>
   </header>
-)
+)}
 /*  
   <header style={{ background: `transparent` }} >
     <Icon style={{ maxWidth: `150px`, maxHeight: `150px`, paddingLeft: `2em` }}/>

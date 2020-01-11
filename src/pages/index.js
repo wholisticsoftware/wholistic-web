@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect, useRef } from "react";
 //import { Link } from "gatsby"
 
 import Layout from "../components/layout"
@@ -24,13 +24,58 @@ import Philosophy from "../components/philosophy"
     </div>
     <Link to="/page-2/">Go to page 2</Link>
     * */
-const IndexPage = () => (
-  <Layout style={{ height: `100%`}}>
+const IndexPage = () => {
+  const wholisticComponent = useRef(null);
+  const [showBrand, setShowBrand] = useState(false);
+  useEffect(() => { 
+    function handleScroll() {
+      //setScrollPosition(getScroll())
+      let scrollY = window.scrollY;
+      //console.log("Scroll: " + scrollY);
+      if (scrollY > 1){
+		let wholisticOuter = document.getElementById("wholistic-outer");
+		if (wholisticOuter){
+		  let woHeight = wholisticOuter.scrollHeight;
+		  //console.log("wholisticComponent: " + wholisticOuter.scrollHeight);
+		  if (scrollY >= (woHeight - 100)){
+	        setShowBrand(true);
+		  } else {
+			setShowBrand(false);
+		  }
+		}
+	  }
+    }
+	if (window){
+	  console.log("window: " + window);
+	  window.addEventListener('scroll', handleScroll);
+	}
+	return () => window.removeEventListener('scroll', handleScroll)
+  }, []);
+  return (
+  <Layout style={{ height: `100%`}} showBrand={showBrand}>
     <SEO title="Wholistic Software, LLC" />
-    <Wholistic></Wholistic>
+    <Wholistic id='wholistic1'></Wholistic>
     <Welcome style={{ scrollSnapType: `y mandatory` }}></Welcome>
     <Philosophy></Philosophy>
   </Layout>
-)
+)}
 
 export default IndexPage
+
+/*
+ * 
+ * -componentDidMount() {
++useEffect(() => {
+   axios
+     .get(
+       "https://gist.githubusercontent.com/witalewski/fc8f043d53a0d505f84c5ddb04ae76ea/raw/7c505bbc1675a0bc8a067f8b633b531c769bb64c/data.json"
+     )
+     .then(({ data }) => {
+-      this.setState({ todos: data });
+-      this.setState({ nextTodoId: data.length });
++      setTodos(data);
++      setNextTodoId(data.length);
+     });
++}, []);
+-}
+* */

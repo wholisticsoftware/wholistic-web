@@ -13,12 +13,9 @@
   font-family: okolaks-bold;
   src: url(../fonts/deutsch_gothic/Deutsch.ttf);
 }
-.wholisticfont {
-  font-family: 'Eagle Lake', cursive;
-}
-.softwarefont {
-  font-family: 'dejavu_sansextralight';
-}
+.wholisticfont { font-family: 'Eagle Lake', cursive; }
+.softwarefont { font-family: 'dejavu_sansextralight'; }
+.deutschfont { font-family: 'okolaks-bold'; }
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -617,7 +614,9 @@ div nav.navbar {
   max-height: 160px;
   padding-left: 2em;
 }*/
-
+.navbar a {
+  display: inline;
+}
 .text-slider-container {
     border-top: 1px solid var(--theme-ui-colors-ui-border, rgba(0,0,0,.1));
     border-bottom: 1px solid var(--theme-ui-colors-ui-border, rgba(0,0,0,.1));
@@ -720,4 +719,57 @@ div nav.navbar {
 .wholistic-inner .softwarefont {
   font-size: 20px;
   transform: scale(3.75, 1.5);
+}
+@media only screen and (max-width: 600px) {
+  .wholistic-inner {
+	min-width: 300px;
+  }
+  .wholistic-outer svg {
+    max-height: 225px;
+  }
+  .wholistic-inner .wholisticfont {
+	font-size: 12px;
+	transform: scale(3, 1.5);
+  }
+  .wholistic-inner .softwarefont {
+	font-size: 12px;
+	transform: scale(3.75, 1.5);
+  }
+}
+.wholistic-slider-container {
+    background-color: white;
+    text-align: center;
+    max-width: 500px;
+}
+.wholistic-arrow {
+  font-size: 50px;
+  transform: scale(3, 1.5); /* rotate(90deg);*/
+  /*-webkit-transform: rotate(90deg) rotate(90deg);*/
+ 
+  color: rgba(100,100,100, 1);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+	100% {color: rgba(200,200,200, .5);}
+}
+.rotate-90 {
+
+}
+.navbar-nav .nav-item a.active-item {
+  opacity: 100%;
+  color: darkseagreen; /*darkorange;*/
+}
+.active-item:before {
+  content: "{ ";
+}
+.active-item:after {
+  content: " }";
+}
+footer {
+  font-family: 'Eagle Lake', cursive;
+}
+
+#wholistic-outer .slick-track {
+  display: flex;
+  align-items: center;
 }
