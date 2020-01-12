@@ -50,7 +50,7 @@ const Welcome = ({ className }) => (
             <div className="text-slider-container">
               <Slider {...settings}>
 				  <div>
-				    <p>Business and Technology</p>
+				    <p>People and Technology</p>
 					<h1 class="wholistic" style={{ wordWrap: `no-wrap`}}>Aligned</h1>
 					<button className="go" style={{ marginTop: `-1em` }}>See How</button>
 				  </div>

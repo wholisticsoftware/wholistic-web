@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-//import { Link } from "gatsby"
+import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 //import Image from "../components/image"
@@ -15,6 +15,7 @@ import Welcome from "../components/welcome"
 import Wholistic from "../components/wholistic"
 //import BizTech from "../components/business-tech"
 import Philosophy from "../components/philosophy"
+import Questionaire from "../components/questionaire"
 
 //     <BizTech></BizTech>
 //
@@ -26,7 +27,9 @@ import Philosophy from "../components/philosophy"
     * */
 const IndexPage = () => {
   const wholisticComponent = useRef(null);
-  const [showBrand, setShowBrand] = useState(false);
+  const [showBrand, setShowBrand] = useState(true);
+  const [brandClass, setBrandClass] = useState("");
+  const [navLinkColor, setNavLinkColor] = useState("black");
   useEffect(() => { 
     function handleScroll() {
       //setScrollPosition(getScroll())
@@ -39,8 +42,12 @@ const IndexPage = () => {
 		  //console.log("wholisticComponent: " + wholisticOuter.scrollHeight);
 		  if (scrollY >= (woHeight - 100)){
 	        setShowBrand(true);
+	        setBrandClass("filter-white");
+	        setNavLinkColor("white");
 		  } else {
-			setShowBrand(false);
+			setShowBrand(true); // conditional show/hide of brand logo
+			setBrandClass("");
+			setNavLinkColor("black");
 		  }
 		}
 	  }
@@ -51,12 +58,27 @@ const IndexPage = () => {
 	}
 	return () => window.removeEventListener('scroll', handleScroll)
   }, []);
+  let onWelcomeClick = () => {
+    console.info("BEGIN onWelcomeClick()");
+	let wholisticOuter = document.getElementById("wholistic-outer");
+	if (wholisticOuter){
+	  let woHeight = wholisticOuter.scrollHeight;
+	  //console.error("a woHeight: " + woHeight);
+	  if (window)
+	    //console.info("woHeight: " + woHeight);
+		window.scroll({
+		  top: (woHeight), 
+		  left: 0, 
+		  behavior: 'smooth'
+		});
+	  }
+  }
   return (
-  <Layout style={{ height: `100%`}} showBrand={showBrand}>
+  <Layout style={{ height: `100%`}} showBrand={showBrand} brandClass={brandClass} navLinkColor={navLinkColor}>
     <SEO title="Wholistic Software, LLC" />
-    <Wholistic id='wholistic1'></Wholistic>
-    <Welcome style={{ scrollSnapType: `y mandatory` }}></Welcome>
-    <Philosophy></Philosophy>
+    <Wholistic id='wholistic1' onWelcomeClick={onWelcomeClick}></Wholistic>
+    <Questionaire style={{ scrollSnapType: `y mandatory` }} ></Questionaire>
+    <Welcome></Welcome>
   </Layout>
 )}
 

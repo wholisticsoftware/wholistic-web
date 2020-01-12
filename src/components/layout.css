@@ -13,6 +13,10 @@
   font-family: okolaks-bold;
   src: url(../fonts/deutsch_gothic/Deutsch.ttf);
 }
+@font-face {
+  font-family: exotica;
+  src: url(../fonts/exotica/Exotica.ttf);
+}
 .wholisticfont { font-family: 'Eagle Lake', cursive; }
 .softwarefont { font-family: 'dejavu_sansextralight'; }
 .deutschfont { font-family: 'okolaks-bold'; }
@@ -627,7 +631,7 @@ div nav.navbar {
     background-color: white;
     text-align: center;
     /*background-image: linear-gradient(to right, rgba(255/*255,255,0), rgba(255,255,255,1));*/
-    opacity: 90%;
+    opacity: .9;
     max-height: 20%;
     max-width: 50%;
     min-width: 50%;
@@ -684,9 +688,9 @@ div nav.navbar {
   font-family: 'deutsch';
   font-size: 10em;
   color: #212529;
-  -webkit-text-fill-color: #212529;
+  /*-webkit-text-fill-color: #212529;
   -webkit-text-stroke-width: .5px;
-  -webkit-text-stroke-color: #444444;
+  -webkit-text-stroke-color: #444444;*/
 }
 @media only screen and (max-width: 600px) {
   .actualize {
@@ -745,16 +749,12 @@ div nav.navbar {
   font-size: 50px;
   transform: scale(3, 1.5); /* rotate(90deg);*/
   /*-webkit-transform: rotate(90deg) rotate(90deg);*/
- 
   color: rgba(100,100,100, 1);
   animation: pulse 2s infinite;
+  cursor: pointer;
 }
-@keyframes pulse {
-	100% {color: rgba(200,200,200, .5);}
-}
-.rotate-90 {
-
-}
+@keyframes pulse {100% {color: rgba(200,200,200, .5);}}
+.rotate-90 {}
 .navbar-nav .nav-item a.active-item {
   opacity: 100%;
   color: darkseagreen; /*darkorange;*/
@@ -768,8 +768,16 @@ div nav.navbar {
 footer {
   font-family: 'Eagle Lake', cursive;
 }
-
 #wholistic-outer .slick-track {
   display: flex;
   align-items: center;
+}
+.complexfont {
+  font-family: "exotica";
+}
+.filter-green{
+	filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+}
+.filter-white {
+  filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(343deg) brightness(102%) contrast(101%);
 }

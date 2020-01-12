@@ -6,39 +6,34 @@ import Icon from "../svg/wholistic-logo-tight.svg";
 //{siteTitle}
 //<Link to="/page-2/">intro</Link>
 //style={{ backgroundColor: `transparent!important`}}
-const Header = ({ siteTitle, showBrand }) => 
-
-{
-	console.log("showBrand: " + showBrand);
-	return (
+const Header = ({ siteTitle, showBrand, brandClass, navLinkColor }) => {
+  //console.log("showBrand: " + showBrand);
+  //console.log("brandClass: " + brandClass);
+  return (
   <header>
-	<nav class="navbar navbar-expand-lg fixed-top navbar-light" fixed="top" style={{ alignItems: `start` }} >
-      <a className="navbar-brand" href="#"><Link to="/" style={{visibility: showBrand ? '' : 'hidden'}}><Icon /></Link></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+	<nav className="navbar navbar-expand-lg fixed-top navbar-light" fixed="top"> 
+      <a className="navbar-brand" href="#"><Link to="/" style={{visibility: showBrand ? '' : 'hidden'}} className={brandClass}><Icon /></Link></a>
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
       </button>
-	  <div class="collapse navbar-collapse justify-content-stretch" id="navbarSupportedContent">
-		<ul class="navbar-nav ml-auto" style={{ backgroundColor: `rgba(255,255,255,.98)` }}>
+	  <div className="collapse navbar-collapse justify-content-stretch" id="navbarSupportedContent">
+		<ul className="navbar-nav ml-auto">
 		  <li className="nav-item">
-			<a className="nav-link active-item" href="#">welcome</a>
-			</li>
-			<li><a className="nav-link">{` `}</a></li>
-			<li className="nav-item">
-				<Link className="nav-link" to="/page-2/">services</Link>
-			</li>
-			<li><a className="nav-link">{` `}</a></li>
-			<li className="nav-item">
-				<a className="nav-link" href="#">philosophy</a>
-			</li>
-			<li><a className="nav-link">{` `}</a></li>
-			<li className="nav-item">
-				<a className="nav-link" href="#">contact</a>
-			</li>
+		    <Link className="nav-link" activeClassName="active-link" activeStyle={{ }} to="/" style={{ color: navLinkColor }}>welcome</Link>
+		  </li>
+		  <li><a className="nav-link">{` `}</a></li>
+		  <li className="nav-item"><Link className="nav-link" to="/page-2/" style={{ color: navLinkColor }}>services</Link></li>
+		  <li><a className="nav-link">{` `}</a></li>
+		  <li className="nav-item"><Link className="nav-link" style={{ color: navLinkColor }}>philosophy</Link></li>
+		  <li><a className="nav-link">{` `}</a></li>
+		  <li className="nav-item"><Link className="nav-link" style={{ color: navLinkColor }}>contact</Link></li>
 		</ul>
 	  </div>
 	</nav>
   </header>
 )}
+/* to make a transparent backgruond on nav link holder: backgroundColor: `rgba(255,255,255,.98)` */
 /*  
   <header style={{ background: `transparent` }} >
     <Icon style={{ maxWidth: `150px`, maxHeight: `150px`, paddingLeft: `2em` }}/>
@@ -46,7 +41,7 @@ const Header = ({ siteTitle, showBrand }) =>
     </div>
   </header>
 )*/
-
+/* style={{ alignItems: `start` }} This style will cause menu to hug top when applied to navbar */
 Header.propTypes = {
   siteTitle: PropTypes.string,
 }

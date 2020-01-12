@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
 
-const Layout = ({ children, showBrand }) => {
+const Layout = ({ children, showBrand, brandClass, navLinkColor }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -17,7 +17,7 @@ const Layout = ({ children, showBrand }) => {
   `)
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} showBrand={showBrand} />
+      <Header siteTitle={data.site.siteMetadata.title} showBrand={showBrand} brandClass={brandClass} navLinkColor={navLinkColor}/>
       <div style={{ margin: `0 auto`, height: `100%`, padding: `0px`, paddingTop: 0, }} >
         <main>{children}</main>
         <footer className="fixed-bottom" style={{ left: `auto`, right: `0px`}}>

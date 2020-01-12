@@ -16,14 +16,19 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import "./layout.css"
 
 function Wholistic(props) {
+  function clickWelcome(){
+	 if (props.onWelcomeClick){
+		props.onWelcomeClick();
+	 }
+  }
   const settings = {
-	  dots: true,
-	  infinite: false,
-	  slidesToShow: 1,
-	  slidesToScroll: 1,
-	  autoplay: true,
-	  speed: 750,
-	  cssEase: "linear"
+	dots: false,
+	infinite: false,
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	autoplay: true,
+	fade: true,
+	speed: 750 //, cssEase: "linear"
   };
   return (
     <div className="wholistic-outer" id="wholistic-outer" style= {{ }} >
@@ -31,11 +36,11 @@ function Wholistic(props) {
           <Slider {...settings} className="wholistic-slider-container">
               <span className='wholistic-inner' style={{}}>
 				<div className='wholisticfont'  style={{}}>Software is</div>
-				<div className='deutschfont' style={{}}>Complex</div>
+				<div className='complexfont' style={{ fontSize: `50px`}}>complex</div>
 			  </span>
 			  <span className='wholistic-inner' style={{}}>
-				<div className='wholisticfont'  style={{}}>We Make It</div>
-				<div className='softwarefont' style={{}}>Simple</div>
+				<div className='softwarefont'  style={{}}>We Make It</div>
+				<div className='wholisticfont' style={{}}>Simple</div>
 			  </span>
 			  <span className='wholistic-inner' style={{}}>
 				<div className='wholisticfont'  style={{}}>Wholistic</div>
@@ -46,7 +51,7 @@ function Wholistic(props) {
 			    <div>&nbsp;</div>
 			    <div className='wholisticfont'  style={{}}>Solution</div>
 			    <div>&nbsp;</div>
-			    <div className='wholistic-arrow'><FontAwesomeIcon icon={faChevronDown} /></div>
+			    <div className='wholistic-arrow' onClick={clickWelcome}><FontAwesomeIcon icon={faChevronDown} /></div>
 			  </span>
           </Slider>
         <RightBrace />
