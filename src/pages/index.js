@@ -29,25 +29,24 @@ const IndexPage = () => {
   const wholisticComponent = useRef(null);
   const [showBrand, setShowBrand] = useState(true);
   const [brandClass, setBrandClass] = useState("");
-  const [navLinkColor, setNavLinkColor] = useState("black");
+  const [navBaseClass, setNavBaseClass] = useState("nav-link");
   useEffect(() => { 
     function handleScroll() {
-      //setScrollPosition(getScroll())
       let scrollY = window.scrollY;
-      //console.log("Scroll: " + scrollY);
+      console.log("Scroll: " + scrollY);
       if (scrollY > 1){
-		let wholisticOuter = document.getElementById("wholistic-outer");
-		if (wholisticOuter){
-		  let woHeight = wholisticOuter.scrollHeight;
-		  //console.log("wholisticComponent: " + wholisticOuter.scrollHeight);
-		  if (scrollY >= (woHeight - 100)){
+		let firstComponent = document.getElementById("index-welcome");
+		if (firstComponent){
+		  let fcHeight = firstComponent.scrollHeight;
+		  console.log("wholisticComponent: " + fcHeight.scrollHeight);
+		  if (scrollY >= (fcHeight - 100)){
 	        setShowBrand(true);
 	        setBrandClass("filter-white");
-	        setNavLinkColor("white");
+	        setNavBaseClass("nav-link-white");
 		  } else {
 			setShowBrand(true); // conditional show/hide of brand logo
 			setBrandClass("");
-			setNavLinkColor("black");
+			setNavBaseClass("nav-link");
 		  }
 		}
 	  }
@@ -58,27 +57,28 @@ const IndexPage = () => {
 	}
 	return () => window.removeEventListener('scroll', handleScroll)
   }, []);
-  let onWelcomeClick = () => {
-    console.info("BEGIN onWelcomeClick()");
-	let wholisticOuter = document.getElementById("wholistic-outer");
-	if (wholisticOuter){
-	  let woHeight = wholisticOuter.scrollHeight;
-	  //console.error("a woHeight: " + woHeight);
+  
+  let onWelcomeClick = (e) => {
+    //console.info("BEGIN onWelcomeClick(): " + e.target);
+	let firstComponent = document.getElementById("index-welcome");
+	console.info("BEGIN onWelcomeClick(): " + firstComponent);
+	if (firstComponent){
+	  let fcHeight = firstComponent.scrollHeight;
+	  console.error("a woHeight: " + fcHeight);
 	  if (window)
-	    //console.info("woHeight: " + woHeight);
+	    console.info("woHeight: " + fcHeight);
 		window.scroll({
-		  top: (woHeight), 
+		  top: (fcHeight), 
 		  left: 0, 
 		  behavior: 'smooth'
 		});
 	  }
   }
   return (
-  <Layout style={{ height: `100%`}} showBrand={showBrand} brandClass={brandClass} navLinkColor={navLinkColor}>
+  <Layout style={{ height: `100%`}} showBrand={showBrand} brandClass={brandClass} navBaseClass={navBaseClass}>
     <SEO title="Wholistic Software, LLC" />
-    <Wholistic id='wholistic1' onWelcomeClick={onWelcomeClick}></Wholistic>
+    <Welcome id='index-welcome' onWelcomeClick={onWelcomeClick}></Welcome>
     <Questionaire style={{ scrollSnapType: `y mandatory` }} ></Questionaire>
-    <Welcome></Welcome>
   </Layout>
 )}
 

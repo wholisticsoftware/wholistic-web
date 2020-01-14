@@ -6,13 +6,13 @@ import Icon from "../svg/wholistic-logo-tight.svg";
 //{siteTitle}
 //<Link to="/page-2/">intro</Link>
 //style={{ backgroundColor: `transparent!important`}}
-const Header = ({ siteTitle, showBrand, brandClass, navLinkColor }) => {
-  //console.log("showBrand: " + showBrand);
-  //console.log("brandClass: " + brandClass);
+const Header = ({ siteTitle, showBrand, brandClass, navBaseClass }) => {
+  console.log("showBrand: " + showBrand);
+  console.log("brandClass: " + brandClass);
   return (
   <header>
 	<nav className="navbar navbar-expand-lg fixed-top navbar-light" fixed="top"> 
-      <a className="navbar-brand" href="#"><Link to="/" style={{visibility: showBrand ? '' : 'hidden'}} className={brandClass}><Icon /></Link></a>
+      <span className="navbar-brand" href="#"><Link to="/" style={{visibility: showBrand ? '' : 'hidden'}} className={brandClass}><Icon /></Link></span>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
@@ -20,19 +20,24 @@ const Header = ({ siteTitle, showBrand, brandClass, navLinkColor }) => {
 	  <div className="collapse navbar-collapse justify-content-stretch" id="navbarSupportedContent">
 		<ul className="navbar-nav ml-auto">
 		  <li className="nav-item">
-		    <Link className="nav-link" activeClassName="active-link" activeStyle={{ }} to="/" style={{ color: navLinkColor }}>welcome</Link>
+		    <Link className={navBaseClass} activeClassName="active-link" to="">welcome</Link>
 		  </li>
-		  <li><a className="nav-link">{` `}</a></li>
-		  <li className="nav-item"><Link className="nav-link" to="/page-2/" style={{ color: navLinkColor }}>services</Link></li>
-		  <li><a className="nav-link">{` `}</a></li>
-		  <li className="nav-item"><Link className="nav-link" style={{ color: navLinkColor }}>philosophy</Link></li>
-		  <li><a className="nav-link">{` `}</a></li>
-		  <li className="nav-item"><Link className="nav-link" style={{ color: navLinkColor }}>contact</Link></li>
+		  <li><span className="nav-link">{` `}</span></li>
+		  <li className="nav-item">
+		    <Link className={navBaseClass} activeClassName="active-link" to="/services">services</Link>
+		  </li>
+		  <li><span className="nav-link">{` `}</span></li>
+		  <li className="nav-item">
+		    <Link className={navBaseClass} to="/page-3">philosophy</Link>
+		  </li>
+		  <li><span className="nav-link">{` `}</span></li>
+		  
 		</ul>
 	  </div>
 	</nav>
   </header>
 )}
+// <li className="nav-item"><Link className="nav-link" style={{ color: navLinkColor }}>contact</Link></li>
 /* to make a transparent backgruond on nav link holder: backgroundColor: `rgba(255,255,255,.98)` */
 /*  
   <header style={{ background: `transparent` }} >

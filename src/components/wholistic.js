@@ -21,15 +21,7 @@ function Wholistic(props) {
 		props.onWelcomeClick();
 	 }
   }
-  const settings = {
-	dots: false,
-	infinite: false,
-	slidesToShow: 1,
-	slidesToScroll: 1,
-	autoplay: true,
-	fade: true,
-	speed: 750 //, cssEase: "linear"
-  };
+  const settings = {dots: false,infinite: false,slidesToShow: 1,slidesToScroll: 1,autoplay: true,fade: true,speed: 750 };  //, cssEase: "linear"
   return (
     <div className="wholistic-outer" id="wholistic-outer" style= {{ }} >
         <LeftBrace />

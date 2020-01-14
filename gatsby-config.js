@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Wholistic Software`,
+    title: `Wholistic Software, LLC.`,
     description: `Software Development, DevTools, Developer Networking`,
     author: `dev@wholisticsoftware.com`,
   },

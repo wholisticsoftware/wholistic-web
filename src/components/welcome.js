@@ -11,7 +11,8 @@ import "./layout.css"
 
 // <div style={{ backgroundImage: `url(./images/willow-creek.jpg)` }}>foobar baz</div>
               
-const Welcome = ({ className }) => (
+const Welcome = ({ className, onWelcomeClick, id }) => {
+	return (
   <StaticQuery
     query={graphql`
       query {
@@ -34,40 +35,33 @@ const Welcome = ({ className }) => (
       
       const imageData = data.desktop.childImageSharp.fluid
       
-      const settings = {
-		  dots: true,
-		  infinite: true,
-		  slidesToShow: 1,
-		  slidesToScroll: 1,
-		  autoplay: true,
-		  speed: 500,
-		  cssEase: "linear"
-      };
+      const settings = { dots: true, infinite: true, slidesToShow: 1, slidesToScroll: 1, autoplay: true, speed: 500, cssEase: "linear" };
       return (
-        <BackgroundImage Tag="section" className={className} fluid={imageData} backgroundColor={`transparent`} 
-          style={{ width: `100%`, height: `100%`, display: `flex`, justifyContent: `center`, alignItems: `center`, backgroundRepeat: `no-repeat`, backgroundSize: `contain`, backgroundPosition: `bottom`, }}>
+        <BackgroundImage id={id} Tag="section" className={className} fluid={imageData} backgroundColor={`transparent`} 
+            style={{ width: `100%`, height: `100%`, display: `flex`, justifyContent: `center`, alignItems: `center`, backgroundRepeat: `no-repeat`, 
+			backgroundSize: `contain`, backgroundPosition: `bottom`, }}>
           <div style={{ width: `100%`, height: `100%`, display: `flex`, justifyContent: `center`, alignItems: `center` }}>
             <div className="text-slider-container">
               <Slider {...settings}>
 				  <div>
 				    <p>People and Technology</p>
-					<h1 class="wholistic" style={{ wordWrap: `no-wrap`}}>Aligned</h1>
-					<button className="go" style={{ marginTop: `-1em` }}>See How</button>
+					<h1 className="wholistic" style={{ wordWrap: `no-wrap`}}>Aligned</h1>
+					<button className="go" style={{ marginTop: `-1em` }} onClick={onWelcomeClick} >See How</button>
 				  </div>
 				  <div>
 				    <p>Full-Service Software</p>
-					<h1 class="wholistic" style={{ wordWrap: `no-wrap` }}>Solutions</h1>
-					<button className="go" style={{ marginTop: `-1em` }}>Learn More</button>
+					<h1 className="wholistic" style={{ wordWrap: `no-wrap` }}>Solutions</h1>
+					<button className="go" style={{ marginTop: `-1em` }} onClick={onWelcomeClick}>Learn More</button>
 				  </div>
 				  <div>
 				    <p>Complexity</p>
-					<h1 class="wholistic" style={{ wordWrap: `no-wrap`}}>Simplified</h1>
-					<button className="go" style={{ marginTop: `-1em` }}>See How</button>
+					<h1 className="wholistic" style={{ wordWrap: `no-wrap`}}>Simplified</h1>
+					<button className="go" style={{ marginTop: `-1em` }} onClick={onWelcomeClick}>See How</button>
 				  </div>
 				  <div>
 					<p>What You Need</p>
-					<h1 class="wholistic" style={{ wordWrap: `no-wrap`}}>Delivered</h1>
-					<button className="go">GO</button>
+					<h1 className="wholistic" style={{ wordWrap: `no-wrap`}}>Delivered</h1>
+					<button className="go" onClick={onWelcomeClick}>GO</button>
 				  </div>
               </Slider>
             </div>
@@ -76,7 +70,7 @@ const Welcome = ({ className }) => (
       )
     }}
   />
-)
+)}
 /*
 <div>
 				    <p>Business and Technology</p>
