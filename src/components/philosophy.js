@@ -7,8 +7,6 @@ import BackgroundImage from 'gatsby-background-image'
 
 import "./layout.css"
 
-// <div style={{ backgroundImage: `url(./images/willow-creek.jpg)` }}>foobar baz</div>
-              
 const BizTech = ({ className }) => (
   <StaticQuery
     query={graphql`
@@ -23,13 +21,6 @@ const BizTech = ({ className }) => (
       }
     `}
     render={data => {
-      // Set ImageData.
-      /*
-      return (<div style={{ width: `100%`, height: `100%`, display: `flex`, justifyContent: `center`, alignItems: `center` }}>
-        <ReactTextRotator content={content} time={5000} startDelay={2000} />
-      </div> )
-      */
-      
       const imageData = data.desktop.childImageSharp.fluid
       
       const settings = {

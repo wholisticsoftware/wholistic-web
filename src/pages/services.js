@@ -16,14 +16,6 @@ import Wholistic from "../components/wholistic"
 //import BizTech from "../components/business-tech"
 import Philosophy from "../components/philosophy"
 
-//     <BizTech></BizTech>
-//
-/*
- *     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-    * */
 const Page2 = () => {
   const [showBrand, setShowBrand] = useState(true);
   const [brandClass, setBrandClass] = useState("");

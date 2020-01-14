@@ -9,24 +9,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "../../node_modules/slick-carousel/slick/slick.css";
 import "../../node_modules/slick-carousel/slick/slick-theme.css";
 
-//import Scrollable from "../components/scrollable/scrollable";
-
 import Welcome from "../components/welcome"
 import Wholistic from "../components/wholistic"
 //import BizTech from "../components/business-tech"
 import Philosophy from "../components/philosophy"
 import Questionaire from "../components/questionaire"
 
-//     <BizTech></BizTech>
-//
-/*
- *     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-    * */
 const IndexPage = () => {
-  const wholisticComponent = useRef(null);
   const [showBrand, setShowBrand] = useState(true);
   const [brandClass, setBrandClass] = useState("");
   const [navBaseClass, setNavBaseClass] = useState("nav-link");

@@ -17,19 +17,24 @@ const BizTech = ({ className }) => {
 	const [projectType, setProjectType] = useState("unknown");
 	const [projectSize, setProjectSize] = useState("unknown");
 	const [techPref, setTechPref] = useState("unknown");
+	const [stack, setStack] = useState("unknown");  // frontend, backend, fullstack
+	const [tech, setTech] = useState([]);
+	
+	let addTech = (name) => { setTech([...tech, name ]); };
+
 	return (
-  <StaticQuery
-    query={graphql`
-      query {
-        desktop: file(relativePath: { eq: "sun-tzu.jpg" }) {
-          childImageSharp {
-            fluid(quality: 90, maxWidth: 1920) {
-              ...GatsbyImageSharpFluid_withWebp
+    <StaticQuery
+      query={graphql`
+        query {
+          desktop: file(relativePath: { eq: "sun-tzu.jpg" }) {
+            childImageSharp {
+              fluid(quality: 90, maxWidth: 1920) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
             }
           }
         }
-      }
-    `}
+      `}
     render={data => {
       const imageData = data.desktop.childImageSharp.fluid;
       const settings = { dots: true, infinite: true, slidesToShow: 1, slidesToScroll: 1, autoplay: true, speed: 500, cssEase: "linear" };
@@ -43,19 +48,19 @@ const BizTech = ({ className }) => {
 				  <h2>{projectType === "unknown" ? 'Tell us, are you' : 'We are'}</h2>
 				  <div className="options">
 					<form>
-					  <Badge pill variant="primary" className={(projectType === "unknown" || projectType === "new") ? '' : 'collapse'}>
+					  <Badge pill variant="primary" className={projectType === "unknown" ? '' : (projectType === 'new' ? 'rotate-90' : 'collapse')}>
 						<div className="form-check">
 						  <label><input type="radio" name="react-tips" value="new" checked={false} className="form-check-input" 
 							 checked={projectType==='new'} onClick={() => setProjectType('new')}/>Building New Software</label>
 						</div>
 					  </Badge><br />
-					  <Badge pill variant="primary" className={(projectType === "unknown" || projectType === "existing") ? '' : 'collapse'} >
+					  <Badge pill variant="primary" className={projectType === "unknown" ? '' : (projectType === 'existing' ? 'rotate-90' : 'collapse')} >
 						<div className="form-check">
 						  <label><input type="radio" name="react-tips" value="existing" checked={false} className="form-check-input" 
 							  checked={projectType==='existing'} onClick={() => setProjectType('existing')} />Maintaining/Expanding</label>
 						</div>
 					  </Badge><br />
-					  <Badge pill variant="primary" className={(projectType === "unknown" || projectType === "both") ? '' : 'collapse'}>
+					  <Badge pill variant="primary" className={projectType === "unknown" ? '' : (projectType === 'both' ? 'rotate-90' : 'collapse')}>
 						<div className="form-check">
 						  <label><input type="radio" name="react-tips" value="both" checked={false} className="form-check-input"
 							  checked={projectType==='both'} onClick={() => setProjectType('both')}/>
@@ -70,19 +75,19 @@ const BizTech = ({ className }) => {
 				  <h2>{projectSize === "unknown" ? 'How Big Is It?' : 'It\'s'}</h2>
 				  <div className="options">
 					<form>
-					  <Badge pill variant="primary" className={(projectSize === "unknown" || projectSize === "small") ? '' : 'collapse'}>
+					  <Badge pill variant="primary" className={projectSize === "unknown" ? '' : (projectSize === 'small' ? 'rotate-90' : 'collapse')}>
 						<div className="form-check">
 						  <label><input type="radio" name="project-size" value="small" checked={false} className="form-check-input" 
 							 checked={projectType==='small'} onClick={() => setProjectSize('small')}/>Small</label>
 						</div>
 					  </Badge><br />
-					  <Badge pill variant="primary" className={(projectSize === "medium" || projectSize === "medium") ? '' : 'collapse'} >
+					  <Badge pill variant="primary" className={projectSize === "unknown" ? '' : (projectSize === 'medium' ? 'rotate-90' : 'collapse')} >
 						<div className="form-check">
 						  <label><input type="radio" name="project-size" value="medium" checked={false} className="form-check-input" 
 							  checked={projectType==='medium'} onClick={() => setProjectSize('medium')} />Medium</label>
 						</div>
 					  </Badge><br />
-					  <Badge pill variant="primary" className={(projectSize === "large" || projectSize === "large") ? '' : 'collapse'}>
+					  <Badge pill variant="primary" className={projectSize === "unknown" ? '' : (projectSize === 'large' ? 'rotate-90' : 'collapse')}>
 						<div className="form-check">
 						  <label><input type="radio" name="project-size" value="large" checked={false} className="form-check-input"
 							  checked={projectSize==='large'} onClick={() => setProjectSize('large')}/>Large</label>
@@ -95,19 +100,19 @@ const BizTech = ({ className }) => {
 				  <h2>Do you have tech preference:</h2>
 				  <div className="options">
 					<form>
-					  <Badge pill variant="primary" className={(techPref === "unknown" || techPref === "new") ? '' : 'collapse'}>
+					  <Badge pill variant="primary" className={techPref === "unknown" ? '' : (techPref === 'yes' ? 'rotate-90' : 'collapse')}>
 						<div className="form-check">
 						  <label><input type="radio" name="techPref" value="yes" checked={false} className="form-check-input" 
 							 checked={projectType==='yes'} onClick={() => setTechPref('yes')}/>Yes</label>
 						</div>
 					  </Badge><br />
-					  <Badge pill variant="primary" className={(techPref === "unknown" || techPref === "existing") ? '' : 'collapse'} >
+					  <Badge pill variant="primary" className={techPref === "unknown" ? '' : (techPref === 'no' ? 'rotate-90' : 'collapse')}>
 						<div className="form-check">
 						  <label><input type="radio" name="techPref" value="no" checked={false} className="form-check-input" 
 							  checked={projectType==='no'} onClick={() => setTechPref('no')} />No</label>
 						</div>
 					  </Badge><br />
-					  <Badge pill variant="primary" className={(techPref === "unknown" || techPref === "both") ? '' : 'collapse'}>
+					  <Badge pill variant="primary" className={techPref === "unknown" ? '' : (techPref === 'notsure' ? 'rotate-90' : 'collapse')}>
 						<div className="form-check">
 						  <label><input type="radio" name="techPref" value="notsure" checked={false} className="form-check-input"
 							  checked={projectType==='notsure'} onClick={() => setTechPref('notsure')}/>Not Sure</label>
@@ -116,7 +121,32 @@ const BizTech = ({ className }) => {
 					</form>
 				  </div>
 			   </div>
-			   <div className="tech" className={(techPref === "unknown" || techPref==="no") ? 'collapse' : ''}>Tell Us About the Tech You Use (or Want To Use):</div>
+			   <div className="tech" className={(techPref === "unknown" || techPref === "no") ? 'collapse' : ''}>
+			     <h2>Tell Us About the Tech You Use (or Want To Use)</h2>
+			     <div className="options">
+					<form>
+					  <Badge pill variant="primary" className={tech.includes('react') ? 'rotate-90' : ''}>
+						<div className="form-check">
+						  <label><input type="checkbox" name="tech" value="react" checked={false} className="form-check-input" 
+							 checked={projectType==='yes'} onClick={() => addTech('react')}/>React</label>
+						</div>
+					  </Badge><br />
+					  <Badge pill variant="primary" className={techPref === "unknown" ? '' : (techPref === 'vue' ? 'rotate-90' : 'collapse')}>
+						<div className="form-check">
+						  <label><input type="checkbox" name="tech" value="vue" checked={false} className="form-check-input" 
+							  checked={projectType==='no'} onClick={() => setTech('vue')} />VueJS</label>
+						</div>
+					  </Badge><br />
+					  <Badge pill variant="primary" className={techPref === "unknown" ? '' : (techPref === 'angular' ? 'rotate-90' : 'collapse')}>
+						<div className="form-check">
+						  <label><input type="checkbox" name="tech" value="angular" checked={false} className="form-check-input"
+							  checked={projectType==='notsure'} onClick={() => setTech('angular')}/>Not Sure</label>
+						</div>
+					  </Badge>
+					</form>
+				  </div>
+			     
+			   </div>
 			   <div className={(techPref === "unknown" || techPref==="yes") ? 'collapse' : ''}>GET https://api.insideview.com/api/v1/reference/industries</div>
           </div>
         </div>

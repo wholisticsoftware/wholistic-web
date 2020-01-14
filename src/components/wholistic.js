@@ -21,10 +21,10 @@ function Wholistic(props) {
 		props.onWelcomeClick();
 	 }
   }
-  const settings = {dots: false,infinite: false,slidesToShow: 1,slidesToScroll: 1,autoplay: true,fade: true,speed: 750 };  //, cssEase: "linear"
+  const settings = {dots: false,infinite: false,slidesToShow: 1,slidesToScroll: 1,autoplay: true,fade: true,speed: 500 };  //, cssEase: "linear"
   return (
     <div className="wholistic-outer" id="wholistic-outer" style= {{ }} >
-        <LeftBrace />
+        <LeftBrace style={{opacity: .6}}/>
           <Slider {...settings} className="wholistic-slider-container">
               <span className='wholistic-inner' style={{}}>
 				<div className='wholisticfont'  style={{}}>Software is</div>
@@ -35,10 +35,6 @@ function Wholistic(props) {
 				<div className='wholisticfont' style={{}}>Simple</div>
 			  </span>
 			  <span className='wholistic-inner' style={{}}>
-				<div className='wholisticfont'  style={{}}>Wholistic</div>
-				<div className='softwarefont' style={{}}>Systems</div>
-			  </span>
-			  <span className='wholistic-inner' style={{}}>
 			    <div className='softwarefont' style={{}}>Find Your</div>
 			    <div>&nbsp;</div>
 			    <div className='wholisticfont'  style={{}}>Solution</div>
@@ -46,9 +42,16 @@ function Wholistic(props) {
 			    <div className='wholistic-arrow' onClick={clickWelcome}><FontAwesomeIcon icon={faChevronDown} /></div>
 			  </span>
           </Slider>
-        <RightBrace />
+        <RightBrace style={{opacity: .6}}/>
     </div>
   )
 }
 export default Wholistic
 //  &raquo; &rsaquo; &darr;
+
+/*
+<span className='wholistic-inner' style={{}}>
+				<div className='wholisticfont'  style={{}}>Wholistic</div>
+				<div className='softwarefont' style={{}}>Systems</div>
+			  </span>
+*/

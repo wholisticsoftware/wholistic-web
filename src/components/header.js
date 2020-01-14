@@ -9,6 +9,7 @@ import Icon from "../svg/wholistic-logo-tight.svg";
 const Header = ({ siteTitle, showBrand, brandClass, navBaseClass }) => {
   console.log("showBrand: " + showBrand);
   console.log("brandClass: " + brandClass);
+  if (!navBaseClass) navBaseClass = "nav-link";
   return (
   <header>
 	<nav className="navbar navbar-expand-lg fixed-top navbar-light" fixed="top"> 
@@ -28,10 +29,13 @@ const Header = ({ siteTitle, showBrand, brandClass, navBaseClass }) => {
 		  </li>
 		  <li><span className="nav-link">{` `}</span></li>
 		  <li className="nav-item">
-		    <Link className={navBaseClass} to="/page-3">philosophy</Link>
+		    <Link className={navBaseClass} activeClassName="active-link" to="/philosophy">philosophy</Link>
 		  </li>
 		  <li><span className="nav-link">{` `}</span></li>
-		  
+		  <li className="nav-item">
+		    <Link className={navBaseClass} activeClassName="active-link" to="/contact">contact</Link>
+		  </li>
+		  <li><span className="nav-link">{` `}</span></li>
 		</ul>
 	  </div>
 	</nav>
