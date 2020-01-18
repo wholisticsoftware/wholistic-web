@@ -41,7 +41,7 @@ const BizTech = ({ className }) => {
       return (
         <div className={className} fluid={imageData} style={{ width: `100%`, height: `100%`, display: `flex`, justifyContent: `center`, alignItems: `center`,
 			backgroundRepeat: `no-repeat`, backgroundSize: `cover`, backgroundPosition: `top`, backgroundColor: `black`}}>
-          <div id="questions" style={{ maxWidth: `750px`, maxHeight: `350px`, display: `flex`, justifyContent: `center`, alignItems: `center`,
+          <div id="questions" className="questions" style={{ maxWidth: `750px`, maxHeight: `350px`, display: `flex`, justifyContent: `center`, alignItems: `center`,
 			  flexDirection: `column`, minWidth: `750px`}}>
 			  
 			  <div className="projectType">
@@ -50,19 +50,19 @@ const BizTech = ({ className }) => {
 					<form>
 					  <Badge pill variant="primary" className={projectType === "unknown" ? '' : (projectType === 'new' ? 'rotate-90' : 'collapse')}>
 						<div className="form-check">
-						  <label><input type="radio" name="react-tips" value="new" checked={false} className="form-check-input" 
+						  <label><input type="radio" name="react-tips" value="new"  className="form-check-input" 
 							 checked={projectType==='new'} onClick={() => setProjectType('new')}/>Building New Software</label>
 						</div>
 					  </Badge><br />
 					  <Badge pill variant="primary" className={projectType === "unknown" ? '' : (projectType === 'existing' ? 'rotate-90' : 'collapse')} >
 						<div className="form-check">
-						  <label><input type="radio" name="react-tips" value="existing" checked={false} className="form-check-input" 
+						  <label><input type="radio" name="react-tips" value="existing"  className="form-check-input" 
 							  checked={projectType==='existing'} onClick={() => setProjectType('existing')} />Maintaining/Expanding</label>
 						</div>
 					  </Badge><br />
 					  <Badge pill variant="primary" className={projectType === "unknown" ? '' : (projectType === 'both' ? 'rotate-90' : 'collapse')}>
 						<div className="form-check">
-						  <label><input type="radio" name="react-tips" value="both" checked={false} className="form-check-input"
+						  <label><input type="radio" name="react-tips" value="both" className="form-check-input"
 							  checked={projectType==='both'} onClick={() => setProjectType('both')}/>
 							Both/Not Sure
 						  </label>
@@ -72,24 +72,24 @@ const BizTech = ({ className }) => {
 				  </div>
 			   </div>
 			   <div className="projectSize" className={(projectType === "unknown") ? 'collapse' : ''}>
-				  <h2>{projectSize === "unknown" ? 'How Big Is It?' : 'It\'s'}</h2>
+				  <h2>{projectSize === "unknown" ? 'How Big Is It?' : ''}</h2>
 				  <div className="options">
 					<form>
 					  <Badge pill variant="primary" className={projectSize === "unknown" ? '' : (projectSize === 'small' ? 'rotate-90' : 'collapse')}>
 						<div className="form-check">
-						  <label><input type="radio" name="project-size" value="small" checked={false} className="form-check-input" 
-							 checked={projectType==='small'} onClick={() => setProjectSize('small')}/>Small</label>
+						  <label><input type="radio" name="project-size" value="small" className="form-check-input" 
+							 checked={projectSize==='small'} onClick={() => setProjectSize('small')}/>Small</label>
 						</div>
 					  </Badge><br />
 					  <Badge pill variant="primary" className={projectSize === "unknown" ? '' : (projectSize === 'medium' ? 'rotate-90' : 'collapse')} >
 						<div className="form-check">
-						  <label><input type="radio" name="project-size" value="medium" checked={false} className="form-check-input" 
-							  checked={projectType==='medium'} onClick={() => setProjectSize('medium')} />Medium</label>
+						  <label><input type="radio" name="project-size" value="medium" className="form-check-input" 
+							  checked={projectSize==='medium'} onClick={() => setProjectSize('medium')} />Medium</label>
 						</div>
 					  </Badge><br />
 					  <Badge pill variant="primary" className={projectSize === "unknown" ? '' : (projectSize === 'large' ? 'rotate-90' : 'collapse')}>
 						<div className="form-check">
-						  <label><input type="radio" name="project-size" value="large" checked={false} className="form-check-input"
+						  <label><input type="radio" name="project-size" value="large" className="form-check-input"
 							  checked={projectSize==='large'} onClick={() => setProjectSize('large')}/>Large</label>
 						</div>
 					  </Badge>
@@ -97,25 +97,25 @@ const BizTech = ({ className }) => {
 				  </div>
 			   </div>
 			   <div className="techPref" className={(projectSize === "unknown") ? 'collapse' : ''}>
-				  <h2>Do you have tech preference:</h2>
+				  <h2>{techPref === "unknown" ? "Do you have tech preference" : ""}</h2>
 				  <div className="options">
 					<form>
 					  <Badge pill variant="primary" className={techPref === "unknown" ? '' : (techPref === 'yes' ? 'rotate-90' : 'collapse')}>
 						<div className="form-check">
-						  <label><input type="radio" name="techPref" value="yes" checked={false} className="form-check-input" 
-							 checked={projectType==='yes'} onClick={() => setTechPref('yes')}/>Yes</label>
+						  <label><input type="radio" name="techPref" value="yes" className="form-check-input" 
+							 checked={techPref==='yes'} onClick={() => setTechPref('yes')}/>Yes</label>
 						</div>
 					  </Badge><br />
 					  <Badge pill variant="primary" className={techPref === "unknown" ? '' : (techPref === 'no' ? 'rotate-90' : 'collapse')}>
 						<div className="form-check">
-						  <label><input type="radio" name="techPref" value="no" checked={false} className="form-check-input" 
-							  checked={projectType==='no'} onClick={() => setTechPref('no')} />No</label>
+						  <label><input type="radio" name="techPref" value="no" className="form-check-input" 
+							  checked={techPref==='no'} onClick={() => setTechPref('no')} />No</label>
 						</div>
 					  </Badge><br />
 					  <Badge pill variant="primary" className={techPref === "unknown" ? '' : (techPref === 'notsure' ? 'rotate-90' : 'collapse')}>
 						<div className="form-check">
-						  <label><input type="radio" name="techPref" value="notsure" checked={false} className="form-check-input"
-							  checked={projectType==='notsure'} onClick={() => setTechPref('notsure')}/>Not Sure</label>
+						  <label><input type="radio" name="techPref" value="notsure" className="form-check-input"
+							  checked={techPref==='notsure'} onClick={() => setTechPref('notsure')}/>Not Sure</label>
 						</div>
 					  </Badge>
 					</form>
@@ -127,20 +127,20 @@ const BizTech = ({ className }) => {
 					<form>
 					  <Badge pill variant="primary" className={tech.includes('react') ? 'rotate-90' : ''}>
 						<div className="form-check">
-						  <label><input type="checkbox" name="tech" value="react" checked={false} className="form-check-input" 
-							 checked={projectType==='yes'} onClick={() => addTech('react')}/>React</label>
+						  <label><input type="checkbox" name="tech" value="react" className="form-check-input" 
+							 checked={tech.includes('react')} onClick={() => addTech('react')}/>React</label>
 						</div>
 					  </Badge><br />
-					  <Badge pill variant="primary" className={techPref === "unknown" ? '' : (techPref === 'vue' ? 'rotate-90' : 'collapse')}>
+					  <Badge pill variant="primary" className={tech.includes('vue') ? 'rotate-90' : ''}>
 						<div className="form-check">
-						  <label><input type="checkbox" name="tech" value="vue" checked={false} className="form-check-input" 
-							  checked={projectType==='no'} onClick={() => setTech('vue')} />VueJS</label>
+						  <label><input type="checkbox" name="tech" value="vue" className="form-check-input" 
+							  checked={tech.includes('vue')} onClick={() => addTech('vue')} />VueJS</label>
 						</div>
 					  </Badge><br />
-					  <Badge pill variant="primary" className={techPref === "unknown" ? '' : (techPref === 'angular' ? 'rotate-90' : 'collapse')}>
+					  <Badge pill variant="primary" className={tech.includes('angular') ? 'rotate-90' : ''}>
 						<div className="form-check">
-						  <label><input type="checkbox" name="tech" value="angular" checked={false} className="form-check-input"
-							  checked={projectType==='notsure'} onClick={() => setTech('angular')}/>Not Sure</label>
+						  <label><input type="checkbox" name="tech" value="angular" className="form-check-input"
+							  checked={tech.includes('angular')} onClick={() => addTech('angular')}/>Angular</label>
 						</div>
 					  </Badge>
 					</form>
