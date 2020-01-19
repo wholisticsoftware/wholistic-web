@@ -13,7 +13,8 @@ import Welcome from "../components/welcome"
 import Wholistic from "../components/wholistic"
 //import BizTech from "../components/business-tech"
 import Philosophy from "../components/philosophy"
-import Questionaire from "../components/questionaire"
+//import Questionaire from "../components/questionaire"
+import Flow from "../components/flow"
 
 const IndexPage = () => {
   const [showBrand, setShowBrand] = useState(true);
@@ -67,7 +68,7 @@ const IndexPage = () => {
   <Layout style={{ height: `100%`}} showBrand={showBrand} brandClass={brandClass} navBaseClass={navBaseClass}>
     <SEO title="Wholistic Software, LLC" />
     <Welcome id='index-welcome' onWelcomeClick={onWelcomeClick}></Welcome>
-    <Questionaire style={{ scrollSnapType: `y mandatory` }} ></Questionaire>
+    <Flow style={{ scrollSnapType: `y mandatory` }} ></Flow>
   </Layout>
 )}
 

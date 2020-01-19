@@ -15,6 +15,7 @@ import Welcome from "../components/welcome"
 import Wholistic from "../components/wholistic"
 //import BizTech from "../components/business-tech"
 import Philosophy from "../components/philosophy"
+import Questionaire from "../components/questionaire"
 
 const Page2 = () => {
   const [showBrand, setShowBrand] = useState(true);
@@ -69,14 +70,13 @@ const Page2 = () => {
   <Layout style={{ height: `100%`}} showBrand={showBrand} brandClass={brandClass} navBaseClass={navBaseClass}>
     <SEO title="Wholistic Software, LLC" />
     <Wholistic id='wholistic1' onWelcomeClick={onWelcomeClick}></Wholistic>
-    <Welcome style={{ scrollSnapType: `y mandatory` }} ></Welcome>
-    <Philosophy></Philosophy>
+    <Questionaire></Questionaire>
   </Layout>
 )}
 
 export default Page2
 
-/*
+/* <Welcome style={{ scrollSnapType: `y mandatory` }} ></Welcome>
  * 
  * -componentDidMount() {
 +useEffect(() => {
