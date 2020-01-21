@@ -599,7 +599,7 @@ div nav.navbar {
   padding: 0px;
 }
 .nav-item .nav-link {
-  font-family: "Dejavu Sans"; font-size: 23px; font-style: normal; font-variant: small-caps; font-weight: 100; line-height: 23px;
+  font-family: "dejavu_sansextralight"; font-size: 23px; font-style: normal; font-variant: small-caps; font-weight: 100; line-height: 23px;
   color: black;
 }
 .nav-item .nav-link-white {
