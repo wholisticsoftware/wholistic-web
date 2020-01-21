@@ -32,6 +32,7 @@ function Wholistic(props) {
 			  </span>
 			  <span className='wholistic-inner' style={{}}>
 				<div className='softwarefont'  style={{}}>We Make It</div>
+				<div>&nbsp;</div>
 				<div className='wholisticfont' style={{}}>Simple</div>
 			  </span>
 			  <span className='wholistic-inner' style={{}}>

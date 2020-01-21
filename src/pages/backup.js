@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 //import { Link } from "gatsby"
 
 import Layout from "../components/layout"
@@ -15,18 +15,13 @@ import Welcome from "../components/welcome"
 import Wholistic from "../components/wholistic"
 //import BizTech from "../components/business-tech"
 import Philosophy from "../components/philosophy"
+import Questionaire from "../components/questionaire"
 
-//     <BizTech></BizTech>
-//
-/*
- *     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-    * */
 const Page2 = () => {
-  const wholisticComponent = useRef(null);
   const [showBrand, setShowBrand] = useState(true);
+  const [brandClass, setBrandClass] = useState("");
+  const [navBaseClass, setNavBaseClass] = useState("nav-link");
+
   useEffect(() => { 
     function handleScroll() {
       //setScrollPosition(getScroll())
@@ -39,8 +34,12 @@ const Page2 = () => {
 		  //console.log("wholisticComponent: " + wholisticOuter.scrollHeight);
 		  if (scrollY >= (woHeight - 100)){
 	        setShowBrand(true);
+	        setBrandClass("filter-white");
+	        setNavBaseClass("nav-link-white");
 		  } else {
-			setShowBrand(false);
+			setShowBrand(true); // conditional show/hide of brand logo
+			setBrandClass("");
+			setNavBaseClass("nav-link");
 		  }
 		}
 	  }
@@ -51,6 +50,7 @@ const Page2 = () => {
 	}
 	return () => window.removeEventListener('scroll', handleScroll)
   }, []);
+  
   let onWelcomeClick = () => {
     console.info("BEGIN onWelcomeClick()");
 	let wholisticOuter = document.getElementById("wholistic-outer");
@@ -67,15 +67,16 @@ const Page2 = () => {
 	  }
   }
   return (
-  <Layout style={{ height: `100%`}} showBrand={showBrand}>
+  <Layout style={{ height: `100%`}} showBrand={showBrand} brandClass={brandClass} navBaseClass={navBaseClass}>
     <SEO title="Wholistic Software, LLC" />
-    <Philosophy></Philosophy>
+    <Wholistic id='wholistic1' onWelcomeClick={onWelcomeClick}></Wholistic>
+    <Questionaire></Questionaire>
   </Layout>
 )}
 
 export default Page2
 
-/*
+/* <Welcome style={{ scrollSnapType: `y mandatory` }} ></Welcome>
  * 
  * -componentDidMount() {
 +useEffect(() => {

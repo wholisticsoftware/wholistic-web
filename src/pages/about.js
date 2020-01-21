@@ -69,7 +69,14 @@ const Page2 = () => {
   return (
   <Layout style={{ height: `100%`}} showBrand={showBrand}>
     <SEO title="Wholistic Software, LLC" />
-    <Philosophy></Philosophy>
+    <div>
+      <h2>About this Website</h2>
+      <h3>Photographs</h3>
+      <p>Many of the images on this page are taken from the extraordinary nature photography of Jane Palmer: janepalmerphotography.com</p>
+      <p>In adition to photography, Jane is passionate about Horse Rescue: Equestrian Rescue Foundation.</p>
+      <h3>Development</h3>
+      <p>Much of the heavy lifting on the UI was done by Dominic Gerweck, of ___ Germany: @dominic/website</p>
+    </div>
   </Layout>
 )}
 

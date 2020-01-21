@@ -827,6 +827,9 @@ footer {
   flex-basis: 100%;
   height: 0;
 }
+.questions {
+  border-radius: 25px;
+}
 .questions form {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;

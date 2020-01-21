@@ -36,6 +36,9 @@ const Header = ({ siteTitle, showBrand, brandClass, navBaseClass }) => {
 		    <Link className={navBaseClass} activeClassName="active-link" to="/contact">contact</Link>
 		  </li>
 		  <li><span className="nav-link">{` `}</span></li>
+		  <li className="nav-item">
+		    <Link className={navBaseClass} activeClassName="active-link" to="/about">+</Link>
+		  </li>
 		</ul>
 	  </div>
 	</nav>
