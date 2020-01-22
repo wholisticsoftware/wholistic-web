@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import LeftBrace from "../svg/left-brace2.svg";
 import RightBrace from "../svg/right-brace2.svg";
 
-//import Slider from "react-slick";
+import Slider from "react-slick";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
@@ -24,7 +24,26 @@ function Wholistic(props) {
   const settings = {dots: false,infinite: false,slidesToShow: 1,slidesToScroll: 1,autoplay: true,fade: true,speed: 500 };  //, cssEase: "linear"
   return (
     <div className="wholistic-outer" id="wholistic-outer" style= {{ }} >
-
+        <LeftBrace style={{opacity: .6}}/>
+          <Slider {...settings} className="wholistic-slider-container">
+              <span className='wholistic-inner' style={{}}>
+				<div className='wholisticfont'  style={{}}>Software is</div>
+				<div className='complexfont' style={{ fontSize: `50px`}}>complex</div>
+			  </span>
+			  <span className='wholistic-inner' style={{}}>
+				<div className='softwarefont'  style={{}}>We Make It</div>
+				<div>&nbsp;</div>
+				<div className='wholisticfont' style={{}}>Simple</div>
+			  </span>
+			  <span className='wholistic-inner' style={{}}>
+			    <div className='softwarefont' style={{}}>Find Your</div>
+			    <div>&nbsp;</div>
+			    <div className='wholisticfont'  style={{}}>Solution</div>
+			    <div>&nbsp;</div>
+			    <div className='wholistic-arrow' onClick={clickWelcome}><FontAwesomeIcon icon={faChevronDown} /></div>
+			  </span>
+          </Slider>
+        <RightBrace style={{opacity: .6}}/>
     </div>
   )
 }

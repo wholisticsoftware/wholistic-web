@@ -11,13 +11,9 @@ import "../patch/slick-theme.css"; // This is a work around for font in slick-th
 
 //import Scrollable from "../components/scrollable/scrollable";
 
-import Welcome from "../components/welcome"
-import Wholistic from "../components/wholistic"
-//import BizTech from "../components/business-tech"
-import Philosophy from "../components/philosophy"
-import Questionaire from "../components/questionaire"
+import About from "../components/about"
 
-const Page2 = () => {
+const AboutPage = () => {
   const [showBrand, setShowBrand] = useState(true);
   const [brandClass, setBrandClass] = useState("");
   const [navBaseClass, setNavBaseClass] = useState("nav-link");
@@ -69,12 +65,11 @@ const Page2 = () => {
   return (
   <Layout style={{ height: `100%`}} showBrand={showBrand} brandClass={brandClass} navBaseClass={navBaseClass}>
     <SEO title="Wholistic Software, LLC" />
-    <Wholistic id='wholistic1' onWelcomeClick={onWelcomeClick}></Wholistic>
-    <Questionaire></Questionaire>
+    <About></About>
   </Layout>
 )}
 
-export default Page2
+export default AboutPage
 
 /* <Welcome style={{ scrollSnapType: `y mandatory` }} ></Welcome>
  * 

@@ -6,8 +6,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "../../node_modules/slick-carousel/slick/slick.css";
-import "../../node_modules/slick-carousel/slick/slick-theme.css";
 
 //import Scrollable from "../components/scrollable/scrollable";
 
@@ -24,7 +22,7 @@ import Philosophy from "../components/philosophy"
     </div>
     <Link to="/page-2/">Go to page 2</Link>
     * */
-const Page2 = () => {
+const About = () => {
   const wholisticComponent = useRef(null);
   const [showBrand, setShowBrand] = useState(true);
   useEffect(() => { 
@@ -67,20 +65,18 @@ const Page2 = () => {
 	  }
   }
   return (
-  <Layout style={{ height: `100%`}} showBrand={showBrand}>
-    <SEO title="Wholistic Software, LLC" />
-    <div>
+    <div style={{padding: `10rem`}}>
       <h2>About this Website</h2>
       <h3>Photographs</h3>
       <p>Many of the images on this page are taken from the extraordinary nature photography of Jane Palmer: janepalmerphotography.com</p>
-      <p>In adition to photography, Jane is passionate about Horse Rescue: Equestrian Rescue Foundation.</p>
+      <p>In addition to photography, Jane is passionate about Horse Rescue: Equestrian Rescue Foundation.</p>
       <h3>Development</h3>
-      <p>Much of the heavy lifting on the UI was done by Dominic Gerweck, of ___ Germany: @dominic/website</p>
+      <p>Much of the work on this UI was done by Dominic Gerweck, of Verden (Aller), Deutschland.</p>
+      <p>dominic-gerweck.de | @Doger83_Dev</p>
     </div>
-  </Layout>
 )}
 
-export default Page2
+export default About
 
 /*
  * 
