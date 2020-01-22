@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../../node_modules/slick-carousel/slick/slick.css";
-import "../../node_modules/slick-carousel/slick/slick-theme.css";
+import "../patch/slick-theme.css"; // This is a work around for font in slick-theme.css causing forever-load
 
 //import Scrollable from "../components/scrollable/scrollable";
 

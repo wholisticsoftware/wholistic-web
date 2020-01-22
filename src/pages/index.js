@@ -6,8 +6,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "../../node_modules/slick-carousel/slick/slick.css";
-import "../patch/slick-theme.css"; // This is a work around for font in slick-theme.css causing forever-load
+//import "../../node_modules/slick-carousel/slick/slick.css";
+//import "../patch/slick-theme.css"; // This is a work around for font in slick-theme.css causing forever-load
 
 import Welcome from "../components/welcome"
 import Wholistic from "../components/wholistic"
