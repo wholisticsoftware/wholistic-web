@@ -2,6 +2,10 @@
 /*@import url('../fonts/dejavu-sans-fontfacekit/web-fonts/dejavusans_extralight_macroman/stylesheet.css');*/
 
 @font-face {
+  font-family: nav-font;
+  src: url(../fonts/elsie/Elsie-Regular.otf);
+}
+@font-face {
   font-family: dejavu_sansextralight;
   src: url(../fonts/dejavu-sans-fontfacekit/web-fonts/dejavusans_extralight_macroman/DejaVuSans-ExtraLight-webfont.woff);
 }
@@ -20,6 +24,7 @@
 .wholisticfont { font-family: 'Eagle Lake', cursive; }
 .softwarefont { font-family: 'dejavu_sansextralight'; }
 .deutschfont { font-family: 'okolaks-bold'; }
+.nav-font { font-family: 'nav-font'; }
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -596,15 +601,15 @@ pre tt:after {
 
 /* wholistic styles */
 div nav.navbar {
-  padding: 0px;
 }
 .nav-item .nav-link {
-  font-family: "dejavu_sansextralight"; font-size: 23px; font-style: normal; font-variant: small-caps; font-weight: 100; line-height: 23px;
+  font-family: "nav-font"; font-size: 25px; font-style: normal; font-variant: small-caps; font-weight: 100; line-height: 23px;
   color: black;
 }
 .nav-item .nav-link-white {
-  font-family: "Dejavu Sans"; font-size: 23px; font-style: normal; font-variant: small-caps; font-weight: 100; line-height: 23px;
+  font-family: "nav-font"; font-size: 25px; font-style: normal; font-variant: small-caps; font-weight: 100; line-height: 23px;
   color: white;
+  padding-left: .5rem; padding-right: .5rem;
 }
 .navbar-nav .nav-item a.nav-link:hover {
   color: darkorange;
