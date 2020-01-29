@@ -24,10 +24,11 @@ function Wholistic(props) {
   const settings = {dots: false,infinite: false,slidesToShow: 1,slidesToScroll: 1,autoplay: true,fade: true,speed: 500 };  //, cssEase: "linear"
   return (
     <div className="wholistic-outer" id="wholistic-outer" style= {{ }} >
-        <LeftBrace style={{opacity: .6}}/>
+        <LeftBrace style={{opacity: 0}}/>
           <Slider {...settings} className="wholistic-slider-container">
               <span className='wholistic-inner' style={{}}>
 				<div className='wholisticfont'  style={{}}>Software is</div>
+        <div>&nbsp;</div>
 				<div className='complexfont' style={{ fontSize: `50px`}}>complex</div>
 			  </span>
 			  <span className='wholistic-inner' style={{}}>
@@ -43,7 +44,7 @@ function Wholistic(props) {
 			    <div className='wholistic-arrow' onClick={clickWelcome}><FontAwesomeIcon icon={faChevronDown} /></div>
 			  </span>
           </Slider>
-        <RightBrace style={{opacity: .6}}/>
+        <RightBrace style={{opacity: 0}}/>
     </div>
   )
 }

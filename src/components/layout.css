@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: nav-font;
-  src: url(../fonts/elsie/Elsie-Regular.otf);
+  src: url(../fonts/Yellow-Magician/YellowMagician.ttf);
 }
 @font-face {
   font-family: dejavu_sansextralight;
@@ -839,3 +839,22 @@ footer {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
 } 
+
+
+/** contact */
+.contact {
+  margin-left: 5em;
+  margin-right: 5em;
+  justify-content: center;
+  padding: 7rem 4rem 4rem 4rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.contact .card {
+  width: 25%;
+  min-width: 300px;
+  margin: 2em;
+}
+.contact .card-img-top {
+  margin-bottom: 0px;
+}

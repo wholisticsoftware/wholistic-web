@@ -40,28 +40,18 @@ const BizTech = ({ className }) => (
               <div style={{fontSize:`1.25rem`, color:`black`, backgroundColor: `rgba(255,255,255,.3)`, height: `100%`,
                 padding:`1rem 1rem 1rem 1rem`, borderLeft:`2px solid rgba(255,255,255,.5)`, borderRight:`2px solid rgba(255,255,255,.5)`, maxWidth:`90%`
                 }}>
-                <p>From simple, compelling websites to enterprise micro-services, <span className="wholistic-font">Wholistic</span> has 
-                  built it.</p>
-                <p>Our core belief is that people are the source and goal of all good software. We believe in echother, and strive to build respect-based
-                  relations.</p>
-                <p>Our team structure is designed to harmonize with where you are at, your team size, and your aims. We look at you and your people as
-                  part of our extended team.</p>
-                <p>Technology-wise, we are a "what-tool-fits-best" thinking shop. That means we have no cloud preference. We are happy to look at the   tech stack that you want, or make recommendations.</p>
-                <p>We'll even take a look at what you are trying to do and write up a high-level tech-spec -- for free. (Send an email to <a href="dev@wholisticsoftware.com">dev@wholisticsoftware.com</a>)</p>
-                <p>Some of the tools we have used in the past include:</p>
-                <ul>
-                <li>AWS</li>
-                <li>GCP</li>
-                <li>blueMix</li>
-                <li>Java</li>
-                <li>Node</li>
-                <li>Python</li>
-                <li>Spring Framework</li>
-                <li>Express</li>
-                <li>React</li>
-                <li>VueJS</li>
-                <li>Angular</li>
-                </ul>
+                <p style={{marginTop: `5rem`}}><h2><span className='wholisticfont'>Although</span> there are many systems and debates, the essence of right action is authenticity.</h2></p>
+                <p>Beliefs and circumstance changes, but honest interaction remains.</p>
+                <p></p>
+                <p>The discipline of software is art, as well as logic. </p>
+                <p>The truth is that the art of software is more about <em>people</em> than technology.</p>
+                <p>Good people working well together is <em>the</em> basis of successful software.</p>
+                <p>Sincerety as always is the criterion of effective relation.</p>
+                <p>I offer my sincere greeting and curiousity for what projects you undertake today.</p>
+                <p>Perhaps we can work togeter officially.</p>
+                <p>Or, I would love to just hear about what you are working on and your vision for it.</p>
+                <p>Matt Tyson</p>
+                <p>Just North of Big Sur, 2020</p>              
               </div>
             </div>
         </BackgroundImage>

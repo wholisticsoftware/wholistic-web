@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 //import { Link } from "gatsby"
 
+import Card from 'react-bootstrap/Card'
+
 import Layout from "../components/layout"
 //import Image from "../components/image"
 import SEO from "../components/seo"
@@ -9,12 +11,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "../../node_modules/slick-carousel/slick/slick.css";
 import "../patch/slick-theme.css"; // This is a work around for font in slick-theme.css causing forever-load
 
+import "../components/layout.css";
+
 //import Scrollable from "../components/scrollable/scrollable";
 
 import Welcome from "../components/welcome"
 import Wholistic from "../components/wholistic"
 //import BizTech from "../components/business-tech"
 import Philosophy from "../components/philosophy"
+
+import stupa from "../images/stupa.jpg"
+import creek from "../images/jane-palmer-creek.jpg" //jane-palmer-creek.jpg
+import desk from "../images/desk.jpg"
+import bixby from "../images/bixby2.jpg"
 
 //     <BizTech></BizTech>
 //
@@ -69,9 +78,44 @@ const Page2 = () => {
   return (
   <Layout style={{ height: `100%`}} showBrand={showBrand}>
     <SEO title="Wholistic Software, LLC" />
-    <Welcome style={{ scrollSnapType: `y mandatory` }} ></Welcome>
-    <Philosophy></Philosophy>
-    <Wholistic id='wholistic1' onWelcomeClick={onWelcomeClick}></Wholistic>
+    <div className="contact" style={{}}>
+      <Card style={{ }}>
+        <Card.Img variant="top" src={stupa} />
+        <Card.Body>
+          <Card.Title>sales@wholisticsoftware.com</Card.Title>
+          <Card.Text>
+            <p>If you have questions about services or want a quote.</p>
+          </Card.Text>
+        </Card.Body>
+      </Card>
+      <Card style={{ width: '18rem' }}>
+        <Card.Img variant="top" src={desk} />
+        <Card.Body>
+          <Card.Title>support@wholisticsoftware.com</Card.Title>
+          <Card.Text>
+            <p>Got a support or service question?  Shoot an email to us here.</p>
+          </Card.Text>
+        </Card.Body>
+      </Card>
+      <Card style={{ width: '18rem' }}>
+        <Card.Img variant="top" src={creek} />
+        <Card.Body>
+          <Card.Title>dev@wholisticsoftware.com</Card.Title>
+          <Card.Text>
+            <p>Hard-tech questions or ideas go here.  We'll also do a free high-level tech spec, if you request one.</p>
+          </Card.Text>
+        </Card.Body>
+      </Card>
+      <Card style={{ width: '18rem' }}>
+        <Card.Img variant="top" src={bixby} />
+        <Card.Body>
+          <Card.Title>work@wholisticosftware.com</Card.Title>
+          <Card.Text>
+            <p>Know about building software and want to work remotely with people who care about eachother?</p>
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    </div>
   </Layout>
 )}
 
@@ -94,3 +138,6 @@ export default Page2
 +}, []);
 -}
 * */
+
+
+ /*<Button variant="primary">Go somewhere</Button>*/

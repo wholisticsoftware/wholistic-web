@@ -15,6 +15,7 @@ import Welcome from "../components/welcome"
 import Wholistic from "../components/wholistic"
 //import BizTech from "../components/business-tech"
 import Philosophy from "../components/philosophy"
+import MattLetter from "../components/matt-letter"
 
 //     <BizTech></BizTech>
 //
@@ -70,6 +71,7 @@ const Page2 = () => {
   <Layout style={{ height: `100%`}} showBrand={showBrand}>
     <SEO title="Wholistic Software, LLC" />
     <Philosophy></Philosophy>
+    <MattLetter></MattLetter>
   </Layout>
 )}
 

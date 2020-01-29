@@ -41,14 +41,15 @@ const BizTech = ({ className }) => {
       return (
       <BackgroundImage Tag="section" className={className} fluid={imageData} backgroundColor={`transparent`} 
           style={{ width: `100%`, height: `100%`, display: `flex`, justifyContent: `center`, alignItems: `center`, backgroundRepeat: `no-repeat`, 
-          backgroundSize: `cover`, backgroundPosition: `bottom`, }}>
-        <div id="questions" className="questions" style={{ width: `100%`, maxHeight: `350px`, display: `flex`, justifyContent: `center`, alignItems: `center`,
-            flexDirection: `column`, minWidth: `750px`, backgroundColor: `rgba(255,255,255,.5)`, 
-            borderTop: `1px solid rgba(100,100,100,.5)`, borderBottom: `1px solid rgba(100,100,100,.5)` }}>
-			<h1>Get In Flow</h1>
-			<h2>We attune to You</h2>
-			<h3>Our team scales to your demand.</h3>
-			<p>We'll meet you where you are, and get you where you need to go. </p>
+          backgroundSize: `cover`, backgroundPosition: `bottom` }}>
+        <div style={{ minWidth: `100%`, textAlign: `center`, maxHeight: `350px`, display: `flex`, justifyContent: `center`, alignItems:  `center`, flexDirection: `column`, backgroundColor: `rgba(255,255,255,.5)`, borderTop: `1px solid rgba(100,100,100,.5)`, borderBottom: `1px solid rgba(100,100,100,.5)`, paddingBottom: `1rem`}}>
+          <h1 className="wholisticfont" style={{paddingTop: '1rem', fontSize: '4em'}}>Flow</h1>
+          <p>A state wherein otherwise difficult aims are achieved with ease.</p>
+          <h4>From compelling websites to enterprise microservices.</h4>
+          <p className="" style={{fontWeight:``}}>Wholistic makes it simpler.</p>
+          <div style={{width: `450px`, display: 'flex', justifyContent: `space-between`}}>
+            <a href="">Get a Quote</a> <a href="">Project Builder</a> <a href="">Wholistic Philosophy</a>
+          </div>
         </div>
       </BackgroundImage>
       )
