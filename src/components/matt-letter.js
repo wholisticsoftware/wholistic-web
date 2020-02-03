@@ -11,7 +11,7 @@ const BizTech = ({ className }) => (
   <StaticQuery
     query={graphql`
       query {
-        desktop: file(relativePath: { eq: "bixby2.jpg" }) {
+        desktop: file(relativePath: { eq: "condor4.webp" }) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 1920) {
               ...GatsbyImageSharpFluid_withWebp
@@ -33,25 +33,24 @@ const BizTech = ({ className }) => (
       cssEase: "linear"
     };
       return (
-        <BackgroundImage Tag="section" className={className} fluid={imageData} backgroundColor={`transparent`} 
-          style={{ width: `100%`, height: `100%`, display: `flex`, justifyContent: `center`, backgroundRepeat: `no-repeat`, 
-          backgroundSize: `cover`, backgroundPosition: `top`}}>
-            <div style={{ width: `100%`, height: `100%`, display: `flex`, justifyContent: `center`, alignItems: `center`, overflow:`auto`}}>
-              <div style={{fontSize:`1.25rem`, color:`black`, backgroundColor: `rgba(255,255,255,.3)`, height: `100%`,
-                padding:`1rem 1rem 1rem 1rem`, borderLeft:`2px solid rgba(255,255,255,.5)`, borderRight:`2px solid rgba(255,255,255,.5)`, maxWidth:`90%`
+        <BackgroundImage Tag="section" fluid={imageData} backgroundColor={`white`} 
+          style={{ width: `100%`, display: `flex`, justifyContent: `center`, backgroundRepeat: `no-repeat`, 
+          backgroundPosition: `center center`, backgroundOrigin:`center`, backgroundSize:`cover`}}>
+            <div style={{ display: `flex`, justifyContent: `center`, alignItems: `center`, overflow:`auto`}}>
+              <div style={{fontSize:`1.25rem`, color:`black`, backgroundColor: `rgba(255,255,255,.3)`, 
+                padding:`1rem 1rem 1rem 1rem`, borderLeft:`2px solid rgba(255,255,255,.5)`, borderRight:`2px solid rgba(255,255,255,.5)`
                 }}>
-                <p style={{marginTop: `5rem`}}><h2><span className='wholisticfont'>Although</span> there are many systems and debates, the essence of right action is authenticity.</h2></p>
+                <p style={{marginTop: `5rem`}}><h2><span className='wholisticfont'>Although</span> there are many systems and much debate, the essence of right action is authenticity.</h2></p>
                 <p>Beliefs and circumstance changes, but honest interaction remains.</p>
                 <p></p>
-                <p>The discipline of software is art, as well as logic. </p>
+                <p>The way of software is art balanced with logic. </p>
                 <p>The truth is that the art of software is more about <em>people</em> than technology.</p>
                 <p>Good people working well together is <em>the</em> basis of successful software.</p>
-                <p>Sincerety as always is the criterion of effective relation.</p>
+                <p>And sincerety is always the criterion of effective relation.</p>
                 <p>I offer my sincere greeting and curiousity for what projects you undertake today.</p>
-                <p>Perhaps we can work togeter officially.</p>
-                <p>Or, I would love to just hear about what you are working on and your vision for it.</p>
-                <p>Matt Tyson</p>
-                <p>Just North of Big Sur, 2020</p>              
+                <p>I would love to hear about what you are working on and your vision for it.</p>
+                <p>Matt Tyson, Founder (matt@wholisticsoftware.com)</p>
+                <p>Big Sur, California January 2020</p>             
               </div>
             </div>
         </BackgroundImage>

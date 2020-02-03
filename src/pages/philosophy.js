@@ -71,7 +71,6 @@ const Page2 = () => {
   <Layout style={{ height: `100%`}} showBrand={showBrand}>
     <SEO title="Wholistic Software, LLC" />
     <Philosophy></Philosophy>
-    <MattLetter></MattLetter>
   </Layout>
 )}
 

@@ -76,13 +76,13 @@ const Page2 = () => {
 	  }
   }
   return (
-  <Layout style={{ height: `100%`}} showBrand={showBrand}>
+  <Layout style={{ height: `100%`, backgroundColor:`rgb(90, 0, 0)`}} showBrand={showBrand}>
     <SEO title="Wholistic Software, LLC" />
-    <div className="contact" style={{}}>
+    <div className="contact" style={{backgroundColor:`#8b4136`, width:`100%`, margin:`0px 0px 0px 0px`}}>
       <Card style={{ }}>
         <Card.Img variant="top" src={stupa} />
         <Card.Body>
-          <Card.Title>sales@wholisticsoftware.com</Card.Title>
+          <Card.Title><a href="emailto:sales@wholisticsoftware.com">sales@wholisticsoftware.com</a></Card.Title>
           <Card.Text>
             <p>If you have questions about services or want a quote.</p>
           </Card.Text>
@@ -91,7 +91,7 @@ const Page2 = () => {
       <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={desk} />
         <Card.Body>
-          <Card.Title>support@wholisticsoftware.com</Card.Title>
+          <Card.Title><a href="emailto:support@wholisticsoftware.com">support@wholisticsoftware.com</a></Card.Title>
           <Card.Text>
             <p>Got a support or service question?  Shoot an email to us here.</p>
           </Card.Text>
@@ -100,7 +100,7 @@ const Page2 = () => {
       <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={creek} />
         <Card.Body>
-          <Card.Title>dev@wholisticsoftware.com</Card.Title>
+          <Card.Title><a href="emailto:dev@wholisticsoftware.com">dev@wholisticsoftware.com</a></Card.Title>
           <Card.Text>
             <p>Hard-tech questions or ideas go here.  We'll also do a free high-level tech spec, if you request one.</p>
           </Card.Text>
@@ -109,7 +109,7 @@ const Page2 = () => {
       <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={bixby} />
         <Card.Body>
-          <Card.Title>work@wholisticosftware.com</Card.Title>
+          <Card.Title><a href="emailto:work@wholisticosftware.com">work@wholisticosftware.com</a></Card.Title>
           <Card.Text>
             <p>Know about building software and want to work remotely with people who care about eachother?</p>
           </Card.Text>

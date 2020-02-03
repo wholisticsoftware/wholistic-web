@@ -797,10 +797,11 @@ footer {
   margin-bottom: .3rem;
   margin-top: .3rem;
 }
-.options .badge {
+.options .badge, .options button {
   color: black;
   margin-bottom: .5rem;
   box-shadow: 2px 2px 2px black;
+  margin-left: .25rem; margin-right: .25rem;
 }
 .options .badge:hover {
   box-shadow: 0px 0px 0px black;
@@ -854,6 +855,8 @@ footer {
   width: 25%;
   min-width: 300px;
   margin: 2em;
+  box-shadow: 2px 2px 3px black;
+  background-color: #f5d6ab;
 }
 .contact .card-img-top {
   margin-bottom: 0px;
