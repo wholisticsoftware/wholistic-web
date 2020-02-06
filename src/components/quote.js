@@ -68,7 +68,7 @@ const Quote = ({ className }) => {
       const imageData = data.desktop.childImageSharp.fluid
       
       return (
-        <BackgroundImage className="philosophy" Tag="section" fluid={imageData} backgroundColor={`transparent`} 
+        <BackgroundImage className="quote" Tag="section" fluid={imageData} backgroundColor={`transparent`} 
           style={{ width: `100%`, display: `flex`, justifyContent: `center`, backgroundRepeat: `no-repeat`, 
           backgroundSize: `cover`, backgroundAttachment:`fixed`, backgroundPosition: `top`, alignItems: `center`, textAlign:`center`, flexDirection:`column`, paddingTop:`7em`, backgroundOrigin:`bottom`}}>
           
@@ -82,7 +82,7 @@ const Quote = ({ className }) => {
                     <textarea placeholder="What are you working on?" value={body} 
                       onChange={(e) => setBody(e.target.value)} style={{marginBottom:`.5em`,width:`300px`}}></textarea>
                     <input type="email" placeholder="Your Email" onChange={(e) => setEmail(e.target.value)} value={email} style={{marginBottom:`.5em`,width:`300px`}}></input>
-                    <Button style={{width:`300px`}} onClick={submitForm}>GO</Button>
+                    <Button className="go-button" style={{width:`300px`}} onClick={submitForm}>GO</Button>
                   </form>
 
                   <a className="softwarefont">Try The Project Builder</a><br/>

@@ -898,3 +898,17 @@ footer {
 .flow-link:hover {
   background-color: rgba(255,255,255,.75);
 }
+
+.quote .content {
+  border-top: 2px solid rgba(255,255,255,.6);
+  border-bottom: 2px solid rgba(255,255,255,.6);
+  background-color: rgba(255,255,255,.75);
+  padding: 1rem 1rem 1rem 1rem;
+  width: 100%;
+}
+.quote .go-button {
+  background-color: rgb(93,50,40);
+}
+.quote .go-button:hover {
+  background-color: rgb(93,50,40);
+}
