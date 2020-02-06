@@ -25,7 +25,7 @@ import MattLetter from "../components/matt-letter"
     </div>
     <Link to="/page-2/">Go to page 2</Link>
     * */
-const Page2 = () => {
+const PhilosophyPage = () => {
   const wholisticComponent = useRef(null);
   const [showBrand, setShowBrand] = useState(true);
   useEffect(() => { 
@@ -74,7 +74,7 @@ const Page2 = () => {
   </Layout>
 )}
 
-export default Page2
+export default PhilosophyPage
 
 /*
  * 

@@ -6,7 +6,7 @@
   src: url(../fonts/Yellow-Magician/YellowMagician.ttf);
 }
 @font-face {
-  font-family: dejavu_sansextralight;
+  font-family: softwarefont;
   src: url(../fonts/dejavu-sans-fontfacekit/web-fonts/dejavusans_extralight_macroman/DejaVuSans-ExtraLight-webfont.woff);
 }
 @font-face {
@@ -22,7 +22,7 @@
   src: url(../fonts/exotica/Exotica.ttf);
 }
 .wholisticfont { font-family: 'Eagle Lake', cursive; }
-.softwarefont { font-family: 'dejavu_sansextralight'; }
+.softwarefont { font-family: 'softwarefont'; }
 .deutschfont { font-family: 'okolaks-bold'; }
 .nav-font { font-family: 'nav-font'; }
 html {
@@ -661,7 +661,7 @@ div nav.navbar {
   font-family: 'Eagle Lake', cursive;
 }
 .text-slider-container p {
-  font-family: 'dejavu_sansextralight';
+  font-family: 'softwarefont';
 }
 .text-slider-container button.go {
     display: inline-block;
@@ -806,11 +806,20 @@ footer {
 .options .badge:hover {
   box-shadow: 0px 0px 0px black;
 }
-.options .badge label, .options .badge input {
+.options .badge label, .options .badge input[type='radio'], .options .badge input[type='checkbox'] {
   cursor: pointer;
 }
-.badge-primary {
-  background-color: rgba(70,189,223,1);
+.options .badge input[type='text'], .options .badge input[type='email'], .options .badge input[type='tel'] {
+  border-radius: 7px 7px 7px 7px;
+  border-width: 1px;
+}
+.options .badge-primary, .options button {
+  /*background-color: rgba(70,189,223,1);*/
+  background-color: rgb(159, 207, 215);
+  /*background-color: rgb(50, 91, 92);*/
+}
+.options .badge-primary:hover, .options button:hover {
+  background-color: rgb(50, 91, 92);
 }
 .options .badge .form-check-input{
   margin-top: 0px;
@@ -833,8 +842,12 @@ footer {
   flex-basis: 100%;
   height: 0;
 }
+
 .questions {
   border-radius: 25px;
+}
+.questions h2 {
+  font-family: 'softwarefont';
 }
 .questions form {
   margin: 0px 0px 0px 0px;
@@ -856,8 +869,32 @@ footer {
   min-width: 300px;
   margin: 2em;
   box-shadow: 2px 2px 3px black;
-  background-color: #f5d6ab;
+  background-color: rgb(223,212,213); /*#f5d6ab;*/
+  color: rgb(41,35,20)
 }
 .contact .card-img-top {
   margin-bottom: 0px;
+}
+
+.philosophy hr {
+
+}
+.philosophy .content {
+  border-top: 2px solid rgba(255,255,255,.6);
+  border-bottom: 2px solid rgba(255,255,255,.6);
+  background-color: rgba(255,255,255,.75);
+  padding: 1rem 1rem 1rem 1rem;
+  width: 100%;
+}
+.flow {
+  color: #341B05;
+}
+.flow-link {
+  border: 1px solid rgba(0, 123, 255, .5);
+  border-radius: 15px 15px 15px 15px;
+  padding: 2px 7px 2px 7px;
+  background-color: rgba(255,255,255,.25);
+}
+.flow-link:hover {
+  background-color: rgba(255,255,255,.75);
 }

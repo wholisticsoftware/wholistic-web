@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 //import { Link } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
 
 import Card from 'react-bootstrap/Card'
 
+import BackgroundImage from 'gatsby-background-image';
 import Layout from "../components/layout"
-//import Image from "../components/image"
 import SEO from "../components/seo"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -13,114 +14,76 @@ import "../patch/slick-theme.css"; // This is a work around for font in slick-th
 
 import "../components/layout.css";
 
-//import Scrollable from "../components/scrollable/scrollable";
 
 import Welcome from "../components/welcome"
 import Wholistic from "../components/wholistic"
-//import BizTech from "../components/business-tech"
 import Philosophy from "../components/philosophy"
 
 import stupa from "../images/stupa.jpg"
 import creek from "../images/jane-palmer-creek.jpg" //jane-palmer-creek.jpg
-import desk from "../images/desk.jpg"
+import desk from "../images/laptop-desk.jpg"
 import bixby from "../images/bixby2.jpg"
 
-//     <BizTech></BizTech>
-//
-/*
- *     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-    * */
-const Page2 = () => {
-  const wholisticComponent = useRef(null);
+const Contact = () => {
   const [showBrand, setShowBrand] = useState(true);
-  useEffect(() => { 
-    function handleScroll() {
-      //setScrollPosition(getScroll())
-      let scrollY = window.scrollY;
-      //console.log("Scroll: " + scrollY);
-      if (scrollY > 1){
-		let wholisticOuter = document.getElementById("wholistic-outer");
-		if (wholisticOuter){
-		  let woHeight = wholisticOuter.scrollHeight;
-		  //console.log("wholisticComponent: " + wholisticOuter.scrollHeight);
-		  if (scrollY >= (woHeight - 100)){
-	        setShowBrand(true);
-		  } else {
-			setShowBrand(false);
-		  }
-		}
-	  }
-    }
-	if (window){
-	  console.log("window: " + window);
-	  window.addEventListener('scroll', handleScroll);
-	}
-	return () => window.removeEventListener('scroll', handleScroll)
-  }, []);
-  let onWelcomeClick = () => {
-    console.info("BEGIN onWelcomeClick()");
-	let wholisticOuter = document.getElementById("wholistic-outer");
-	if (wholisticOuter){
-	  let woHeight = wholisticOuter.scrollHeight;
-	  console.error("a woHeight: " + woHeight);
-	  if (window)
-	    console.info("woHeight: " + woHeight);
-		window.scroll({
-		  top: (woHeight), 
-		  left: 0, 
-		  behavior: 'smooth'
-		});
-	  }
-  }
   return (
-  <Layout style={{ height: `100%`, backgroundColor:`rgb(90, 0, 0)`}} showBrand={showBrand}>
-    <SEO title="Wholistic Software, LLC" />
-    <div className="contact" style={{backgroundColor:`#8b4136`, width:`100%`, margin:`0px 0px 0px 0px`}}>
-      <Card style={{ }}>
-        <Card.Img variant="top" src={stupa} />
-        <Card.Body>
-          <Card.Title><a href="emailto:sales@wholisticsoftware.com">sales@wholisticsoftware.com</a></Card.Title>
-          <Card.Text>
-            <p>If you have questions about services or want a quote.</p>
-          </Card.Text>
-        </Card.Body>
-      </Card>
-      <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={desk} />
-        <Card.Body>
-          <Card.Title><a href="emailto:support@wholisticsoftware.com">support@wholisticsoftware.com</a></Card.Title>
-          <Card.Text>
-            <p>Got a support or service question?  Shoot an email to us here.</p>
-          </Card.Text>
-        </Card.Body>
-      </Card>
-      <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={creek} />
-        <Card.Body>
-          <Card.Title><a href="emailto:dev@wholisticsoftware.com">dev@wholisticsoftware.com</a></Card.Title>
-          <Card.Text>
-            <p>Hard-tech questions or ideas go here.  We'll also do a free high-level tech spec, if you request one.</p>
-          </Card.Text>
-        </Card.Body>
-      </Card>
-      <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={bixby} />
-        <Card.Body>
-          <Card.Title><a href="emailto:work@wholisticosftware.com">work@wholisticosftware.com</a></Card.Title>
-          <Card.Text>
-            <p>Know about building software and want to work remotely with people who care about eachother?</p>
-          </Card.Text>
-        </Card.Body>
-      </Card>
-    </div>
-  </Layout>
+    <StaticQuery
+      query={graphql`query { desktop: file(relativePath: { eq: "yosemite.jpg" }) { childImageSharp { fluid(quality: 90, maxWidth: 1920) {
+      ...GatsbyImageSharpFluid_withWebp } } } } `}
+      render={data => {
+        const imageData = data.desktop.childImageSharp.fluid;
+        return (
+          <BackgroundImage className="philosophy" Tag="section" fluid={imageData} backgroundColor={`transparent`} 
+              style={{ width: `100%`, display: `flex`, justifyContent: `center`, backgroundRepeat: `no-repeat`, 
+              backgroundSize: `cover`, backgroundAttachment:`fixed`, backgroundPosition: `top`, alignItems: `center`, textAlign:`center`, flexDirection:`column`}}>
+            <Layout style={{ height: `100%`, backgroundColor:`transparent`}} showBrand={showBrand}>
+              <SEO title="Wholistic Software, LLC" />
+              <div className="contact" style={{backgroundColor:``, width:`100%`, margin:`0px 0px 0px 0px`}}>
+                <Card style={{ }}>
+                  <Card.Img variant="top" src={stupa} />
+                  <Card.Body>
+                    <Card.Title><a href="emailto:sales@wholisticsoftware.com">sales@wholisticsoftware.com</a></Card.Title>
+                    <Card.Text>
+                      <p>If you have questions about services or want a quote.</p>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+                <Card style={{ width: '18rem' }}>
+                  <Card.Img variant="top" src={desk} />
+                  <Card.Body>
+                    <Card.Title><a href="emailto:support@wholisticsoftware.com">support@wholisticsoftware.com</a></Card.Title>
+                    <Card.Text>
+                      <p>Got a support or service question?  Shoot an email to us here.</p>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+                <Card style={{ width: '18rem' }}>
+                  <Card.Img variant="top" src={creek} />
+                  <Card.Body>
+                    <Card.Title><a href="emailto:dev@wholisticsoftware.com">dev@wholisticsoftware.com</a></Card.Title>
+                    <Card.Text>
+                      <p>Hard-tech questions or ideas go here.  We'll also do a free high-level tech spec, if you request one.</p>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+                <Card style={{ width: '18rem' }}>
+                  <Card.Img variant="top" src={bixby} />
+                  <Card.Body>
+                    <Card.Title><a href="emailto:work@wholisticosftware.com">work@wholisticosftware.com</a></Card.Title>
+                    <Card.Text>
+                      <p>Know about building software and want to work remotely with people who care about eachother?</p>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </div>
+            </Layout>
+          </BackgroundImage>
+      )}}
+  />
 )}
 
-export default Page2
-
+export default Contact
+//rgb(90, 0, 0) #8b4136
 /*
  * 
  * -componentDidMount() {

@@ -12,7 +12,7 @@ import "../patch/slick-theme.css"; // This is a work around for font in slick-th
 //import Scrollable from "../components/scrollable/scrollable";
 
 import Welcome from "../components/welcome"
-import Wholistic from "../components/wholistic"
+import Quote from "../components/quote"
 //import BizTech from "../components/business-tech"
 import Philosophy from "../components/philosophy"
 import Questionaire from "../components/questionaire"
@@ -28,21 +28,21 @@ const Page2 = () => {
       let scrollY = window.scrollY;
       //console.log("Scroll: " + scrollY);
       if (scrollY > 1){
-		let wholisticOuter = document.getElementById("wholistic-outer");
-		if (wholisticOuter){
-		  let woHeight = wholisticOuter.scrollHeight;
-		  //console.log("wholisticComponent: " + wholisticOuter.scrollHeight);
-		  if (scrollY >= (woHeight - 100)){
-	        setShowBrand(true);
-	        setBrandClass("filter-white");
-	        setNavBaseClass("nav-link-white");
-		  } else {
-			setShowBrand(true); // conditional show/hide of brand logo
-			setBrandClass("");
-			setNavBaseClass("nav-link");
-		  }
-		}
-	  }
+		    let wholisticOuter = document.getElementById("wholistic-outer");
+		    if (wholisticOuter){
+		      let woHeight = wholisticOuter.scrollHeight;
+		      //console.log("wholisticComponent: " + wholisticOuter.scrollHeight);
+		      if (scrollY >= (woHeight - 100)){
+	          setShowBrand(true);
+	          setBrandClass("filter-white");
+	          setNavBaseClass("nav-link-white");
+		      } else {
+            setShowBrand(true); // conditional show/hide of brand logo
+            setBrandClass("");
+            setNavBaseClass("nav-link");
+		      }
+		    }
+	    }
     }
 	if (window){
 	  console.log("window: " + window);
@@ -69,7 +69,7 @@ const Page2 = () => {
   return (
   <Layout style={{ height: `100%`}} showBrand={showBrand} brandClass={brandClass} navBaseClass={navBaseClass}>
     <SEO title="Wholistic Software, LLC" />
-    <Wholistic id='wholistic1' onWelcomeClick={onWelcomeClick}></Wholistic>
+    <Quote id='wholistic1' onWelcomeClick={onWelcomeClick}></Quote>
     <Questionaire></Questionaire>
   </Layout>
 )}

@@ -11,7 +11,7 @@ const BizTech = ({ className }) => (
   <StaticQuery
     query={graphql`
       query {
-        desktop: file(relativePath: { eq: "condor4.webp" }) {
+        desktop: file(relativePath: { eq: "desert-condor-big.jpg" }) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 1920) {
               ...GatsbyImageSharpFluid_withWebp
@@ -34,24 +34,20 @@ const BizTech = ({ className }) => (
     };
       return (
         <BackgroundImage Tag="section" fluid={imageData} backgroundColor={`white`} 
-          style={{ width: `100%`, display: `flex`, justifyContent: `center`, backgroundRepeat: `no-repeat`, 
-          backgroundPosition: `center center`, backgroundOrigin:`center`, backgroundSize:`cover`}}>
-            <div style={{ display: `flex`, justifyContent: `center`, alignItems: `center`, overflow:`auto`}}>
-              <div style={{fontSize:`1.25rem`, color:`black`, backgroundColor: `rgba(255,255,255,.3)`, 
-                padding:`1rem 1rem 1rem 1rem`, borderLeft:`2px solid rgba(255,255,255,.5)`, borderRight:`2px solid rgba(255,255,255,.5)`
-                }}>
-                <p style={{marginTop: `5rem`}}><h2><span className='wholisticfont'>Although</span> there are many systems and much debate, the essence of right action is authenticity.</h2></p>
-                <p>Beliefs and circumstance changes, but honest interaction remains.</p>
-                <p></p>
-                <p>The way of software is art balanced with logic. </p>
-                <p>The truth is that the art of software is more about <em>people</em> than technology.</p>
-                <p>Good people working well together is <em>the</em> basis of successful software.</p>
-                <p>And sincerety is always the criterion of effective relation.</p>
-                <p>I offer my sincere greeting and curiousity for what projects you undertake today.</p>
-                <p>I would love to hear about what you are working on and your vision for it.</p>
-                <p>Matt Tyson, Founder (matt@wholisticsoftware.com)</p>
-                <p>Big Sur, California January 2020</p>             
-              </div>
+          style={{ width: `100%`, height:`100vh`, display: `flex`, justifyContent: `center`, backgroundRepeat: `no-repeat`, 
+          backgroundPosition: `center center`, backgroundOrigin:`bottom`, backgroundSize:`cover`}}>
+          <div style={{display:`flex`, flexDirection:`column`, alignItems:`center`}}>
+            <p style={{marginTop: `5rem`, maxWidth:`450px`}}><h2>The essence of right action is <span className="wholisticfont">authenticity</span>.</h2></p>
+            <div style={{ display: `flex`, justifyContent: `space-between`, alignItems: `center`, overflow:`auto`, minHeight:`200px`, minWidth:`375px`}}>
+                <p style={{maxWidth:`100px`}}>The way of software is art balanced with logic. </p>
+                <p style={{maxWidth:`100px`}}>Good people working well together is the art of software.</p>
+                <p style={{maxWidth:`100px`}}>Sincerety is the criterion of working well together.</p>
+            </div>
+            <div style={{ maxWidth:`500px`, fontFamily:`softwarefont`}}>
+              <h3 style={{fontFamily:`softwarefont`,fontWeight:`bold`}}>I offer my sincere curiousity for what projects you undertake today.</h3>
+              <p><span className="wholisticfont">Matt Tyson</span>, Founder | matt@wholisticsoftware.com</p>
+              <p className="wholisticfont">Big Sur, California January 2020</p>  
+          </div>
             </div>
         </BackgroundImage>
       )
@@ -66,3 +62,8 @@ const StyledWelcome = styled(BizTech)`
   background-size: cover;
 `
 export default StyledWelcome
+//<p>I would love to hear about what you are working on and your vision for it.</p>
+/*
+<p>Beliefs and circumstance changes, but honest interaction remains.</p>
+                <p></p>
+                */

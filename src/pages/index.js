@@ -20,48 +20,44 @@ const IndexPage = () => {
   const [showBrand, setShowBrand] = useState(true);
   const [brandClass, setBrandClass] = useState("");
   const [navBaseClass, setNavBaseClass] = useState("nav-link");
+
   useEffect(() => { 
     function handleScroll() {
       let scrollY = window.scrollY;
-      console.log("Scroll: " + scrollY);
+      //console.log("Scroll: " + scrollY);
       if (scrollY > 1){
-		let firstComponent = document.getElementById("index-welcome");
-		if (firstComponent){
-		  let fcHeight = firstComponent.scrollHeight;
-		  console.log("wholisticComponent: " + fcHeight.scrollHeight);
-		  if (scrollY >= (fcHeight - 100)){
-	        setShowBrand(true);
-	        setBrandClass("filter-white");
-	        setNavBaseClass("nav-link-white");
-		  } else {
-			setShowBrand(true); // conditional show/hide of brand logo
-			setBrandClass("");
-			setNavBaseClass("nav-link");
-		  }
-		}
-	  }
+		    let firstComponent = document.getElementById("index-welcome");
+		    if (firstComponent){
+		      let fcHeight = firstComponent.scrollHeight;
+		      //console.log("wholisticComponent: " + fcHeight.scrollHeight);
+		      if (scrollY >= (fcHeight - 100)){
+            setShowBrand(true);
+            setBrandClass("filter-white");
+            setNavBaseClass("nav-link-white");
+		      } else {
+            setShowBrand(true); // conditional show/hide of brand logo
+            setBrandClass("");
+            setNavBaseClass("nav-link");
+          }
+        }
+      }
     }
-	if (window){
-	  console.log("window: " + window);
-	  window.addEventListener('scroll', handleScroll);
-	}
-	return () => window.removeEventListener('scroll', handleScroll)
+    if (window){
+      //console.log("window: " + window);
+      window.addEventListener('scroll', handleScroll);
+    }
+    return () => window.removeEventListener('scroll', handleScroll)
   }, []);
   
   let onWelcomeClick = (e) => {
     //console.info("BEGIN onWelcomeClick(): " + e.target);
-	let firstComponent = document.getElementById("index-welcome");
-	console.info("BEGIN onWelcomeClick(): " + firstComponent);
-	if (firstComponent){
-	  let fcHeight = firstComponent.scrollHeight;
-	  console.error("a woHeight: " + fcHeight);
-	  if (window)
-	    console.info("woHeight: " + fcHeight);
-		window.scroll({
-		  top: (fcHeight), 
-		  left: 0, 
-		  behavior: 'smooth'
-		});
+	  let firstComponent = document.getElementById("index-welcome");
+	  console.info("BEGIN onWelcomeClick(): " + firstComponent);
+	  if (firstComponent){
+	    let fcHeight = firstComponent.scrollHeight;
+	    console.error("a woHeight: " + fcHeight);
+	    if (window) console.info("woHeight: " + fcHeight);
+		  window.scroll({ top: (fcHeight), left: 0, behavior: 'smooth' });
 	  }
   }
   return (

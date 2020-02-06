@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 //import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
-import styled from 'styled-components'
+import { StaticQuery, graphql } from "gatsby";
+import styled from 'styled-components';
+import { Link } from "gatsby";
 
 import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel, } from 'react-accessible-accordion';
+
+import { FaGuitar, FaDrum } from "react-icons/fa";
 
 import Badge from 'react-bootstrap/Badge'
 
@@ -39,16 +42,19 @@ const BizTech = ({ className }) => {
       const imageData = data.desktop.childImageSharp.fluid;
       const settings = { dots: true, infinite: true, slidesToShow: 1, slidesToScroll: 1, autoplay: true, speed: 500, cssEase: "linear" };
       return (
-      <BackgroundImage Tag="section" className={className} fluid={imageData} backgroundColor={`transparent`} 
+      <BackgroundImage Tag="section" className="flow" fluid={imageData} backgroundColor={`transparent`} 
           style={{ width: `100%`, height: `100%`, display: `flex`, justifyContent: `center`, alignItems: `center`, backgroundRepeat: `no-repeat`, 
           backgroundSize: `cover`, backgroundPosition: `bottom` }}>
         <div style={{ minWidth: `100%`, textAlign: `center`, maxHeight: `350px`, display: `flex`, justifyContent: `center`, alignItems:  `center`, flexDirection: `column`, backgroundColor: `rgba(255,255,255,.5)`, borderTop: `1px solid rgba(100,100,100,.5)`, borderBottom: `1px solid rgba(100,100,100,.5)`, paddingBottom: `1rem`}}>
-          <h1 className="wholisticfont" style={{paddingTop: '1rem', fontSize: '4em'}}>Flow</h1>
-          <p>A state wherein otherwise difficult aims are achieved with ease.</p>
-          <h4>From compelling websites to enterprise microservices.</h4>
-          <p className="" style={{fontWeight:``}}>Wholistic makes it simpler.</p>
-          <div style={{width: `450px`, display: 'flex', justifyContent: `space-between`}}>
-            <a href="">Get a Quote</a> <a href="">Project Builder</a> <a href="">Wholistic Philosophy</a>
+          <h1 className="wholisticfont" style={{paddingTop: '1rem', fontSize: '4em',cursor:`pointer`}} onClick={() => alert('Flow: A state wherein otherwise  difficult aims are achieved with ease.')}>Flow</h1>
+          <p style={{fontSize:`25px`,fontSize:`20px`}}>From <b>compelling websites</b> to <b>enterprise microservices</b></p>
+          <h3 className="" style={{fontWeight:``, color:`#BC7421`}}><span className="wholisticfont">Wholistic</span> makes <span style={{fontFamily:`nav-font`}}>SOFTWARE</span> Simpler</h3>
+          <div style={{width: `500px`, display: 'flex', justifyContent: `space-between`, paddingTop:`1em`}}>
+            <Link to="/services" className="flow-link">Get a Quote</Link>
+            <span><FaGuitar style={{color:`rgb(0, 123, 255)`, fontSize:`12px`}}/></span>
+            <Link to="/services#builder" className="flow-link">Project Builder</Link>
+            <span><FaDrum style={{color:`rgb(0, 123, 255)`, fontSize:`12px`}}/></span>
+            <Link to="/philosophy" className="flow-link">Wholistic Philosophy</Link>
           </div>
         </div>
       </BackgroundImage>

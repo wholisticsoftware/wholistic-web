@@ -16,7 +16,7 @@ import "./layout.css"
 
 //
 
-// <div style={{ backgroundImage: `url(./images/willow-creek.jpg)` }}>foobar baz</div>
+// <div style={{ backgroundImage: `url(./images/oak-creek.jpg)` }}>foobar baz</div>
               
 const BizTech = ({ className }) => {
 	const [projectType, setProjectType] = useState("unknown");
@@ -64,7 +64,7 @@ const BizTech = ({ className }) => {
     <StaticQuery
       query={graphql`
         query {
-          desktop: file(relativePath: { eq: "jane-palmer-creek.jpg" }) {
+          desktop: file(relativePath: { eq: "oak-creek.jpg" }) {
             childImageSharp {
               fluid(quality: 90, maxWidth: 1920) {
                 ...GatsbyImageSharpFluid_withWebp
@@ -79,16 +79,16 @@ const BizTech = ({ className }) => {
       return (
       <BackgroundImage Tag="section" className={className} fluid={imageData} backgroundColor={`transparent`} 
             style={{ width: `100%`, height: `100%`, display: `flex`, justifyContent: `center`, alignItems: `center`, backgroundRepeat: `no-repeat`, 
-        backgroundSize: `cover`, backgroundPosition: `bottom`, }}>
+        backgroundSize: `cover`, backgroundPosition: `bottom`, textAlign:`center`}}>
         {complete}
             <div id="questions" style={{ width: `100%`, maxHeight: `350px`, display: `flex`, justifyContent: `center`, alignItems: `center`,
           flexDirection: `column`, minWidth: `750px`, backgroundColor: `rgba(255,255,255,.5)`, borderTop: `2px solid grey`, borderBottom: `2px solid grey`, borderRadius:`0px 0px 0px 0px` }}>
-          <div id="complete-msg" className={complete === true ? '' : 'collapse'} >
+          <div id="complete-msg" className={complete === true ? '' : 'collapse'} style={{paddingTop:`1em`}} >
             <h2 className="wholisticfont">Thanks!</h2>
           </div>
           <div className={complete === false ? 'questions' : 'collapse'}>
           <div className="projectType">
-            <h2>{projectType === "unknown" ? 'Tell us About It' : ''}</h2>
+            <h2>{projectType === "unknown" ? 'Tell Us a Little About Your Project' : ''}</h2>
             <div className="options">
             <form>
               <Badge pill variant="primary" className={projectType === "unknown" ? '' : (projectType === 'new' ? 'rotate-90' : 'collapse')}>
@@ -209,14 +209,14 @@ const BizTech = ({ className }) => {
             </form>
             </div>
             </div>
-            <div className="contact" className={(techPref === "unknown" || techPref === "no" || techPref === "complete") ? '' : 'collapse'}>
+            <div className="contact" className={(techPref === "no" || techPref === "complete") ? '' : 'collapse'}>
              <h2>Got it. How do we get a hold of you?</h2>
              <div className="options" id="contact-form" style={{display:`flex`, flexLayout:`space-between`}}>
                 <Badge pill variant="primary">
                   <label style={{paddingRight:`1em`}}><input type='email' value={email} placeholder="Email" onChange={(e)=>setEmail(e.target.value)}></input></label><br />
                 </Badge>
                 <Badge pill variant="primary">
-                  <label><input type='phone' value={phone} placeholder="Phone" onChange={(e)=>setPhone(e.target.value)}></input></label><br/>
+                  <label><input type='tel' value={phone} placeholder="Phone" onChange={(e)=>setPhone(e.target.value)}></input></label><br/>
                 </Badge>
                 <Button onClick={submitForm}>Done!</Button>
              </div>

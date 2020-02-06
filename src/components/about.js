@@ -68,11 +68,16 @@ const About = () => {
     <div style={{padding: `10rem`}}>
       <h2>About this Website</h2>
       <h3>Photographs</h3>
-      <p>Many of the images on this page are taken from the extraordinary nature photography of Jane Palmer: janepalmerphotography.com</p>
-      <p>In addition to photography, Jane is passionate about Horse Rescue: Equestrian Rescue Foundation.</p>
+      <p>The shot of the river on this website comes from the extraordinary nature photography of Jane Palmer: janepalmerphotography.com</p>
+      <p>In addition to photography, Jane is passionate about Horse Rescue: <a href="http://www.equineadoption.com/">Equestrian Rescue Foundation.</a></p>
+      <hr/>
       <h3>Development</h3>
-      <p>Much of the work on this UI was done by Dominic Gerweck, of Verden (Aller), Deutschland.</p>
+      <p>Some of the work on this UI was done by Dominic Gerweck, of Verden (Aller), Deutschland.</p>
       <p>dominic-gerweck.de | @Doger83_Dev</p>
+      <hr/>
+      <p>This page uses Gatsby, on top of React.</p>
+      <p>See something you think could be better?</p>
+      <p>Fix it: wholistic-web github</p>
     </div>
 )}
 
