@@ -77,7 +77,7 @@ const About = () => {
       <hr/>
       <p>This page uses Gatsby, on top of React.</p>
       <p>See something you think could be better?</p>
-      <p>Fix it: wholistic-web github</p>
+      <p>Awesome, Build it! https://github.com/wholisticsoftware/wholistic-web</p>
     </div>
 )}
 
