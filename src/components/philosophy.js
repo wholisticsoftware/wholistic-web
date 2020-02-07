@@ -33,7 +33,7 @@ const BizTech = ({ className }) => (
           style={{ width: `100%`, display: `flex`, justifyContent: `center`, backgroundRepeat: `no-repeat`, 
           backgroundSize: `cover`, backgroundAttachment:`fixed`, backgroundPosition: `top`, alignItems: `center`, textAlign:`center`, flexDirection:`column`, paddingTop:`7em`}}>
             
-                <p className="content"><span className="wholisticfont" style={{fontSize:`2.5em`,fontWeight:`regular`}}>Wholistic</span><br/>makes <b>software</b> easier.</p>
+                <p className="content" style={{background:`linear-gradient(90deg, rgba(251,251,252,0) 0%, rgba(253,253,255,1) 50%, rgba(251,249,249,0) 100%)`}}><span className="wholisticfont" style={{fontSize:`2.5em`,fontWeight:`regular`}}>Wholistic</span><br/>makes <b>software</b> easier.</p>
                 <hr/>
                 <div className="content">
                 <p><em>People</em> are our secret.</p><br/>
@@ -43,10 +43,10 @@ const BizTech = ({ className }) => (
                 <p>Let's Build</p>
                 </div>
                 <hr/>
-                
-                <Technology></Technology>
                 <hr/>
-                <Companies></Companies>
+                
+                <p className="content" style={{backgroundColor:`rgba(50,125,75,.75)`}}>Bixby Bridge, Big Sur, CA</p>
+                
                 <hr/>
                 <hr/>
                 <div className="content" style={{width:`100%`, padding: `0`}}>
@@ -65,7 +65,11 @@ const StyledWelcome = styled(BizTech)`
   background-size: cover;
 `
 export default StyledWelcome
-
+/*
+ <Technology></Technology>
+                <hr/>
+                <Companies></Companies>
+*/
 /*
 
 <div>

@@ -18,8 +18,12 @@ const Quote = ({ className }) => {
   const [email, setEmail] = useState();
   const [body, setBody] = useState();
   const [complete, setComplete] = useState(false);
+  // TODO: The below scroll handlers are brittle
   const techScroll = () => {
     scrollNext(null, "companies");
+  }
+  const compScroll = () => {
+    scrollNext(null, "builder");
   }
   const submitForm = () => {
     var templateParams = {
@@ -85,7 +89,7 @@ const Quote = ({ className }) => {
                     <Button className="go-button" style={{width:`300px`}} onClick={submitForm}>GO</Button>
                   </form>
 
-                  <a className="softwarefont">Try The Project Builder</a><br/>
+                  <a className="softwarefont" style={{cursor:`pointer`}} onClick={scrollNext}>Learn More</a><br/>
                   <FaChevronDown style={{cursor:`pointer`}} onClick={scrollNext}/>
                 </div>
                 <div className="content" style={{display:complete ? "" : "none" }}>
@@ -94,7 +98,7 @@ const Quote = ({ className }) => {
                 <hr/>
                 <Technology onScroll={() => techScroll()}></Technology> 
                 <hr/><hr/>
-                <Companies></Companies>
+                <Companies onScroll={() => compScroll()}></Companies>
                 <hr/>
                 <hr/>
         </BackgroundImage>

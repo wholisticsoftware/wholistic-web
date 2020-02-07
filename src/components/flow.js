@@ -48,7 +48,7 @@ const BizTech = ({ className }) => {
         <div style={{ minWidth: `100%`, textAlign: `center`, maxHeight: `350px`, display: `flex`, justifyContent: `center`, alignItems:  `center`, flexDirection: `column`, backgroundColor: `rgba(255,255,255,.5)`, borderTop: `1px solid rgba(100,100,100,.5)`, borderBottom: `1px solid rgba(100,100,100,.5)`, paddingBottom: `1rem`}}>
           <h1 className="wholisticfont" style={{paddingTop: '1rem', fontSize: '4em',cursor:`pointer`}} onClick={() => alert('Flow: A state wherein otherwise  difficult aims are achieved with ease.')}>Flow</h1>
           <p style={{fontSize:`25px`,fontSize:`20px`}}>From <b>compelling websites</b> to <b>enterprise microservices</b></p>
-          <h3 className="" style={{fontWeight:``, color:`#BC7421`}}><span className="wholisticfont">Wholistic</span> makes <span style={{fontFamily:`nav-font`}}>SOFTWARE</span> Simpler</h3>
+          <h3 className="" style={{fontWeight:`light`, color:`#BC7421`}}><span className="wholisticfont">Wholistic</span> makes <span style={{fontFamily:`nav-font`}}>SOFTWARE</span> Simpler</h3>
           <div style={{width: `500px`, display: 'flex', justifyContent: `space-between`, paddingTop:`1em`}}>
             <Link to="/services" className="flow-link">Get a Quote</Link>
             <span><FaGuitar style={{color:`rgb(0, 123, 255)`, fontSize:`12px`}}/></span>

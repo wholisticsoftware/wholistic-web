@@ -77,7 +77,7 @@ const BizTech = ({ className }) => {
       const imageData = data.desktop.childImageSharp.fluid;
       const settings = { dots: true, infinite: true, slidesToShow: 1, slidesToScroll: 1, autoplay: true, speed: 500, cssEase: "linear" };
       return (
-      <BackgroundImage Tag="section" className={className} fluid={imageData} backgroundColor={`transparent`} 
+      <BackgroundImage id="builder" Tag="section" className={className} fluid={imageData} backgroundColor={`transparent`} 
             style={{ width: `100%`, height: `100%`, display: `flex`, justifyContent: `center`, alignItems: `center`, backgroundRepeat: `no-repeat`, 
         backgroundSize: `cover`, backgroundPosition: `bottom`, textAlign:`center`}}>
         {complete}

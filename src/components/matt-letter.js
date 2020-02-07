@@ -11,7 +11,7 @@ const BizTech = ({ className }) => (
   <StaticQuery
     query={graphql`
       query {
-        desktop: file(relativePath: { eq: "desert-condor-big.jpg" }) {
+        desktop: file(relativePath: { eq: "desert-condor-big-2.jpg" }) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 1920) {
               ...GatsbyImageSharpFluid_withWebp
@@ -39,9 +39,9 @@ const BizTech = ({ className }) => (
           <div style={{display:`flex`, flexDirection:`column`, alignItems:`center`}}>
             <p style={{marginTop: `5rem`, maxWidth:`450px`}}><h2>The essence of right action is <span className="wholisticfont">authenticity</span>.</h2></p>
             <div style={{ display: `flex`, justifyContent: `space-between`, alignItems: `center`, overflow:`auto`, minHeight:`200px`, minWidth:`375px`}}>
-                <p style={{maxWidth:`100px`}}>The way of software is art balanced with logic. </p>
-                <p style={{maxWidth:`100px`}}>Good people working well together is the art of software.</p>
-                <p style={{maxWidth:`100px`}}>Sincerety is the criterion of working well together.</p>
+                <p style={{maxWidth:`100px`, textAlign:`right`}}>Success <br/> is applied <br/> wisdom.</p>
+                <p style={{maxWidth:`100px`}}>Good people working well together is the heart of software.</p>
+                <p style={{maxWidth:`100px`, textAlign:`left`}}>Sincerety is the criterion of working well together.</p>
             </div>
             <div style={{ maxWidth:`500px`, fontFamily:`softwarefont`}}>
               <h3 style={{fontFamily:`softwarefont`,fontWeight:`bold`}}>I offer my sincere curiousity for what projects you undertake today.</h3>

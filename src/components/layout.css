@@ -894,9 +894,13 @@ footer {
   border-radius: 15px 15px 15px 15px;
   padding: 2px 7px 2px 7px;
   background-color: rgba(255,255,255,.25);
+  box-shadow:rgba(0, 123, 255, .5) 3px 3px;
+  text-decoration: none;
 }
 .flow-link:hover {
   background-color: rgba(255,255,255,.75);
+  box-shadow:rgba(0, 123, 255, .5) 0px 0px;
+  text-decoration: none;
 }
 
 .quote .content {
