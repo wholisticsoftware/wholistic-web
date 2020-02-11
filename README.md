@@ -8,35 +8,32 @@
   Wholistic Software - The Website
 </h1>
 
-Let's collaborate.
+*Let's collaborate.*
 
 This site uses react and gatsby.
 
-## 🚀 More Info
+## 🎸 Development
 
-1.  **TODO**
+1.  **Install Gatsby**
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+    You'll need gatsby set up locally.  To do that, just install it as a global npm package (that way it is not saved into the project, but is instead available on the commandline as the `gatsby` command):
 
     ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
+    npm install -g gatsby-cli
     ```
 
-1.  **TODO... MORE**
+2.  **Run it locally**
 
-    Navigate into your new site’s directory and start it up.
+    After you clone the project, you can run it from the project directory
 
     ```shell
-    cd my-default-starter/
+    cd /wholistic-web/
     gatsby develop
     ```
 
-1.  **Open the source code and start editing!**
+3.  **Open the source code and start editing!**
 
     Your site is now running at `http://localhost:8000`!
-
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
     Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
