@@ -1,11 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 //import { Link } from "gatsby"
+import { StaticQuery, graphql } from "gatsby";
+
 
 import Layout from "../components/layout"
 //import Image from "../components/image"
 import SEO from "../components/seo"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+import BackgroundImage from 'gatsby-background-image';
 
 //import Scrollable from "../components/scrollable/scrollable";
 
@@ -14,14 +18,53 @@ import Wholistic from "../components/wholistic"
 //import BizTech from "../components/business-tech"
 import Philosophy from "../components/philosophy"
 
-//     <BizTech></BizTech>
-//
-/*
- *     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+const About = () => {
+  return (
+  <StaticQuery
+    query={graphql`
+      query {
+        desktop: file(relativePath: { eq: "guitar4.jpg" }) {
+          childImageSharp {
+            fluid(quality: 90, maxWidth: 1920) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `}
+    render={data => {
+      const imageData = data.desktop.childImageSharp.fluid
+      
+      return (
+        <BackgroundImage className="quote" Tag="section" fluid={imageData} backgroundColor={`transparent`} 
+          style={{ width: `100%`, height:`100vh`, display: `flex`, justifyContent: `center`, backgroundRepeat: `no-repeat`, 
+          backgroundSize: `cover`, backgroundAttachment:`fixed`, backgroundPosition: `top`, alignItems: `center`, textAlign:`left`, flexDirection:`column`, paddingTop:`7em`, backgroundOrigin:`bottom`}}>
+          <div style={{padding: `10rem`}}>
+      <h2>About this Website</h2>
+      <div style={{backgroundColor:`rgba(255,255,255,.9)`}}>
+        <h3>Photographs</h3>
+        <p>The shot of the river on this website comes from the extraordinary nature photography of Jane Palmer: janepalmerphotography.com</p>
+        <p>In addition to photography, Jane is passionate about Horse Rescue: <a href="http://www.equineadoption.com/">Equestrian Rescue Foundation.</a></p>
+      </div>
+      <hr/>
+      <div style={{backgroundColor:`rgba(255,255,255,.9)`}}>
+        <h3>Development</h3>
+        <p>Some of the work on this UI was done by Dominic Gerweck, of Verden (Aller), Deutschland.</p>
+        <p>dominic-gerweck.de | @Doger83_Dev</p>
+      </div>
+        <hr/>
+        <p>This page uses Gatsby, on top of React.</p>
+        <p>See something you think could be better?</p>
+        <p>Awesome, Build it! https://github.com/wholisticsoftware/wholistic-web</p>
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
-    * */
+        </BackgroundImage>
+      )
+    }}
+  />
+)}
+  
+export default About;
+/*
 const About = () => {
   const wholisticComponent = useRef(null);
   const [showBrand, setShowBrand] = useState(true);
@@ -81,8 +124,8 @@ const About = () => {
     </div>
 )}
 
-export default About
 
+*/
 /*
  * 
  * -componentDidMount() {

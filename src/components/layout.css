@@ -634,14 +634,14 @@ div nav.navbar {
 .text-slider-container {
     border-top: 1px solid var(--theme-ui-colors-ui-border, rgba(0,0,0,.1));
     border-bottom: 1px solid var(--theme-ui-colors-ui-border, rgba(0,0,0,.1));
-    padding: 1rem 3rem;
+    /*padding: 1rem 3rem;*/
     /*margin-top: 1.5rem;
     margin-bottom: 1.5rem;*/
     position: relative;
-    background-color: white;
+    background: linear-gradient(90deg, rgba(251,251,252,0) 0%, rgba(253,253,254,1) 40%, rgba(253,253,255,1) 50%, rgba(253,253,254,1) 60%, rgba(251,249,249,0) 100%);
     text-align: center;
     /*background-image: linear-gradient(to right, rgba(255/*255,255,0), rgba(255,255,255,1));*/
-    opacity: .9;
+    /*opacity: .9;*/
     max-height: 20%;
     max-width: 50%;
     min-width: 50%;
@@ -915,4 +915,21 @@ footer {
 }
 .quote .go-button:hover {
   background-color: rgb(93,50,40);
+}
+
+/*Make collapsed navbar visible*/
+.navbar-collapse.justify-content-stretch.collapse.show{
+  background-color: rgba(255,255,255,.975);
+}
+
+/** general **/
+.button-slanted {
+  -ms-transform: skewX(-20deg);
+  -webkit-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+.button-slanted:hover {
+  -ms-transform: skewX(0deg);
+  -webkit-transform: skewX(0deg);
+  transform: skewX(0deg);
 }

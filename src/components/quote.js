@@ -92,7 +92,8 @@ const Quote = ({ className }) => {
                   <a className="softwarefont" style={{cursor:`pointer`}} onClick={scrollNext}>Learn More</a><br/>
                   <FaChevronDown style={{cursor:`pointer`}} onClick={scrollNext}/>
                 </div>
-                <div className="content" style={{display:complete ? "" : "none" }}>
+                <div className="content" style={{display:complete ? "" : "none"}}>
+                  <p>Message Received</p>
                   <h2 className="wholisticfont">Thanks!</h2>
                 </div>
                 <hr/>

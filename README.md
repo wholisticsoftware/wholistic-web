@@ -89,3 +89,35 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 
 <!-- AUTO-GENERATED-CONTENT:END -->
+
+
+What is wholistic software?
+
+It is a rallying cry.
+
+It starts with the recognition that software is an art.
+
+That means people love it for itself.
+
+Those people are musicians of the mind.
+
+They are called software developers.
+
+So what services are we offering, besides high-fallutin ideas?
+
+First: The hardest single part of building a software system is deciding precisely what to build. (Fred Brooks said this)
+So, if you need help defining your needs, we can help there.
+
+Second: We help you figure out what technology choices are the best for your needs.
+
+Third: We help you implement those choices. 
+
+Forth: We help you evolve all these elements as progress proceeds. That is called agile. 
+
+So, Wholistic is a band, and you can hire us to play your event.  Or, we can play a show together. 
+
+You can even join the band.
+
+https://www.youtube.com/watch?v=YwSZvHqf9qM
+
+

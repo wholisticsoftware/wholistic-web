@@ -8,7 +8,7 @@ import { FaChevronDown } from 'react-icons/fa';
 
 const Technology = ({ className, onScroll }) => (
 <div id="tech" className="content" style={{backgroundColor:`rgba(110,60,70,.95)`,color:`white`,border:`1px`,display:`flex`,
-    flexDirection:`column`,justifyContent:`space-between`, alignItems:`center`, height:`100vh`}}>
+    flexDirection:`column`,justifyContent:`space-between`, alignItems:`center`, height:`100vh`, transform: `skewY(-1.5deg)`, transformOrigin: `100%`}}>
     <div>&nbsp;</div>
     <div>
   <h3>Some of the Tools we Use</h3><hr/>
@@ -32,5 +32,6 @@ const Technology = ({ className, onScroll }) => (
 );
 
 export default Technology;
+// clipPath: `polygon(0 0, 100% 0, 100% 96%, 0 100%)`,
 
 //<a className="softwarefont" style={{cursor:`pointer`}}>(Try The Project Builder)</a><br/>

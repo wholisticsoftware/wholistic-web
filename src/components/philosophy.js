@@ -45,7 +45,10 @@ const BizTech = ({ className }) => (
                 <hr/>
                 <hr/>
                 
-                <p className="content" style={{backgroundColor:`rgba(50,125,75,.75)`}}>Bixby Bridge, Big Sur, CA</p>
+                <div className="content" style={{backgroundColor:`rgba(50,125,75,.75)`}}>
+                  <p>It was here in Big Sur that I first learned to say "Amen" -- Henry Miller</p>
+                  <p>Bixby Bridge, Big Sur, CA</p>
+                </div>
                 
                 <hr/>
                 <hr/>
@@ -57,7 +60,7 @@ const BizTech = ({ className }) => (
     }}
   />
 )
-
+// Big Sur is the face of the Earth as the creator intended it to look. -- Henry Miller
 const StyledWelcome = styled(BizTech)`
   width: 100%;
   background-position: left;
