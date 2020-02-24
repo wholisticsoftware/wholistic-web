@@ -620,6 +620,13 @@ div nav.navbar {
   max-height: 120px;
   padding-left: 2em;
 }
+@media only screen and (max-width: 480px) {
+  .navbar-brand svg {
+    max-width: 120px;
+    max-height: 75px;
+  }
+}
+
 .navbar-nav {
   padding-right: 1em;
 }
@@ -642,16 +649,21 @@ div nav.navbar {
     text-align: center;
     /*background-image: linear-gradient(to right, rgba(255/*255,255,0), rgba(255,255,255,1));*/
     /*opacity: .9;*/
-    max-height: 20%;
+    max-height: 300px;
     max-width: 50%;
     min-width: 50%;
-}/*
-.text-slider-container h1 {
-  padding: 0px;
-}*/
-@media only screen and (max-width: 600px) {
+}
+.slider-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+@media only screen and (max-width: 360px) {
   .text-slider-container {
      max-width: 100%;
+     max-height: 150px;
   }
 }
 .text-slider-container p {
@@ -827,7 +839,7 @@ footer {
 .rotate-90{
  /*animation: animationFrames 1s ease 0s 1 normal forwards running;
   transform-origin: 10px 10px;*/
- 
+
   /*transform: rotate(90deg);*/
 }
 @keyframes animationFrames {
@@ -852,7 +864,7 @@ footer {
 .questions form {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
-} 
+}
 
 
 /** contact */

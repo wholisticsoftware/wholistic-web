@@ -9,11 +9,14 @@ import Slider from "react-slick";
 
 import { FaFly } from "react-icons/fa";
 import { GiCurledLeaf } from "react-icons/gi";
+import { GoTriangleDown } from "react-icons/go";
+
+import Icon from "../svg/wholistic-logo-tight.svg";
 
 import "./layout.css"
 
 // <div style={{ backgroundImage: `url(./images/willow-creek.jpg)` }}>foobar baz</div>
-              
+
 const Welcome = ({ className, onWelcomeClick, id }) => {
 	return (
   <StaticQuery
@@ -35,41 +38,41 @@ const Welcome = ({ className, onWelcomeClick, id }) => {
         <ReactTextRotator content={content} time={5000} startDelay={2000} />
       </div> )
       */
-      
+
       const imageData = data.desktop.childImageSharp.fluid
-      
+
       const settings = { dots: true, infinite: true, slidesToShow: 1, slidesToScroll: 1, autoplay: true, speed: 500, cssEase: "linear" };
       return (
-        <BackgroundImage id={id} Tag="section" className={className} fluid={imageData} backgroundColor={`transparent`} 
+        <BackgroundImage id={id} Tag="section" className={className} fluid={imageData} backgroundColor={`transparent`}
             style={{ width: `100%`, height: `100%`, display: `flex`, justifyContent: `center`, alignItems: `center`, backgroundRepeat: `no-repeat`, backgroundSize: `contain`, backgroundPosition: `bottom`}}>
-          <div style={{ width: `100%`, height: `100%`, display: `flex`, justifyContent: `center`, alignItems: `center` }}>
+          <div className="front-page" style={{ width: `100%`, height: `100%`, display: `flex`, justifyContent: `center`, alignItems: `center` }}>
             <div className="text-slider-container">
               <Slider {...settings}>
-                <div>
-                  <p>People and Technology</p>
-                  <h1 className="wholistic" style={{ wordWrap: `no-wrap`}}>Aligned</h1>
-                  <button className="go button-slanted" style={{ marginTop: `-1em`}} onClick={onWelcomeClick} >See How</button>
+                <div className="slider-inner">
+                  <div>&nbsp;</div>
+                  <Icon style={{maxWidth:'95px', maxHeight:'95px'}} />
+                  <div>&nbsp;</div>
                 </div>
                 <div>
-                  <p>Software Can Be</p>
-                  <h1 className="wholistic" style={{ wordWrap: `no-wrap` }}>Easier</h1>
-                  <button className="go button-slanted" style={{ marginTop: `-1em` }} onClick={onWelcomeClick}>Easy</button>
+                  <p>Get What</p>
+                  <h1 className="wholistic" style={{ wordWrap: `no-wrap`}}>You Need</h1>
+                  <p className='wholistic-arrow'><GoTriangleDown style={{fontSize:"1em", textAlign:'top'}} /></p>
                 </div>
                 <div>
-                  <p>Are You </p>
-                  <h1 className="wholistic" style={{ wordWrap: `no-wrap`}}>Looking For</h1>
-                  <button className="go button-slanted" onClick={onWelcomeClick}>Simplicity?</button>
+                  <p>The</p>
+                  <h1 className="wholistic" style={{ wordWrap: `no-wrap` }}>Easy Way</h1>
+                  <p className='wholistic-arrow'><GoTriangleDown style={{fontSize:"1em", textAlign:'top'}}/></p>
                 </div>
-                
+                {/*
                 <div id="foo" style={{display:'flex',flexDirection:`column`, justifyContent: `center`, alignItems:`center`, textAlign:`center`, cursor:`pointer`}} onClick={onWelcomeClick}>
                   <h1 className="wholistic" style={{ wordWrap: `no-wrap`, marginTop:`.1em`}}>Simplicity</h1>
-                  <GiCurledLeaf style={{/*transform:`rotate(90deg)`*/ fontSize:`3em`, marginBottom:`.5em`}}/>
+                  <GiCurledLeaf style={{ fontSize:`3em`, marginBottom:`.5em`}}/>
                   <FaFly style={{fontSize:`3em`, marginBottom:`.5em`, cursor:`pointer`}}/>
                   <GiCurledLeaf style={{transform: `scale(-1, 1)`, fontSize:`3em`, marginBottom:`.5em`}}/>
                   <p>&nbsp;</p>
                 </div>
-                
-                
+                */}
+
               </Slider>
             </div>
           </div>
@@ -113,4 +116,3 @@ export default StyledWelcome
 					<button className="go">GO</button>
 				  </div>
 				  */
-

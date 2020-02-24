@@ -12,9 +12,13 @@ const Header = ({ siteTitle, showBrand, brandClass, navBaseClass }) => {
   if (!navBaseClass) navBaseClass = "nav-link";
   return (
   <header>
-	<nav className="navbar navbar-expand-lg fixed-top navbar-light" fixed="top"> 
-      <span className="navbar-brand" href="#"><Link to="/" style={{visibility: showBrand ? '' : 'hidden'}} className={brandClass}><Icon /></Link></span>
-      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+	<nav className="navbar navbar-expand-lg fixed-top navbar-light" fixed="top">
+      <span className="navbar-brand" href="#">
+        <Link to="/" style={{visibility: showBrand ? '' : 'hidden'}} className={brandClass}>
+          <Icon className="nav-logo"/>
+        </Link>
+      </span>
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -37,7 +41,7 @@ const Header = ({ siteTitle, showBrand, brandClass, navBaseClass }) => {
 		  </li>
 		  <li><span className="nav-link">{` `}</span></li>
 		  <li className="nav-item">
-		    <Link className={navBaseClass} activeClassName="active-link" to="/about">+</Link>
+		    {/*}<Link className={navBaseClass} activeClassName="active-link" to="/about">+</Link>*/}
 		  </li>
 		</ul>
 	  </div>
@@ -46,7 +50,7 @@ const Header = ({ siteTitle, showBrand, brandClass, navBaseClass }) => {
 )}
 // <li className="nav-item"><Link className="nav-link" style={{ color: navLinkColor }}>contact</Link></li>
 /* to make a transparent backgruond on nav link holder: backgroundColor: `rgba(255,255,255,.98)` */
-/*  
+/*
   <header style={{ background: `transparent` }} >
     <Icon style={{ maxWidth: `150px`, maxHeight: `150px`, paddingLeft: `2em` }}/>
     <div style={{ margin: `0 auto`, maxWidth: 960 }} >
@@ -66,7 +70,7 @@ export default Header
 /*
   <nav className="navbar navbar-expand-lg fixed-top" fixed="top">
 		<a className="navbar-brand" href="#"><Link to="/"><Icon /></Link></a>
-		<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+		<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 		    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		  <span className="navbar-toggler-icon"></span>
 		</button>

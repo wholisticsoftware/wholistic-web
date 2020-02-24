@@ -20,9 +20,11 @@ const Layout = ({ children, showBrand, brandClass, navBaseClass }) => {
       <Header siteTitle={data.site.siteMetadata.title} showBrand={showBrand} brandClass={brandClass} navBaseClass={navBaseClass}/>
       <div style={{ margin: `0 auto`, height: `100%`, padding: `0px`, paddingTop: 0, }} >
         <main>{children}</main>
+        {/*
         <footer className="fixed-bottom" style={{ left: `auto`, right: `0px`}}>
           © {new Date().getFullYear()}, wholistic software, llc.
         </footer>
+        */}
       </div>
     </>
   )
