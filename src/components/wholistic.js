@@ -17,9 +17,9 @@ import "./layout.css"
 
 function Wholistic(props) {
   function clickWelcome(){
-	 if (props.onWelcomeClick){
-		props.onWelcomeClick();
-	 }
+	  if (props.onWelcomeClick){
+		  props.onWelcomeClick();
+	  }
   }
   const settings = {dots: false,infinite: false,slidesToShow: 1,slidesToScroll: 1,autoplay: true,fade: true,speed: 500 };  //, cssEase: "linear"
   return (

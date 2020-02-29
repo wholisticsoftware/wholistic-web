@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 //import Image from "../components/image"
@@ -16,12 +16,24 @@ import Philosophy from "../components/philosophy"
 //import Questionaire from "../components/questionaire"
 import Flow from "../components/flow"
 
-const IndexPage = () => {
+export const query = graphql`
+  query {
+    bixby: file(relativePath: { eq: "bixby.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth:1920){
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
+
+const IndexPage = ({data}) => {
   const [showBrand, setShowBrand] = useState(true);
   const [brandClass, setBrandClass] = useState("");
   const [navBaseClass, setNavBaseClass] = useState("nav-link");
 
-  useEffect(() => { 
+  useEffect(() => {
     function handleScroll() {
       let scrollY = window.scrollY;
       //console.log("Scroll: " + scrollY);
@@ -48,7 +60,7 @@ const IndexPage = () => {
     }
     return () => window.removeEventListener('scroll', handleScroll)
   }, []);
-  
+
   let onWelcomeClick = (e) => {
     //console.info("BEGIN onWelcomeClick(): " + e.target);
 	  let firstComponent = document.getElementById("index-welcome");
@@ -63,7 +75,7 @@ const IndexPage = () => {
   return (
   <Layout style={{ height: `100%`}} showBrand={showBrand} brandClass={brandClass} navBaseClass={navBaseClass}>
     <SEO title="Wholistic Software, LLC" />
-    <Welcome id='index-welcome' onWelcomeClick={onWelcomeClick}></Welcome>
+    <Welcome id='index-welcome' data={data} onWelcomeClick={onWelcomeClick}></Welcome>
     <Flow style={{ scrollSnapType: `y mandatory` }} ></Flow>
   </Layout>
 )}
@@ -71,7 +83,7 @@ const IndexPage = () => {
 export default IndexPage
 
 /*
- * 
+ *
  * -componentDidMount() {
 +useEffect(() => {
    axios
@@ -87,3 +99,23 @@ export default IndexPage
 +}, []);
 -}
 * */
+
+/*
+Bixby Picture palette
+#89908F
+#BAB6A4
+#46321B
+#5D6564
+#905A1B
+#C38948
+*/
+
+/*
+Bixby selection
+#AFAEA1
+#D2CDB2
+#A3856A
+#D5B27B
+#7A5536
+#DA9641
+*/
