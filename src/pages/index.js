@@ -9,16 +9,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //import "../../node_modules/slick-carousel/slick/slick.css";
 //import "../patch/slick-theme.css"; // This is a work around for font in slick-theme.css causing forever-load
 
-import Welcome from "../components/welcome"
-import Wholistic from "../components/wholistic"
-//import BizTech from "../components/business-tech"
-import Philosophy from "../components/philosophy"
-//import Questionaire from "../components/questionaire"
-import Flow from "../components/flow"
+import dividerImg from "../images/guitar4.jpg";
 
+import Welcome from "../components/welcome";
+import Hero from "../components/hero";
+import Flow from "../components/flow";
+//guitar4.jpg
 export const query = graphql`
   query {
-    bixby: file(relativePath: { eq: "bixby.jpg" }) {
+    strategy: file(relativePath: { eq: "SunTzu.jpg" }) {
       childImageSharp {
         fluid(maxWidth:1920){
           ...GatsbyImageSharpFluid
@@ -75,7 +74,11 @@ const IndexPage = ({data}) => {
   return (
   <Layout style={{ height: `100%`}} showBrand={showBrand} brandClass={brandClass} navBaseClass={navBaseClass}>
     <SEO title="Wholistic Software, LLC" />
+    <div className="nav-divider" style={{backgroundColor:"grey", backgroundImage:"url("+dividerImg+")", height:`3px`, width:'100%'}}></div>
+    <Hero data={data} />
+    <div className="spacer" style={{backgroundColor:"grey", backgroundImage:"url("+dividerImg+")", height:`3px`, width:'100%'}}></div>
     <Welcome id='index-welcome' data={data} onWelcomeClick={onWelcomeClick}></Welcome>
+
     <Flow style={{ scrollSnapType: `y mandatory` }} ></Flow>
   </Layout>
 )}

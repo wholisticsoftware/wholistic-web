@@ -33,7 +33,7 @@ const Header = ({ siteTitle, showBrand, brandClass, navBaseClass }) => {
 		  </li>
 		  <li><span className="nav-link">{` `}</span></li>
 		  <li className="nav-item">
-		    <Link className={navBaseClass} activeClassName="active-link" to="/philosophy">philosophy</Link>
+		    <Link className={navBaseClass} activeClassName="active-link" to="/philosophy">publications</Link>
 		  </li>
 		  <li><span className="nav-link">{` `}</span></li>
 		  <li className="nav-item">
