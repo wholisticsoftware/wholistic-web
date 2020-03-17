@@ -1,6 +1,6 @@
 import React, {useEffect} from "react"
 //import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql, Link } from "gatsby"
 import styled from 'styled-components';
 
 import microservices from '../images/microservices.png';
@@ -24,101 +24,57 @@ import { GoTriangleDown } from "react-icons/go";
 import Icon from "../svg/wholistic-logo-tight.svg";
 
 import "./layout.css"
-
-const adjectives = [
-  "Development Solutions", "Published Expertise", "Strategic Consultation"
-];
-const texts = [
-   "Need some heavy lifting? Efficient and focused software development at the scale you need.",
-   "Published expertise in the state-of-the-art, from JavaScript to devOps.",
-   "Action without adaquate strategy is the number 1 cause of software project failure."
-]
-const buttonTexts = [
-  "We Got Your Back",
-  "Read Some Articles",
-  "Get a free Consultation"
-];
+//https://colorhunt.co/palette/167893
 //https://css-tricks.com/look-ma-no-media-queries-responsive-layouts-using-css-grid/
 // <div style={{ backgroundImage: `url(./images/willow-creek.jpg)` }}>foobar baz</div>
 //https://www.schemecolor.com/soft-neutrals.php
 //https://www.npmjs.com/package/react-text-transition
 const Welcome = ({ className, onWelcomeClick, id, data }) => {
-	const [banner, setBanner] = React.useState("Strategic Consultation");
-  const [bannerX, setBannerX] = React.useState(0);
-  const [adjIndex, setAdjIndex] = React.useState(0);
-  const [opacity, setOpacity] = React.useState(1);
-  const [scale, setScale] = React.useState(1);
-  const [text, setText] = React.useState("Action without adaquate strategy is the number 1 cause of software project failure.");
-  const [buttonText, setButtonText] = React.useState("Get a free Consultation");
-
-  useEffect(() => {
-    let interval = setInterval(function(){
-  		setAdjIndex(adjIndex + 1);
-      setOpacity(0);
-      setScale(.95);
-      setBannerX(40);
-      let timeout = setTimeout(function(){
-        setBanner(adjectives[adjIndex % adjectives.length]);
-        setText(texts[adjIndex % texts.length]);
-        setButtonText(buttonTexts[adjIndex % buttonTexts.length]);
-        console.log("adj: " + adjectives[adjIndex % adjectives.length]);
-        setOpacity(1);
-        setScale(1);
-        setBannerX(0);
-      },1250)
-
-  	}, 2500)
-    return () => {
-      clearInterval(interval);
-      //clearTimeout(timeout);
-    };
-  });
 
 //border: solid aliceblue 3px;
 //<motion.span animate={{ opacity: opacity }} transition={{ duration: 1 }}>{adjective}</motion.span>
     return (
-      <div id={id} Tag="section" className="welcome" style={{}}>
-          <main class="wrapper">
-            <section class="breweries" id="breweries">
+      <div id={id} className="welcome" style={{}}>
+          <main className="wrapper">
+            <section className="breweries" id="breweries">
+            {/*<BackgroundImage id="breweries" className="breweries" Tag="section" fluid={data.guitar.childImageSharp.fluid} backgroundColor={`#040e18`}>*/}
               <ul>
-                <li>
-                  <figure>
-                    <img src={microservices} alt="Several hands holding beer glasses" />
-                    <figcaption><h3>What is Microservice Architecture?</h3></figcaption>
-                  </figure>
-                  <p>
-                    Made in the interiors of collapsing stars star stuff harvesting star light venture billions upon billions Drake Equation brain is the seed of intelligence?
-                  </p>
-                  <a href="#">Visit Website</a>
-                </li>
                 <li>
                   <figure>
                     <img src={suntzu} alt="Art of War" />
                     <figcaption><h3>Software Strategy</h3></figcaption>
                   </figure>
                   <p>
-                    "'Weeks of coding can save you hours of strategizing.'"
+                    We work with founders, engineers and execs to help define and refine strategy. Getting the high-level strategy right
+                    makes the most of your process, people and tech.
                   </p>
-                  <a href="#">Visit Website</a>
+                  <Link to="/services">Get a Free 1 Hour Consult</Link>
                 </li>
+                <li>
+                  <figure>
+                    <img src={microservices} alt="Several hands holding beer glasses" />
+                    <figcaption><h3>What is Microservice Architecture?</h3></figcaption>
+                  </figure>
+                  <p>
+                    Microservices decompose applications into remotely decoupled components. Is microservice right for your needs?
+                  </p>
+                  <a href="https://medium.com/swlh/what-why-when-microservices-4c5797c319d8">Learn About Microservices</a>
+                </li>
+
                 <li>
                   <figure>
                     <img src={modernui} alt="React, Angular and VueJS logos" />
                     <figcaption><h3>Modern JS Frameworks Explained</h3></figcaption>
                   </figure>
                   <p>
-                    https://medium.com/@matthewcarltyson/modern-ui-explained-in-4-paragraphs-and-2-pictures-2494042b3847
+                    React, Angular and Vue took the JavaScript and web UI world by storm. What is it about them? How do they work?
                   </p>
-                  <a href="#">Visit Website</a>
+                  <a href="https://medium.com/@matthewcarltyson/modern-ui-explained-in-4-paragraphs-and-2-pictures-2494042b3847">Learn About Modern UI</a>
                 </li>
               </ul>
             </section>
           </main>
 
-
-
-          <div style={{backgroundColor:'#796465'}}>Wholistic Software delivers high-impact software strategy.</div>
-          <div style={{backgroundColor:'#796465'}}>Technical Articles</div>
           {/*<motion.div className="text-slider-container circle" onClick={onWelcomeClick} animate={{scale:1}} initial={{ scale: 0 }}
              transition={{ mass: 1, type: "spring" }}>
                <h1 className="wholisticfont" style={{fontSize:`50px`}}>Strategy</h1>

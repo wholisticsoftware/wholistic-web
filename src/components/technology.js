@@ -7,11 +7,11 @@ import { GiSpring } from 'react-icons/gi';
 import { FaChevronDown } from 'react-icons/fa';
 
 const Technology = ({ className, onScroll }) => (
-<div id="tech" className="content" style={{backgroundColor:`rgba(110,60,70,.95)`,color:`white`,border:`1px`,display:`flex`,
-    flexDirection:`column`,justifyContent:`space-between`, alignItems:`center`, height:`100vh`, transform: `skewY(-1.5deg)`, transformOrigin: `100%`}}>
+<div id="tech" className="content" style={{backgroundColor:`rgba(110,60,70,.95)`,color:`white`,border:`1px`,display:`flex`, height:"80vh",
+    flexDirection:`column`,justifyContent:`space-between`, alignItems:`center`}}>
     <div>&nbsp;</div>
     <div>
-  <h3>Some of the Tools we Use</h3><hr/>
+  <h3 style={{textAlign:'center'}}>Some of the Tools we Use</h3><hr/>
   <ul style={{columns: `3`, textAlign:`left`, maxWidth:`375px`, listStyle: `none`}}>
   <li><DiAws style={{fontSize:`2em`}} /> AWS</li>
   <li><DiGoogleCloudPlatform style={{fontSize:`2em`}} /> GCP</li>

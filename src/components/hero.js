@@ -26,21 +26,23 @@ import Icon from "../svg/wholistic-logo-tight.svg";
 import "./layout.css"
 
 const adjectives = [
-  "Development Solutions", "Published Expertise", "Strategic Consultation"
+  "We Know Remote", "Strategic Partner", "Simple, Efficient, Reliable"
 ];
 const texts = [
-   "Need some heavy lifting? Efficient and focused software development at the scale you need.",
+   "Over 15 years of experience in remote dev at your service!",
    "Published expertise in the state-of-the-art, from JavaScript to devOps.",
    "Action without adaquate strategy is the number 1 cause of software project failure."
 ]
 const buttonTexts = [
-  "We Got Your Back",
-  "Read Some Articles",
+  "Dev Services",
+  "Check it Out",
   "Get a free Consultation"
 ];
 
-const Welcome = ({ className, onWelcomeClick, id, data }) => {
-	const [banner, setBanner] = React.useState("Strategic Consultation");
+
+
+const Welcome = ({ className, onWelcomeClick, id, data, expandState }) => {
+	const [banner, setBanner] = React.useState("We Know Remote");
   const [bannerX, setBannerX] = React.useState(0);
   const [adjIndex, setAdjIndex] = React.useState(0);
   const [opacity, setOpacity] = React.useState(1);
@@ -72,14 +74,15 @@ const Welcome = ({ className, onWelcomeClick, id, data }) => {
   });
 
     return (
-      <div className="hero" Tag="section" fluid={data.strategy.childImageSharp.fluid}
-          style={{backgroundPosition:"left", backgroundSize:"contain",  backgroundColor:"black"}}>
+      <motion.div className="hero" style={{backgroundPosition:"left", backgroundSize:"contain",  backgroundColor:"black"}} 
+         initial={{height:0}} transition={{delay:.33}}
+         animate={{height: expandState ? '' : 0 }}>
         <motion.h1 animate={{ opacity: opacity, x: bannerX }} transition={{ duration: 1.25 }}>{banner}</motion.h1>
-        <article>
+          <article>
           <p>{text}</p>
           <a href="#breweries">{buttonText}</a>
-        </article>
-      </div>
+          </article>
+      </motion.div>
 )}
 
 const StyledWelcome = styled(Welcome)`

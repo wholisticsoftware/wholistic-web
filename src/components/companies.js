@@ -22,23 +22,23 @@ const Technology = ({ className, onScroll }) => {
 
   return (
   <div id="companies" className="content" style={{backgroundColor:`rgba(50,50,75,.95)`,color:`white`,border:`1px`,display:`flex`,
-    flexDirection:`column`,justifyContent:`space-between`, alignItems:`center`, height:`100vh`}}>
+    flexDirection:`column`,justifyContent:`space-between`, alignItems:`center`, paddigTop: '5em', paddingBottom: '5em'}}>
     <div>&nbsp;</div>
-    <div style={{height:`300px`}}>
-      <h3>Some Companies We've Worked With</h3><hr/>
-      <div style={{display:`flex`, flexDirection:`row`, justifyContent:`space-between`}}>
-        <IbmLogo style={{maxWidth: `75px`, maxHeight:`75px`}}/>
-        <CiscoLogo style={{maxWidth: `75px`, maxHeight:`75px`}}/>
-        <ActLogo id="actLogo" style={{maxWidth: `150px`, maxHeight:`75px`}} />
-        <PacLifeLogo style={{maxWidth: `125px`}}/>
-      </div>
-      <div style={{display:`flex`, flexDirection:`row`, minHeight:`300px`, justifyContent:`space-around`}}>
-        <ProlificsLogo style={{maxWidth: `125px`}}/>
-        <DeloitteLogo style={{maxWidth: `75px`, maxHeight:`30px`}} />
-        <NorthernTrustLogo style={{maxWidth: `75px`, maxHeight:`75px`}} />
+    <div style={{}}>
+      <h3>Companies We've Worked With</h3><hr/>
+      <div style={{display:`flex`, flexDirection:`row`, justifyContent:`space-between`, flexWrap: "wrap", padding: "1.5em"}}>
+        <IbmLogo style={{maxWidth: `75px`, maxHeight:`75px`, margin: "1em"}}/>
+        <CiscoLogo style={{maxWidth: `75px`, maxHeight:`75px`, margin: "1em"}}/>
+        <ActLogo id="actLogo" style={{maxWidth: `150px`, maxHeight:`75px`, margin: "1em"}} />
+
+        <ProlificsLogo style={{maxWidth: `125px`, margin: "1em"}}/>
+        <DeloitteLogo style={{maxWidth: `75px`, maxHeight:`30px`, margin: "1em"}} />
+        <PacLifeLogo style={{maxWidth: `125px`, maxHeight:'75px', margin: "1em"}}/>
+        <NorthernTrustLogo style={{maxWidth: `125px`, maxHeight:`75px`, margin: "1em"}} />
+        &nbsp;
       </div>
     </div>
-    <FaChevronDown style={{cursor:`pointer`}} onClick={onScroll ? onScroll : console.log('ignore')}/>
+    {/*<FaChevronDown style={{cursor:`pointer`}} onClick={onScroll ? onScroll : console.log('ignore')}/>*/}
   </div>
 )};
 

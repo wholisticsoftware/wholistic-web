@@ -606,7 +606,7 @@ div nav.navbar {
 .nav-item .nav-link-white {
   font-family: "nav-font"; font-size: 20px; font-style: normal; font-variant: small-caps; font-weight: 100; line-height: 23px;
   color: white;
-  padding-left: .5rem; padding-right: .5rem;
+  /*padding-left: .5rem; padding-right: .5rem;*/
 }
 .navbar-nav .nav-item a.nav-link:hover {
   color: darkorange;
@@ -620,13 +620,16 @@ span.navbar-brand {
   max-height: 100px;
   padding-left: 2em;
 }
+.navbar-spacer { max-height: 110px; }
 .nav-divider {
   margin-top:100px;
 }
+
 @media only screen and (max-width: 480px) {
   .nav-divider {
     margin-top:55px;
   }
+  .navbar-spacer { max-height: 60px; }
   .navbar-brand svg {
     padding-left: 7.5px;
     padding-top:8px; padding-bottom: 8px;
@@ -634,6 +637,7 @@ span.navbar-brand {
     max-height: 55px;
   }
 }
+
 .navbar-nav { padding-right: 1em; }
 /*.navbar-brand svg:hover {
   max-width: 160px;
@@ -653,8 +657,8 @@ span.navbar-brand {
     background-position: center 70%;
   }
   .navbar-brand svg {
-    max-width: 90px;
-    padding-left: 0px;
+    /*max-width: 90px;
+    padding-left: 0px;*/
   }
   .welcome .text-slider-container {
     width: 300px;
@@ -685,7 +689,7 @@ span.navbar-brand {
     align-content: center;
     justify-items: center;
 }
-.text-slider-container .button {
+.text-slider-container .button {/*
   border-radius: 50%;
   border: solid 2px #46321B;
   background-color: #5D6564;
@@ -694,7 +698,7 @@ span.navbar-brand {
   flex-direction: column;
   justify-content: center;
   align-items:center;
-
+*/
 }
 .text-slider-container .wholistic-arrow {
   font-size: 104px;
@@ -726,7 +730,7 @@ span.navbar-brand {
 .text-slider-container p {
   font-family: 'softwarefont';
 }
-.text-slider-container button.go {
+.text-slider-container button.go {/*
     display: inline-block;
     border: none;
     padding: 0rem 1.5rem;
@@ -741,6 +745,7 @@ span.navbar-brand {
     transition: background 250ms ease-in-out, transform 150ms ease;
     -webkit-appearance: none;
     -moz-appearance: none;
+    */
 }
 
 .text-slider-container button.go:hover, button.go:focus {
@@ -989,6 +994,10 @@ a {
 a:hover {
   opacity: .6;
 }
+#companies h3 {
+  text-align: center;
+  font-size: 1.5em;
+}
 
 /* Styles for the hero image */
 .hero {
@@ -1000,6 +1009,7 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   align-items: center;
+
 }
 .hero > * {
   color: white;
@@ -1017,18 +1027,21 @@ a:hover {
   margin-top: .75rem;
   background-color: rgba(255,255,255,.8);
 }
-.breweries {
-  padding: 2rem;
+section.breweries {
+  padding: 1rem;
+  background-color: #bbe1fa;
 }
 .breweries > ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  /*grid-gap: 1rem;*/
+  grid-gap: .5rem;
+  padding-left: 0em;
 }
 .breweries > ul > li {
   border: 1px solid #E2E2E2;
   border-radius: .5rem;
   list-style: none;
+  background-color: #1b262c;
 }
 .breweries > ul > li > figure {
   max-height: 220px;
@@ -1055,7 +1068,7 @@ a:hover {
   font-size: 1rem;
   line-height: 1.5;
   padding: 1rem .75rem;
-  color: #666666;
+  color: white;
 }
 .breweries > ul > li > a {
   padding: .5rem 1rem;
@@ -1069,12 +1082,39 @@ footer {
   font-size: .75rem;
 }
 @media only screen and (max-width: 600px) {
+  .hero {
+    height: 95vh;
+  }
   .hero > h1 { font-size: 2rem; }
   .hero > article > p {
     font-size: 1rem;
   }
   .breweries {
-    padding: .5rem;
+    padding: 0rem;
   }
-  .breweries > ul { padding-left: .15rem; }
+  .breweries > ul { padding-left: 0; }
 }
+@media only screen and (max-width: 768px) {
+  .hero {
+    height: 50vh;
+  }
+}
+.services {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction:column;
+}
+.services .accordion .card-header button{
+  /*border-bottom: 2px solid #bbe1fa;*/
+  color: #3282b8;
+}
+
+/* this will skew a div: transform: `skewY(-1.5deg)`, transformOrigin: `100%` */
+/*
+#foo1 {
+  background-image: url(../svg/wholistic-logo-tight.svg);
+}
+*/

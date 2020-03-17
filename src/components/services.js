@@ -19,72 +19,8 @@ import Button from 'react-bootstrap/Button';
 import "./layout.css";
 
 const Quote = ({ className }) => {
-  const [email, setEmail] = useState();
-  const [body, setBody] = useState();
-  const [complete, setComplete] = useState(false);
-  // TODO: The below scroll handlers are brittle
-  const techScroll = () => {
-    scrollNext(null, "companies");
-  }
-  const compScroll = () => {
-    scrollNext(null, "builder");
-  }
-  const submitForm = () => {
-    var templateParams = {
-        from_name: email,
-        to_name: 'sales@wholisticsoftware',
-        message_html: `A contact from wholistic-web (quote). email: ${email}
-          <br>
-          body: ${body}
-        `
-    };
-    window.emailjs.send(
-        'default_service', // default email provider in your EmailJS account
-        'template_p7ivdTfl',
-        templateParams
-      ).then(res => {
-        this.setState({ formEmailSent: true })
-      }).catch(err => console.error('Failed to send feedback. Error: ', err));
-      setComplete(true);
-  }
-  let scrollNext = (e, whereTo="tech") => {
-    console.info(`Scrolling to domnode with id=${whereTo}`);
-    //console.info("BEGIN onWelcomeClick(): " + e.target);
-	  let firstComponent = document.getElementById(whereTo);
-	  console.info("BEGIN scrollNext(): " + firstComponent);
-	  if (firstComponent){
-	    let fcHeight = firstComponent.offsetTop;
-	    console.error("a woHeight: " + fcHeight);
-	    if (window) console.info("woHeight: " + fcHeight);
-		  window.scroll({ top: (fcHeight), left: 0, behavior: 'smooth' });
-	  }
-  }
-  return (
-  <StaticQuery
-    query={graphql`
-      query {
-        desktop: file(relativePath: { eq: "amsterdam.jpg" }) {
-          childImageSharp {
-            fluid(quality: 90, maxWidth: 1920) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-      }
-    `}
-    render={data => {
-      const imageData = data.desktop.childImageSharp.fluid
-
       return (
-        <div className="plan" style={{ width: `100%`, display: `flex`, justifyContent: `center`, backgroundRepeat: `no-repeat`, backgroundSize: `cover`,
-            backgroundAttachment:`fixed`, backgroundPosition: `top`, alignItems: `center`, textAlign:`center`, flexDirection:`column`,
-            backgroundOrigin:`bottom`, backgroundColor:"#bbe1fa"}}>
-             <div>
-               <p style={{paddingTop:".5em"}}>The<br/> <span className="wholisticfont" style={{fontSize:"2em"}}>Whole Picture</span><br/>
-                 for <br/>
-               <span className="wholisticfont" style={{fontSize:"2em"}}>Maximum Impact </span> </p>
-             </div>
-             <div className="nav-divider" style={{backgroundColor:"#0f4c75", height:`3px`, width:'100%'}}></div>
+        <div className="services">
              <Accordion style={{width:"95%"}}>
                 <Card>
                   <Card.Header>
@@ -119,8 +55,8 @@ const Quote = ({ className }) => {
                   </Card.Header>
                   <Accordion.Collapse eventKey="1">
                     <Card.Body>We've built every imaginable kind of software, since 1999. Tools have improved. We love the cloud.
-                    But the SAME DAMN MISTAKES are still made, again and again.
-                    Don't cut corners on your coding. Get people who care and know what they are doing. Wholistic.</Card.Body>
+                    But the SAME MISTAKES are still made, again and again.
+                    Don't cut corners on coding. Get people who care and know what they are doing.</Card.Body>
                   </Accordion.Collapse>
                 </Card>
                 <Card>
@@ -136,19 +72,10 @@ const Quote = ({ className }) => {
                   </Accordion.Collapse>
                 </Card>
               </Accordion>
-               <form style={{display:'flex', flexDirection:`column`, maxWidth:`100%`, justifyContent:`center`, alignItems:`center`}}>
-                 <textarea placeholder="What are you working on?" value={body}
-                   onChange={(e) => setBody(e.target.value)} style={{marginBottom:`.5em`,width:`300px`}}></textarea>
-                 <input type="email" placeholder="Your Email" onChange={(e) => setEmail(e.target.value)} value={email} style={{marginBottom:`.5em`,width:`300px`}}></input>
-                 <Button className="go-button" style={{width:`300px`}} onClick={submitForm}>GO</Button>
-                 <a href="#" style={{fontSize:'8px'}}>Privacy Policy</a>
-               </form>
-
         </div>
-      )
-    }}
-  />
-)}
+    )
+  }
+
 
 export default Quote
 

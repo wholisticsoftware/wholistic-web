@@ -12,6 +12,7 @@ const Header = ({ siteTitle, showBrand, brandClass, navBaseClass }) => {
   if (!navBaseClass) navBaseClass = "nav-link";
   return (
   <header>
+  <div className="navbar-spacer"></div>
 	<nav className="navbar navbar-expand-lg fixed-top navbar-light" fixed="top">
       <span className="navbar-brand" href="#">
         <Link to="/" style={{visibility: showBrand ? '' : 'hidden'}} className={brandClass}>
@@ -25,27 +26,28 @@ const Header = ({ siteTitle, showBrand, brandClass, navBaseClass }) => {
 	  <div className="collapse navbar-collapse justify-content-stretch" id="navbarSupportedContent">
 		<ul className="navbar-nav ml-auto">
 		  <li className="nav-item">
-		    <Link className={navBaseClass} activeClassName="active-link" to="">welcome</Link>
+		    <Link className={navBaseClass} activeClassName="active-link" to="">home</Link>
 		  </li>
 		  <li><span className="nav-link">{` `}</span></li>
 		  <li className="nav-item">
-		    <Link className={navBaseClass} activeClassName="active-link" to="/services">services</Link>
+		    <Link className={navBaseClass} activeClassName="active-link" to="/plan">plan</Link>
 		  </li>
 		  <li><span className="nav-link">{` `}</span></li>
 		  <li className="nav-item">
-		    <Link className={navBaseClass} activeClassName="active-link" to="/philosophy">publications</Link>
+		    <Link className={navBaseClass} activeClassName="active-link" to="/design">design</Link>
+		  </li>
+		  <li><span className="nav-link">{` `}</span></li>
+		  <li className="nav-item">
+		    <Link className={navBaseClass} activeClassName="active-link" to="/code">code</Link>
 		  </li>
 		  <li><span className="nav-link">{` `}</span></li>
 		  <li className="nav-item">
 		    <Link className={navBaseClass} activeClassName="active-link" to="/contact">contact</Link>
 		  </li>
-		  <li><span className="nav-link">{` `}</span></li>
-		  <li className="nav-item">
-		    {/*}<Link className={navBaseClass} activeClassName="active-link" to="/about">+</Link>*/}
-		  </li>
 		</ul>
 	  </div>
 	</nav>
+  <div className="nav-divider" style={{backgroundColor:"#0f4c75", height:`3px`, width:'100%'}}></div>
   </header>
 )}
 // <li className="nav-item"><Link className="nav-link" style={{ color: navLinkColor }}>contact</Link></li>

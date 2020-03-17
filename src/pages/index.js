@@ -13,11 +13,28 @@ import dividerImg from "../images/guitar4.jpg";
 
 import Welcome from "../components/welcome";
 import Hero from "../components/hero";
-import Flow from "../components/flow";
+//import Flow from "../components/flow";
+import Technology from "../components/technology";
+import Companies from "../components/companies";
+import Services from "../components/services";
 //guitar4.jpg
 export const query = graphql`
   query {
+    logo: file(relativePath: { eq: "wholistic-linkedin.png" }) {
+      childImageSharp {
+        fluid(maxWidth:1920){
+          ...GatsbyImageSharpFluid
+        }
+      }
+    },
     strategy: file(relativePath: { eq: "SunTzu.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth:1920){
+          ...GatsbyImageSharpFluid
+        }
+      }
+    },
+    guitar: file(relativePath: { eq: "guitar4.jpg" }) {
       childImageSharp {
         fluid(maxWidth:1920){
           ...GatsbyImageSharpFluid
@@ -27,10 +44,12 @@ export const query = graphql`
   }
 `
 
-const IndexPage = ({data}) => {
+  const IndexPage = ({data}) => {
   const [showBrand, setShowBrand] = useState(true);
   const [brandClass, setBrandClass] = useState("");
   const [navBaseClass, setNavBaseClass] = useState("nav-link");
+  
+  const [expandState, setExpandState] = useState(false);
 
   useEffect(() => {
     function handleScroll() {
@@ -43,12 +62,12 @@ const IndexPage = ({data}) => {
 		      //console.log("wholisticComponent: " + fcHeight.scrollHeight);
 		      if (scrollY >= (fcHeight - 100)){
             setShowBrand(true);
-            setBrandClass("filter-white");
-            setNavBaseClass("nav-link-white");
+            //setBrandClass("filter-white");
+            //setNavBaseClass("nav-link-white");
 		      } else {
             setShowBrand(true); // conditional show/hide of brand logo
-            setBrandClass("");
-            setNavBaseClass("nav-link");
+            //setBrandClass("");
+            //setNavBaseClass("nav-link");
           }
         }
       }
@@ -69,22 +88,32 @@ const IndexPage = ({data}) => {
 	    console.error("a woHeight: " + fcHeight);
 	    if (window) console.info("woHeight: " + fcHeight);
 		  window.scroll({ top: (fcHeight), left: 0, behavior: 'smooth' });
-	  }
+    }
+    
+  }
+  const onLogoClick = () => {
+    setExpandState(true);
   }
   return (
-  <Layout style={{ height: `100%`}} showBrand={showBrand} brandClass={brandClass} navBaseClass={navBaseClass}>
+  <Layout style={{ height: `100%`}} showBrand={showBrand} brandClass={brandClass} navBaseClass={navBaseClass} parentData={data} onLogoClick={onLogoClick}>
     <SEO title="Wholistic Software, LLC" />
-    <div className="nav-divider" style={{backgroundColor:"grey", backgroundImage:"url("+dividerImg+")", height:`3px`, width:'100%'}}></div>
-    <Hero data={data} />
-    <div className="spacer" style={{backgroundColor:"grey", backgroundImage:"url("+dividerImg+")", height:`3px`, width:'100%'}}></div>
+    <Hero data={data} expandState={expandState}/>
+    <div className="spacer" style={{backgroundColor:"#0f4c75", height:`3px`, width:'100%'}}></div>
+    <Services />
     <Welcome id='index-welcome' data={data} onWelcomeClick={onWelcomeClick}></Welcome>
 
-    <Flow style={{ scrollSnapType: `y mandatory` }} ></Flow>
+    {/*<Flow style={{ scrollSnapType: `y mandatory` }} ></Flow>*/}
+
+    <Technology />
+
+    <Companies />
   </Layout>
 )}
 
 export default IndexPage
+//<div style={{backgroundColor:'#0f4c75', textAlign:"center"}}>Wholistic Software is your trusted partner for software development.</div>
 
+//  backgroundImage:"url("+dividerImg+")",
 /*
  *
  * -componentDidMount() {

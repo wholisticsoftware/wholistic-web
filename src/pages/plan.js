@@ -22,7 +22,7 @@ const Page2 = () => {
   const [brandClass, setBrandClass] = useState("");
   const [navBaseClass, setNavBaseClass] = useState("nav-link");
 
-  useEffect(() => { 
+  useEffect(() => {
     function handleScroll() {
       //setScrollPosition(getScroll())
       let scrollY = window.scrollY;
@@ -50,7 +50,7 @@ const Page2 = () => {
 	}
 	return () => window.removeEventListener('scroll', handleScroll)
   }, []);
-  
+
   let onWelcomeClick = () => {
     console.info("BEGIN onWelcomeClick()");
 	let wholisticOuter = document.getElementById("wholistic-outer");
@@ -60,8 +60,8 @@ const Page2 = () => {
 	  if (window)
 	    console.info("woHeight: " + woHeight);
 		window.scroll({
-		  top: (woHeight), 
-		  left: 0, 
+		  top: (woHeight),
+		  left: 0,
 		  behavior: 'smooth'
 		});
 	  }
@@ -70,14 +70,13 @@ const Page2 = () => {
   <Layout style={{ height: `100%`}} showBrand={showBrand} brandClass={brandClass} navBaseClass={navBaseClass}>
     <SEO title="Wholistic Software, LLC" />
     <Quote id='wholistic1' onWelcomeClick={onWelcomeClick}></Quote>
-    <Questionaire></Questionaire>
   </Layout>
 )}
 
 export default Page2
 
 /* <Welcome style={{ scrollSnapType: `y mandatory` }} ></Welcome>
- * 
+ *
  * -componentDidMount() {
 +useEffect(() => {
    axios
