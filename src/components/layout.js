@@ -14,7 +14,7 @@ import Popup from "./popup"
 import { IoLogoLinkedin } from 'react-icons/io';
 
 const Layout = ({ children, showBrand, brandClass, navBaseClass, parentData, onLogoClick }) => {
-  const logoRef = useRef();
+  const layoutRef = useRef();
   let [logoScale, setLogoScale] = useState(1);
   let [logoPosition, setLogoPosition] = useState("inherit");
   let [navTop, setNavTop] = useState("auto");
@@ -33,7 +33,18 @@ const Layout = ({ children, showBrand, brandClass, navBaseClass, parentData, onL
     if (onLogoClick) {
       onLogoClick();
     }
+    //console.log("layoutRef.current.parentNode: " + layoutRef.current.parentNode);
+    layoutRef.current.parentNode.style.overflow = "auto";
   }
+  useEffect(() => {
+    function handleScroll() {
+      navClick();
+    }
+    if (window){
+      window.addEventListener('scroll', handleScroll);
+    }
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, []);
   let onScroll = (info) => {/*
     console.log("point: " + info.point.y);
     console.log("offset: " + info.offset.y);
@@ -67,7 +78,7 @@ const Layout = ({ children, showBrand, brandClass, navBaseClass, parentData, onL
         backgroundSize: `cover`, backgroundPosition: `bottom`, textAlign:`center`}}>
         */
   return ( 
-    <div style={{}}>
+    <div className="layout1" style={{}} ref={layoutRef}>
       <motion.nav id="behind-nav" style={{top:0, left: 0, width:'100vw',height:navHeight}} animate={{height:navHeight}}></motion.nav>
       <motion.nav id="nav" style={{backgroundColor:'white',position:"fixed", top:0, left: 0, width:'100vw',height:navHeight, textAlign:"center",
           display: 'flex', display: `flex`, justifyContent: `center`, alignItems: `center`}}

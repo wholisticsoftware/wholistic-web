@@ -95,8 +95,10 @@ export const query = graphql`
     setExpandState(true);
   }
   return (
-  <Layout style={{ height: `100%`}} showBrand={showBrand} brandClass={brandClass} navBaseClass={navBaseClass} parentData={data} onLogoClick={onLogoClick}>
+  <Layout style={{ height: `100%`}} showBrand={showBrand} brandClass={brandClass} navBaseClass={navBaseClass} parentData={data} 
+      onLogoClick={onLogoClick}>
     <SEO title="Wholistic Software, LLC" />
+    <div className="spacer" style={{backgroundColor:"#0f4c75", height:`3px`, width:'100%'}}></div>
     <Hero data={data} expandState={expandState}/>
     <div className="spacer" style={{backgroundColor:"#0f4c75", height:`3px`, width:'100%'}}></div>
     <Services />

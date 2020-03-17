@@ -595,6 +595,9 @@ pre tt:after {
 }
 
 /* wholistic styles */
+nav#nav {
+  z-index: 10000;
+}
 div nav.navbar {
   background-color: white; /*#796465;*/
   padding: 0px;
@@ -619,6 +622,9 @@ span.navbar-brand {
   max-width: 130px;
   max-height: 100px;
   padding-left: 2em;
+}
+nav#nav svg {
+  cursor: pointer;
 }
 .navbar-spacer { max-height: 110px; }
 .nav-divider {
@@ -1118,3 +1124,7 @@ footer {
   background-image: url(../svg/wholistic-logo-tight.svg);
 }
 */
+
+div#gatsby-focus-wrapper {
+  /*overflow: hidden;*/
+}

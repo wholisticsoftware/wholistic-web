@@ -26,15 +26,15 @@ import Icon from "../svg/wholistic-logo-tight.svg";
 import "./layout.css"
 
 const adjectives = [
-  "We Know Remote", "Strategic Partner", "Simple, Efficient, Reliable"
+  "We Know Remote", "Deep Expertise", "Simple, Efficient, Reliable"
 ];
 const texts = [
-   "Over 15 years of experience in remote dev at your service!",
-   "Published expertise in the state-of-the-art, from JavaScript to devOps.",
-   "Action without adaquate strategy is the number 1 cause of software project failure."
+   "Over 15 years of experience in remote dev at your service.  Remote is better.",
+   "Published expertise in the state-of-the-art, from JavaScript to devOps. Read some of our articles.",
+   "Our mission is to be the simplest way for you to get the software services you need."
 ]
 const buttonTexts = [
-  "Dev Services",
+  "Find Out Why",
   "Check it Out",
   "Get a free Consultation"
 ];
