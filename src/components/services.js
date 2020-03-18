@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { StaticQuery, graphql } from "gatsby";
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
+import Modal from 'react-bootstrap/Modal'
+
 
 import Technology from '../components/technology.js';
 import Companies from '../components/companies.js';
@@ -19,6 +21,10 @@ import Button from 'react-bootstrap/Button';
 import "./layout.css";
 
 const Quote = ({ className }) => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
       return (
         <div className="services">
              <Accordion style={{width:"95%"}}>
@@ -33,6 +39,24 @@ const Quote = ({ className }) => {
                     <Card.Body>We help founders and execs formulate effective technology strategy to implement business objectives.
                       <br/>
                       <a href="">Contact</a>
+                      <Button variant="primary" onClick={handleShow}>
+        Launch demo modal
+      </Button>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
@@ -44,7 +68,10 @@ const Quote = ({ className }) => {
                   </Card.Header>
                   <Accordion.Collapse eventKey="1">
                     <Card.Body>Software Architecture is the bridge between business and tech. The high level vision of technology, staffing and specs are
-                     the most important technology artifacts in a software project.</Card.Body>
+                     the most important technology artifacts in a software project.
+                     <a href="">Contact</a>
+                     </Card.Body>
+                    
                   </Accordion.Collapse>
                 </Card>
                 <Card>
@@ -56,7 +83,10 @@ const Quote = ({ className }) => {
                   <Accordion.Collapse eventKey="1">
                     <Card.Body>We've built every imaginable kind of software, since 1999. Tools have improved. We love the cloud.
                     But the SAME MISTAKES are still made, again and again.
-                    Don't cut corners on coding. Get people who care and know what they are doing.</Card.Body>
+                    Don't cut corners on coding. Get people who care and know what they are doing.
+                    <a href="">Contact</a>
+                    </Card.Body>
+                    
                   </Accordion.Collapse>
                 </Card>
                 <Card>
@@ -68,7 +98,11 @@ const Quote = ({ className }) => {
                   <Accordion.Collapse eventKey="1">
                     <Card.Body>We are a custom software shop, and we can handle a great deal with our remote-flex team style.  Sometimes,
                     you need even more help. Maybe you need some fulltime people to carry on the work.
-                    We'll hook you up with some of the best industry resources, period.</Card.Body>
+                    We'll hook you up with some of the best industry resources, period.
+                    <a href="">Contact</a>
+                    
+                    </Card.Body>
+                    
                   </Accordion.Collapse>
                 </Card>
               </Accordion>

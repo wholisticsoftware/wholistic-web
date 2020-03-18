@@ -34,7 +34,7 @@ const Layout = ({ children, showBrand, brandClass, navBaseClass, parentData, onL
       onLogoClick();
     }
     //console.log("layoutRef.current.parentNode: " + layoutRef.current.parentNode);
-    layoutRef.current.parentNode.style.overflow = "auto";
+    layoutRef.current.parentNode.style.overflow = "inherit";
   }
   useEffect(() => {
     function handleScroll() {
