@@ -596,7 +596,7 @@ pre tt:after {
 
 /* wholistic styles */
 nav#nav {
-  z-index: 10000;
+  z-index: 1000;
 }
 div nav.navbar {
   background-color: white; /*#796465;*/
@@ -1015,7 +1015,7 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   align-items: center;
-
+  height: 45vh;
 }
 .hero > * {
   color: white;

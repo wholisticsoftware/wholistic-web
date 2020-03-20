@@ -1,7 +1,12 @@
-import React, {useEffect} from "react"
+import React, {useEffect, useState} from "react"
 //import PropTypes from "prop-types"
 import { StaticQuery, graphql, Link } from "gatsby"
 import styled from 'styled-components';
+
+import Modal from 'react-bootstrap/Modal'
+
+
+import Quote from '../components/quote.js';
 
 import microservices from '../images/microservices.png';
 import suntzu from '../images/sun-tzu-planning.png';
@@ -30,6 +35,9 @@ import "./layout.css"
 //https://www.schemecolor.com/soft-neutrals.php
 //https://www.npmjs.com/package/react-text-transition
 const Welcome = ({ className, onWelcomeClick, id, data }) => {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = (e) => { e.preventDefault(); setShow(true); return false;}
 
 //border: solid aliceblue 3px;
 //<motion.span animate={{ opacity: opacity }} transition={{ duration: 1 }}>{adjective}</motion.span>
@@ -45,10 +53,10 @@ const Welcome = ({ className, onWelcomeClick, id, data }) => {
                     <figcaption><h3>Software Strategy</h3></figcaption>
                   </figure>
                   <p>
-                    We work with founders, engineers and execs to help define and refine strategy. Getting the high-level strategy right
-                    makes the most of your process, people and tech.
+                    We work with founders, engineers and execs to help define and refine strategy. Get the high-level strategy right
+                    to make the most of your process, people and tech.
                   </p>
-                  <Link to="/services">Get a Free 1 Hour Consult</Link>
+                  <a href="#" onClick={handleShow}>Get a Free 1 Hour Consult</a>
                 </li>
                 <li>
                   <figure>
@@ -95,7 +103,15 @@ const Welcome = ({ className, onWelcomeClick, id, data }) => {
                     <p style={{fontSize:"12px"}}>For</p> Executives</div>
                 </div>
               */}
-
+        <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Contact Wholistic</Modal.Title>
+        </Modal.Header>
+        <Modal.Body><Quote /></Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>Close</Button>
+        </Modal.Footer>
+      </Modal>
 
       </div>
 )}

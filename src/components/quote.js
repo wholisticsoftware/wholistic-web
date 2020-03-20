@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 //import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby";
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
+
+import Icon from "../svg/wholistic-logo-tight.svg";
+
+import Popup from "./popup";
 
 import Technology from '../components/technology.js';
 import Companies from '../components/companies.js';
@@ -19,6 +23,10 @@ import Button from 'react-bootstrap/Button';
 import "./layout.css";
 
 const Quote = ({ className }) => {
+  useEffect(() => {
+    if (window) window.emailjs.init("user_4oDwty2PIsJhhdqS2Hyre")
+  }, []);
+
   const [email, setEmail] = useState();
   const [body, setBody] = useState();
   const [complete, setComplete] = useState(false);
@@ -80,12 +88,36 @@ const Quote = ({ className }) => {
             backgroundAttachment:`fixed`, backgroundPosition: `top`, alignItems: `center`, textAlign:`center`, flexDirection:`column`,
             backgroundOrigin:`bottom`, backgroundColor:"#bbe1fa"}}>
              <div>
-               <p style={{paddingTop:".5em"}}>The<br/> <span className="wholisticfont" style={{fontSize:"2em"}}>Whole Picture</span><br/>
-                 for <br/>
-               <span className="wholisticfont" style={{fontSize:"2em"}}>Maximum Impact </span> </p>
+              <Icon style={{maxWidth:"45%", maxHeight:'100px', margin: "2em"}}/>
              </div>
-             <div className="nav-divider" style={{backgroundColor:"#0f4c75", height:`3px`, width:'100%'}}></div>
-             <Accordion style={{width:"95%"}}>
+             {complete ? 
+               <div>Message Received, thanks.</div>
+               :
+               <form style={{display:'flex', flexDirection:`column`, maxWidth:`100%`, justifyContent:`center`, alignItems:`center`}}>
+                 <textarea placeholder="What are you working on?" value={body}
+                   onChange={(e) => setBody(e.target.value)} style={{marginBottom:`.5em`,width:`300px`}}></textarea>
+                 <input type="email" placeholder="Your Email" onChange={(e) => setEmail(e.target.value)} value={email} style={{marginBottom:`.5em`,width:`300px`}}></input>
+                 <Button className="go-button" style={{width:`300px`}} onClick={submitForm}>GO</Button>
+                 <a href="#" style={{fontSize:'8px'}} onClick={
+                   (e) => { 
+                     e.preventDefault(); 
+                     alert("Wholistic does not discuss your business with anyone else. Ever. Nor do we sell information. We send out an occasional newsletter covering the tech industry."); return false; }
+                 }>Privacy Policy</a>
+                 
+               </form>
+              }
+        </div>
+      )
+    }}
+  />
+)}
+
+export default Quote
+
+
+/*
+
+<Accordion style={{width:"95%"}}>
                 <Card>
                   <Card.Header>
                     <Accordion.Toggle as={Button} variant="link" eventKey="0">
@@ -136,21 +168,7 @@ const Quote = ({ className }) => {
                   </Accordion.Collapse>
                 </Card>
               </Accordion>
-               <form style={{display:'flex', flexDirection:`column`, maxWidth:`100%`, justifyContent:`center`, alignItems:`center`}}>
-                 <textarea placeholder="What are you working on?" value={body}
-                   onChange={(e) => setBody(e.target.value)} style={{marginBottom:`.5em`,width:`300px`}}></textarea>
-                 <input type="email" placeholder="Your Email" onChange={(e) => setEmail(e.target.value)} value={email} style={{marginBottom:`.5em`,width:`300px`}}></input>
-                 <Button className="go-button" style={{width:`300px`}} onClick={submitForm}>GO</Button>
-                 <a href="#" style={{fontSize:'8px'}}>Privacy Policy</a>
-               </form>
-
-        </div>
-      )
-    }}
-  />
-)}
-
-export default Quote
+              */
 
 /*
 <BackgroundImage className="quote" Tag="section" fluid={imageData} backgroundColor={`transparent`}
