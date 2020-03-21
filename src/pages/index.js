@@ -97,7 +97,7 @@ export const query = graphql`
   return (
   <Layout style={{ height: `100%`}} showBrand={showBrand} brandClass={brandClass} navBaseClass={navBaseClass} parentData={data} 
       onLogoClick={onLogoClick}>
-    <SEO title="Wholistic Software, LLC" />
+    <SEO title="Wholistic Software, Inc." description="Software Development made Simple. Programming, coding, cloud infrastructure and devops."/>
     <div className="spacer" style={{backgroundColor:"#0f4c75", height:`3px`, width:'100%'}}></div>
     <Hero data={data} expandState={expandState}/>
     <div className="spacer" style={{backgroundColor:"#0f4c75", height:`3px`, width:'100%'}}></div>
