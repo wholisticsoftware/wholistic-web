@@ -63,8 +63,10 @@ const Quote = ({ className }) => {
 	  if (firstComponent){
 	    let fcHeight = firstComponent.offsetTop;
 	    console.error("a woHeight: " + fcHeight);
-	    if (window) console.info("woHeight: " + fcHeight);
-		  window.scroll({ top: (fcHeight), left: 0, behavior: 'smooth' });
+	    if (window) {
+        console.info("woHeight: " + fcHeight);
+        window.scroll({ top: (fcHeight), left: 0, behavior: 'smooth' });
+      }
 	  }
   }
   return (

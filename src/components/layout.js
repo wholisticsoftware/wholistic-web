@@ -1,11 +1,12 @@
 import React, {useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
-import { Frame, Scroll } from "framer";
+
+//import { Frame, Scroll } from "framer";
 import { motion, useMotionValue } from "framer-motion";
 import BackgroundImage from 'gatsby-background-image';
 
-import Icon from "../svg/wholistic-logo-tight.svg";
+import Icon from "../svg/wholistic-systems-c.svg";
 
 import Header from "./header2"
 import "./layout.css"
@@ -37,13 +38,22 @@ const Layout = ({ children, showBrand, brandClass, navBaseClass, parentData, onL
     layoutRef.current.parentNode.style.overflow = "inherit";
   }
   useEffect(() => {
+    let timeOut = null;
+    if (window){ window.setTimeout(()=>{navClick()}, 1250); }
+    return () => {
+      if (window) clearTimeout(timeOut);
+    }
+  }, []);
+  useEffect(() => {
     function handleScroll() {
       navClick();
     }
     if (window){
       window.addEventListener('scroll', handleScroll);
     }
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => {
+      if (window) window.removeEventListener('scroll', handleScroll);
+    }
   }, []);
   let onScroll = (info) => {/*
     console.log("point: " + info.point.y);
@@ -82,8 +92,8 @@ const Layout = ({ children, showBrand, brandClass, navBaseClass, parentData, onL
       <motion.nav id="behind-nav" style={{top:0, left: 0, width:'100vw',height:navHeight}} animate={{height:navHeight}}></motion.nav>
       <motion.nav id="nav" style={{backgroundColor:'white',position:"fixed", top:0, left: 0, width:'100vw',height:navHeight, textAlign:"center",
           display: 'flex', display: `flex`, justifyContent: `center`, alignItems: `center`}}
-          onClick={navClick} animate={{height:navHeight, scale:1}} initial={{scale:0}}>
-        <Icon id="foo" style={{height:'50%', minHeight:'10vh', maxWidth:'70%', paddingTop: "10px", paddingBottom: "10px"}} />
+          onClick={navClick} animate={{height:navHeight, scale:1}} initial={{scale:0}} transition={{ duration: .6 }}>
+        <Icon id="foo" style={{height:'70%', minHeight:'11vh', maxWidth:'70%', paddingTop: "7px", paddingBottom: "7px"}} />
         {/*<BackgroundImage id="logo" className="logo" Tag="section" fluid={parentData.logo.childImageSharp.fluid} 
           backgroundColor="white" style={{ width: `100%`, height: `100%`, display: `flex`, justifyContent: `center`, alignItems: `center`, backgroundRepeat: `no-repeat`, 
           backgroundSize: `contain`, backgroundPosition: `center`, textAlign:`center`}}>
@@ -92,7 +102,7 @@ const Layout = ({ children, showBrand, brandClass, navBaseClass, parentData, onL
       </motion.nav>
       <main style={{width:'100%'}}>{children}</main>
       <footer>
-        <span>&copy; 2020. Wholistic. Built with Gatsby and Framer.</span>&nbsp;&nbsp;
+        <span>&copy; 2020. Wholistic Systems, Inc.</span>&nbsp;&nbsp;
         <span style={{fontSize:'20px'}}><a href="https://www.linkedin.com/company/wholistic-software-llc"><IoLogoLinkedin /></a></span>
       </footer>
     </div>

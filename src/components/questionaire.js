@@ -32,7 +32,7 @@ const BizTech = ({ className }) => {
   const [complete, setComplete] = useState(false);
   
   useEffect(() => {
-    window.emailjs.init("user_4oDwty2PIsJhhdqS2Hyre")
+    if (window) window.emailjs.init("user_4oDwty2PIsJhhdqS2Hyre")
   }, []);
   
 	let addTech = (name) => { setTech([...tech, name ]); };

@@ -20,7 +20,7 @@ import Services from "../components/services";
 //guitar4.jpg
 export const query = graphql`
   query {
-    logo: file(relativePath: { eq: "wholistic-linkedin.png" }) {
+    logo: file(relativePath: { eq: "wholistic-systems-b.png" }) {
       childImageSharp {
         fluid(maxWidth:1920){
           ...GatsbyImageSharpFluid
@@ -86,8 +86,10 @@ export const query = graphql`
 	  if (firstComponent){
 	    let fcHeight = firstComponent.scrollHeight;
 	    console.error("a woHeight: " + fcHeight);
-	    if (window) console.info("woHeight: " + fcHeight);
-		  window.scroll({ top: (fcHeight), left: 0, behavior: 'smooth' });
+	    if (window) { 
+        console.info("woHeight: " + fcHeight);
+        window.scroll({ top: (fcHeight), left: 0, behavior: 'smooth' });
+      }
     }
     
   }
@@ -98,9 +100,9 @@ export const query = graphql`
   <Layout style={{ height: `100%`}} showBrand={showBrand} brandClass={brandClass} navBaseClass={navBaseClass} parentData={data} 
       onLogoClick={onLogoClick}>
     <SEO title="Wholistic Software, Inc." description="Software Development made Simple. Programming, coding, cloud infrastructure and devops."/>
-    <div className="spacer" style={{backgroundColor:"#0f4c75", height:`3px`, width:'100%'}}></div>
+    
     <Hero data={data} expandState={expandState}/>
-    <div className="spacer" style={{backgroundColor:"#0f4c75", height:`3px`, width:'100%'}}></div>
+
     <Services />
     <Welcome id='index-welcome' data={data} onWelcomeClick={onWelcomeClick}></Welcome>
 
@@ -111,7 +113,7 @@ export const query = graphql`
     <Companies />
   </Layout>
 )}
-
+//<div className="spacer" style={{backgroundColor:"#0f4c75", height:`3px`, width:'100%'}}></div>
 export default IndexPage
 //<div style={{backgroundColor:'#0f4c75', textAlign:"center"}}>Wholistic Software is your trusted partner for software development.</div>
 

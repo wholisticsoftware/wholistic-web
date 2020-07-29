@@ -10,7 +10,6 @@
     "@fortawesome/react-fontawesome": "^0.1.8",
     "babel-plugin-styled-components": "^1.10.6",
     "bootstrap": "^4.4.1",
-    "framer": "^1.1.7",
     "framer-motion": "^1.8.4",
     "gatsby": "^2.18.12",
     "gatsby-background-image": "^0.9.12",
@@ -35,7 +34,6 @@
     "react-helmet": "^5.2.1",
     "react-icons": "^3.9.0",
     "react-slick": "^0.25.2",
-    "react-text-transition": "^1.0.2",
     "reactjs-popup": "^1.5.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^4.4.1"

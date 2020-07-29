@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-import Icon from "../svg/wholistic-logo-tight.svg";
+import Icon from "../svg/wholistic-systems-b.svg";
 //{siteTitle}
 //<Link to="/page-2/">intro</Link>
 //style={{ backgroundColor: `transparent!important`}}

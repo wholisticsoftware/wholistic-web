@@ -14,8 +14,6 @@ import Quote from '../components/quote.js';
 
 import { motion, useMotionValue } from "framer-motion";
 
-import ReactTextTransition, { presets } from "react-text-transition";
-
 import BackgroundImage from 'gatsby-background-image'
 
 import Slider from "react-slick";
@@ -24,7 +22,7 @@ import { FaFly } from "react-icons/fa";
 import { GiCurledLeaf } from "react-icons/gi";
 import { GoTriangleDown } from "react-icons/go";
 
-import Icon from "../svg/wholistic-logo-tight.svg";
+import Icon from "../svg/wholistic-systems-b.svg";
 
 import "./layout.css"
 
@@ -80,7 +78,7 @@ const Welcome = ({ className, onWelcomeClick, id, data, expandState }) => {
 
   return (
     <motion.div className="hero" style={{ backgroundPosition: "left", backgroundSize: "contain", backgroundColor: "black" }}
-      initial={{ height: 0 }} transition={{ delay: .33 }}
+      initial={{ height: 0 }} transition={{ delay: .6 }}
       animate={{ height: expandState ? '' : 0 }}>
       <motion.h1 animate={{ opacity: opacity, x: bannerX }} transition={{ duration: 1.25 }}>{banner}</motion.h1>
       <article>

@@ -5,7 +5,6 @@ import styled from 'styled-components';
 
 import Modal from 'react-bootstrap/Modal'
 
-
 import Quote from '../components/quote.js';
 
 import microservices from '../images/microservices.png';
@@ -15,8 +14,6 @@ import modernui from '../images/ui.jpeg';
 import Button from 'react-bootstrap/Button';
 
 import { motion, useMotionValue } from "framer-motion";
-
-import ReactTextTransition, { presets } from "react-text-transition";
 
 import BackgroundImage from 'gatsby-background-image'
 

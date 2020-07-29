@@ -3,6 +3,7 @@ module.exports = {
     title: `Wholistic Software, LLC.`,
     description: `Software Development, DevTools, Developer Networking`,
     author: `dev@wholisticsoftware.com`,
+    keywords: "software, development, programming, cloud, web, architecture, inexpensive, javascript, java"
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
